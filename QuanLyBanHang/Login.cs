@@ -17,11 +17,6 @@ namespace QuanLyBanHang
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
             txtPass.UseSystemPasswordChar = true;
@@ -51,6 +46,16 @@ namespace QuanLyBanHang
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+        }
+
+        private void Userlb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Passlb_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

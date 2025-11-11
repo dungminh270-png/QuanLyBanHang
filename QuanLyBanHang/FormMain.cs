@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyBanHang
 {
-    public partial class frmMain : Form
+    public partial class FormMain : Form
     {
-        public frmMain()
+        public FormMain()
         {
             InitializeComponent();
             this.IsMdiContainer = true;
@@ -20,19 +20,21 @@ namespace QuanLyBanHang
 
         private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var f= new Login();
+            var f = new Login();
             f.MdiParent = this;
             f.Show();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            lblDongHo.Text = DateTime.Now.ToString("dd/MM/yyyyy HH:mm:ss tt");
-        }
-
-        private void kháchHàngToolStripMenuItem3_Click(object sender, EventArgs e)
+        private void kháchHàngToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             var f = new frmQuanLiKhachHang();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void kháchHàngToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var f = new FormTimKiemKhachHang();
             f.MdiParent = this;
             f.Show();
         }

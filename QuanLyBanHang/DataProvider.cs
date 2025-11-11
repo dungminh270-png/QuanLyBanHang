@@ -15,23 +15,23 @@ namespace QuanLyBanHang
         {
             get
             {
-                return @"Server=.; DataBase=QLBanHang;Trusted_Connection = True";
+                return @"Server=localhost\SQLEXPRESS;Database=QLBanHang;Trusted_Connection=True;";
             }
+
         }
 
-        public static DataTable TruyVanLayDuLieu(string sql)
+        public static DataTable TruyVanLayDuLieu (string sql)
         {
             DataTable dt = new DataTable();
-            var connection = new SqlConnection(ChuoiKetNoi);
-            var dataAdapter = new SqlDataAdapter(sql, connection);
-
-            dataAdapter.Fill(dt);
+            var connection =new SqlConnection(ChuoiKetNoi);
+            var DataAdapter = new SqlDataAdapter(sql, connection);
+            DataAdapter.Fill(dt);
             return dt;
         }
 
         public static bool TruyVanXuLiDuLieu(string sql)
         {
-            try
+            try 
             {
                 var connection = new SqlConnection(ChuoiKetNoi);
                 var command = new SqlCommand(sql, connection);
@@ -42,7 +42,7 @@ namespace QuanLyBanHang
             }
             catch (Exception ex)
             {
-                //Handle Error
+                //handle error
                 return false;
             }
         }

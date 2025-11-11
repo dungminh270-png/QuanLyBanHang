@@ -30,10 +30,11 @@ namespace QuanLyBanHang
             lblDongHo.Text = DateTime.Now.ToString("dd/MM/yyyyy HH:mm:ss tt");
         }
 
-        private void kháchHàngToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void kháchHàngToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            FormTimKiemKhachHang KH = new FormTimKiemKhachHang();
-            KH.Show();
+            var f = new frmQuanLiKhachHang();
+            f.MdiParent = this;
+            f.Show();
         }
     }
 }

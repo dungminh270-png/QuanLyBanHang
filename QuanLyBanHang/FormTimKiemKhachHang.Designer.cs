@@ -64,14 +64,17 @@
             this.dgvKhachHang.RowTemplate.Height = 24;
             this.dgvKhachHang.Size = new System.Drawing.Size(893, 466);
             this.dgvKhachHang.TabIndex = 1;
+            this.dgvKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellContentClick);
             // 
             // cboThanhPho
             // 
+            this.cboThanhPho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboThanhPho.FormattingEnabled = true;
             this.cboThanhPho.Location = new System.Drawing.Point(147, 33);
             this.cboThanhPho.Name = "cboThanhPho";
             this.cboThanhPho.Size = new System.Drawing.Size(166, 24);
             this.cboThanhPho.TabIndex = 2;
+            this.cboThanhPho.SelectedIndexChanged += new System.EventHandler(this.cboThanhPho_SelectedIndexChanged);
             // 
             // lblSoKhachhang
             // 
@@ -134,6 +137,7 @@
             this.Controls.Add(this.lblThanhPho);
             this.Name = "FormTimKiemKhachHang";
             this.Text = "FormTimKiemKhachHang";
+            this.Load += new System.EventHandler(this.FormTimKiemKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

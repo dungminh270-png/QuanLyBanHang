@@ -31,7 +31,7 @@ namespace QuanLyBanHang
 
         public static bool TruyVanXuLiDuLieu(string sql)
         {
-            try
+            try 
             {
                 var connection = new SqlConnection(ChuoiKetNoi);
                 var command = new SqlCommand(sql, connection);
@@ -42,7 +42,7 @@ namespace QuanLyBanHang
             }
             catch (Exception ex)
             {
-                //Handle Error
+                //handle error
                 return false;
             }
         }

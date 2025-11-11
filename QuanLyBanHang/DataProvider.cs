@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyBanHang
 {
@@ -31,7 +32,7 @@ namespace QuanLyBanHang
 
         public static bool TruyVanXuLiDuLieu(string sql)
         {
-            try 
+            try
             {
                 var connection = new SqlConnection(ChuoiKetNoi);
                 var command = new SqlCommand(sql, connection);
@@ -46,5 +47,33 @@ namespace QuanLyBanHang
                 return false;
             }
         }
+        //public static bool TruyVanXuLiDuLieu(string sql)
+        //{
+        //    try
+        //    {
+        //        using (SqlConnection connection = new SqlConnection(ChuoiKetNoi))
+        //        {
+        //            connection.Open();
+        //            using (SqlCommand command = new SqlCommand(sql, connection))
+        //            {
+        //                int rows = command.ExecuteNonQuery(); // trả về số dòng bị ảnh hưởng
+        //                if (rows > 0)
+        //                    return true;
+        //                else
+        //                {
+        //                    MessageBox.Show("Không có bản ghi nào bị ảnh hưởng.\nCó thể mã không tồn tại hoặc bị khóa ràng buộc.",
+        //                                    "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //                    return false;
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Lỗi SQL: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return false;
+        //    }
+        //}
+
     }
 }

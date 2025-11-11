@@ -197,6 +197,7 @@
             this.kháchHàngToolStripMenuItem2.Name = "kháchHàngToolStripMenuItem2";
             this.kháchHàngToolStripMenuItem2.Size = new System.Drawing.Size(169, 26);
             this.kháchHàngToolStripMenuItem2.Text = "Khách hàng";
+            this.kháchHàngToolStripMenuItem2.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem2_Click);
             // 
             // sảnPhẩmToolStripMenuItem1
             // 

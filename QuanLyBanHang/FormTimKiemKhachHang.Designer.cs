@@ -44,7 +44,7 @@
             // 
             this.lblThanhPho.AutoSize = true;
             this.lblThanhPho.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThanhPho.Location = new System.Drawing.Point(35, 35);
+            this.lblThanhPho.Location = new System.Drawing.Point(30, 35);
             this.lblThanhPho.Name = "lblThanhPho";
             this.lblThanhPho.Size = new System.Drawing.Size(102, 20);
             this.lblThanhPho.TabIndex = 0;
@@ -80,7 +80,7 @@
             // 
             this.lblSoKhachhang.AutoSize = true;
             this.lblSoKhachhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoKhachhang.Location = new System.Drawing.Point(636, 37);
+            this.lblSoKhachhang.Location = new System.Drawing.Point(623, 35);
             this.lblSoKhachhang.Name = "lblSoKhachhang";
             this.lblSoKhachhang.Size = new System.Drawing.Size(138, 20);
             this.lblSoKhachhang.TabIndex = 3;

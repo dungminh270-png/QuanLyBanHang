@@ -104,7 +104,7 @@
             this.label1.Font = new System.Drawing.Font("Georgia", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(799, 67);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 39);
+            this.label1.Size = new System.Drawing.Size(210, 38);
             this.label1.TabIndex = 2;
             this.label1.Text = "WELCOME";
             // 
@@ -143,6 +143,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
             this.linkLabel1.Location = new System.Drawing.Point(876, 241);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(109, 16);

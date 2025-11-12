@@ -234,17 +234,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataProvider.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTimKiemKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormTimKiemKhachHang.Designer.cs">
       <DependentUpon>FormTimKiemKhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQuanLiKhachHang.cs">
       <SubType>Form</SubType>
@@ -260,11 +260,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTimKiemKhachHang.resx">
       <DependentUpon>FormTimKiemKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLiKhachHang.resx">
       <DependentUpon>frmQuanLiKhachHang.cs</DependentUpon>
@@ -298,6 +298,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Avatar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuanLiKhachHang..png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

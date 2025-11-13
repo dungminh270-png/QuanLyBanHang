@@ -25,7 +25,7 @@ namespace QuanLyBanHang
 
         }
 
-        string ChuoiKetNoi = @"Server=localhost\SQLEXPRESS;Database=QLBanHang;Trusted_Connection=True;";
+        string ChuoiKetNoi = @"Server=ROSANNRYY;Database=QLBanHang;Trusted_Connection=True;";
         private void LoadKhachHang()
         {
             var connection = new SqlConnection(ChuoiKetNoi);
@@ -47,6 +47,11 @@ namespace QuanLyBanHang
             cboThanhPho.DataSource = dtThanhPho;
             cboThanhPho.DisplayMember = "TenThanhPho";
             cboThanhPho.ValueMember = "MaThanhPho";
+        }
+
+        private void dgvKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

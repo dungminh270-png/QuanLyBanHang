@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -46,8 +47,43 @@ namespace QuanLyBanHang
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            using (var db = new QLBanHangDataContext())
+            {
+                if (radNhanvien.Checked)
+                {
+                    var nv = db.NhanViens.FirstOrDefault(x => x.MaDN == user && x.MatKhau == pass);
+                    if (nv != null)
+                    {
+                        MessageBox.Show("Đăng nhập thành công (Nhân Viên)!");
+                        FormMain main = new FormMain();
+                        main.Show();
+                        this.Hide();
+                    }
+                    else 
+                    {
+                        MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Lỗi",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else if (radKhachHang.Checked)
+                {
+                    var kh = db.KhachHangs.FirstOrDefault(x => x.MaDN == user && x.MatKhau == pass);
+                    if (kh != null)
+                    {
+                        MessageBox.Show("Đăng nhập thành công (Khách Hàng)!");
+                        // chưa tạo FormMain cho Khach Hang
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Lỗi",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
+       
         private void Userlb_Click(object sender, EventArgs e)
         {
 
@@ -56,6 +92,26 @@ namespace QuanLyBanHang
         private void Passlb_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            radNhanvien.Text = "Nhân viên";
+            radKhachHang.Text = "Khách hàng";
+            radNhanvien.Checked = true;
+        }
+
+        private void btnSignin_Click(object sender, EventArgs e)
+        {
+            if (!radKhachHang.Checked)
+            {
+                MessageBox.Show("Chỉ khách hàng mới được đăng ký!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Register frm = new Register();
+            frm.ShowDialog();
         }
     }
 }

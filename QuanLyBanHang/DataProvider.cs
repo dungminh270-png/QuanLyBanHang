@@ -16,7 +16,7 @@ namespace QuanLyBanHang
         {
             get
             {
-                return @"Server=localhost\SQLEXPRESS;Database=QLBanHang;Trusted_Connection=True;";
+                return @"Server=ROSANNRYY;Database=QLBanHang;Trusted_Connection=True;";
             }
 
         }
@@ -43,6 +43,7 @@ namespace QuanLyBanHang
             }
             catch (Exception ex)
             {
+                Console.WriteLine("Lỗi: " + ex.Message);
                 //handle error
                 return false;
             }

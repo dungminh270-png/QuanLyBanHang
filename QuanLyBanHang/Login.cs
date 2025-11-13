@@ -13,17 +13,21 @@ namespace QuanLyBanHang
 {
     public partial class Login : Form
     {
-
+        public Login()
+        {
+            InitializeComponent();
+        }
         private FormMain forMain;
         public Login( FormMain fmain)
         {
+            
             forMain = fmain;
-            InitializeComponent();
+           
         }
 
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
-            txtPass.UseSystemPasswordChar = true;
+            
         }
 
         private void checkPass_CheckedChanged(object sender, EventArgs e)
@@ -75,10 +79,19 @@ namespace QuanLyBanHang
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            if (dbPass != pass)
+            {
+                MessageBox.Show("Sai mật khẩu. Vui lòng nhập lại !!!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Nếu tới đây => đúng tài khoản và mật khẩu
             MessageBox.Show("Đăng nhập thành công", "Thông báo",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+            forMain.Show();
+            this.Hide();
+
+
         }
 
 
@@ -100,7 +113,7 @@ namespace QuanLyBanHang
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            txtPass.UseSystemPasswordChar = true;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

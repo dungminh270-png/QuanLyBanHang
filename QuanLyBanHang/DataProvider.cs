@@ -16,7 +16,7 @@ namespace QuanLyBanHang
         {
             get
             {
-                return @"Server=.;Database=QLBanHang;Trusted_Connection=True;";
+                return @"Server=localhost\SQLEXPRESS;Database=QLBanHang;Trusted_Connection=True;";
             }
 
         }

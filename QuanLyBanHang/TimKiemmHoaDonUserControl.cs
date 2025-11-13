@@ -23,7 +23,9 @@ namespace QuanLyBanHang
             LoadThanhPho();
             LoadNhanVien();
             LoadSanPham();
-            cboThanhPho.SelectedIndex = 0; //ép chọn tp đầu tiên
+
+            if (cboThanhPho.Items.Count > 0)
+                cboThanhPho.SelectedIndex = 0;
             //LoadKhachHang();
         }
 
@@ -33,9 +35,12 @@ namespace QuanLyBanHang
 
             var cboMaSP = dgvChiTietHoaDon.Columns["MaSP"] as DataGridViewComboBoxColumn;
 
-            cboMaSP.ValueMember = "MaSP";
-            cboMaSP.DisplayMember = "TenSP";
-            cboMaSP.DataSource = DataProvider.TruyVanLayDuLieu(sql);
+            if (cboMaSP != null)
+            {
+                cboMaSP.ValueMember = "MaSP";
+                cboMaSP.DisplayMember = "TenSP";
+                cboMaSP.DataSource = DataProvider.TruyVanLayDuLieu(sql);
+            }
         }
 
         private void LoadNhanVien()
@@ -44,9 +49,12 @@ namespace QuanLyBanHang
 
             var cboMaNV = dgvHoaDon.Columns["MaNV"] as DataGridViewComboBoxColumn;
 
-            cboMaNV.ValueMember = "MaNV";
-            cboMaNV.DisplayMember = "HoTen";
-            cboMaNV.DataSource = DataProvider.TruyVanLayDuLieu(sql);
+            if (cboMaNV != null)
+            {
+                cboMaNV.ValueMember = "MaNV";
+                cboMaNV.DisplayMember = "HoTen";
+                cboMaNV.DataSource = DataProvider.TruyVanLayDuLieu(sql);
+            }
 
 
         }
@@ -73,10 +81,12 @@ namespace QuanLyBanHang
 
             //đổ dữ liệu cho column MaKH trong dgvHoaDon
             var hdCboMaKH = dgvHoaDon.Columns["MaKH"] as DataGridViewComboBoxColumn;
-            hdCboMaKH.ValueMember = "MaKH";
-            hdCboMaKH.DisplayMember = "TenCty";
-            hdCboMaKH.DataSource = dtKhachhang;
-
+            if (hdCboMaKH != null)
+            {
+                hdCboMaKH.ValueMember = "MaKH";
+                hdCboMaKH.DisplayMember = "TenCty";
+                hdCboMaKH.DataSource = dtKhachhang;
+            }
 
             //ép chọn khách hàng đầu tiên
             if (dtKhachhang.Rows.Count > 0)
@@ -121,6 +131,11 @@ namespace QuanLyBanHang
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -110,6 +110,7 @@
             this.Controls.Add(this.dgvKhachHang);
             this.Name = "DanhMucKhachHang";
             this.Text = "DanhMucKhachHang";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DanhMucKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.ResumeLayout(false);

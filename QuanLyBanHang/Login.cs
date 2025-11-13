@@ -13,8 +13,11 @@ namespace QuanLyBanHang
 {
     public partial class Login : Form
     {
-        public Login()
+
+        private FormMain forMain;
+        public Login( FormMain fmain)
         {
+            forMain = fmain;
             InitializeComponent();
         }
 

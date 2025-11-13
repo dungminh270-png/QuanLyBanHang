@@ -48,7 +48,7 @@ namespace QuanLyBanHang
                 MessageBox.Show("Đăng nhập thất bại");
             }
 
-                string user = txtUser.Text.Trim();
+            string user = txtUser.Text.Trim();
             string pass = txtPass.Text;
 
             if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
@@ -70,6 +70,11 @@ namespace QuanLyBanHang
         }
 
         private void btnSignup_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
         {
 
         }

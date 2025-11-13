@@ -35,6 +35,26 @@ namespace QuanLyBanHang
         {
             return db.KhachHangs.ToList();
         }
+        public List<SanPham> GetAllSanPham()
+        {
+            return db.SanPhams.ToList();
+        }
+        public List<NhanVien> GetAllNhanVien()
+        {
+            return db.NhanViens.ToList();
+        }
+        public List<HoaDon> GetAllHoaDon()
+        {
+            return db.HoaDons.ToList();
+        }
+        public List<ThanhPho> GetAllThanhPho()
+        {
+            return db.ThanhPhos.ToList();
+        }
+        public List<ChiTietHoaDon> GetAllChiTietHoaDon()
+        {
+            return db.ChiTietHoaDons.ToList();
+        }
 
     }
 }

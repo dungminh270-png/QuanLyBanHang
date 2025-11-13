@@ -87,7 +87,11 @@
             this.Userlb.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Userlb.Location = new System.Drawing.Point(858, 168);
             this.Userlb.Name = "Userlb";
+<<<<<<< HEAD
             this.Userlb.Size = new System.Drawing.Size(128, 25);
+=======
+            this.Userlb.Size = new System.Drawing.Size(102, 20);
+>>>>>>> 0c7ebc1614cb12ab722fa9d50996ff8c7ba21a22
             this.Userlb.TabIndex = 2;
             this.Userlb.Text = "UserName";
             this.Userlb.Click += new System.EventHandler(this.Userlb_Click);
@@ -152,8 +156,12 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
+<<<<<<< HEAD
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
             this.linkLabel1.Location = new System.Drawing.Point(986, 301);
+=======
+            this.linkLabel1.Location = new System.Drawing.Point(876, 241);
+>>>>>>> 0c7ebc1614cb12ab722fa9d50996ff8c7ba21a22
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(129, 20);
             this.linkLabel1.TabIndex = 5;

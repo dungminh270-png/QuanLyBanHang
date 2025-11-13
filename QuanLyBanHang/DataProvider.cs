@@ -30,6 +30,25 @@ namespace QuanLyBanHang
             return dt;
         }
 
+        public static DataTable TruyVanLayDuLieu(string sql, SqlParameter[] parameters)
+        {
+            DataTable dt = new DataTable();
+            using (var connection = new SqlConnection(ChuoiKetNoi))
+            using (var command = new SqlCommand(sql, connection))
+            {
+                if (parameters != null)
+                {
+                    command.Parameters.AddRange(parameters);
+                }
+
+                using (var adapter = new SqlDataAdapter(command))
+                {
+                    adapter.Fill(dt);
+                }
+            }
+            return dt;
+        }
+
         public static bool TruyVanXuLiDuLieu(string sql)
         {
             try

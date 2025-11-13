@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace QuanLyBanHang
 {
     public partial class Login : Form
@@ -37,26 +38,26 @@ namespace QuanLyBanHang
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var SQl = $"SELECT * FROM NhanVien WHERE MaNV = '{txtUser.Text.Trim()}' AND MatKhau = '{txtPass.Text}'";
-            var dtNhanVien = DataProvider.TruyVanLayDuLieu(SQl);
-            if(dtNhanVien.Rows.Count > 0 )
-            {
-                MessageBox.Show("Đăng nhập thành công");
-            }
-            else
-            {
-                MessageBox.Show("Đăng nhập thất bại");
-            }
+            //var SQl = $"SELECT * FROM NhanVien WHERE MaNV = '{txtUser.Text.Trim()}' AND MatKhau = '{txtPass.Text}'";
+            ////var dtNhanVien = DataProvider.TruyVanLayDuLieu(SQl);
+            //if(dtNhanVien.Rows.Count > 0 )
+            //{
+            //    MessageBox.Show("Đăng nhập thành công");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Đăng nhập thất bại");
+            //}
 
-            string user = txtUser.Text.Trim();
-            string pass = txtPass.Text;
+            //string user = txtUser.Text.Trim();
+            //string pass = txtPass.Text;
 
-            if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
+            //{
+            //    MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
         }
 
         private void Userlb_Click(object sender, EventArgs e)

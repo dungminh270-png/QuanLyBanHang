@@ -20,7 +20,20 @@ namespace QuanLyBanHang
         // Connection to database
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=.;Database=QLBanHang;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=.;Database=QLBanHang;Trusted_Connection=True;TrustServerCertificate=True;");
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Cấu hình khóa gộp cho ChiTietHoaDon
+            modelBuilder.Entity<ChiTietHoaDon>()
+                .HasKey(ct => new { ct.MaHD, ct.MaSP });
+
+            // ánh xạ các thực thể với bảng tương ứng
+            modelBuilder.Entity<KhachHang>().ToTable("KhachHang");
+            modelBuilder.Entity<HoaDon>().ToTable("HoaDon");
+            modelBuilder.Entity<NhanVien>().ToTable("NhanVien");
+            modelBuilder.Entity<SanPham>().ToTable("SanPham");
+            modelBuilder.Entity<ThanhPho>().ToTable("ThanhPho");
         }
     }
 }

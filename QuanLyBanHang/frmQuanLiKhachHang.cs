@@ -33,27 +33,27 @@ namespace QuanLyBanHang
 
         private void LoadKhachHang()
         {
-            //hiển thị hết khách hàng
-            var sql= "SELECT * FROM KhachHang ORDER BY TenCty";
-            dgvKhachHang.DataSource= DataProvider.TruyVanLayDuLieu(sql);
+            ////hiển thị hết khách hàng
+            //var sql= "SELECT * FROM KhachHang ORDER BY TenCty";
+            //dgvKhachHang.DataSource= DataProvider.TruyVanLayDuLieu(sql);
 
         }
 
         private void LoadThanhPho()
         {
-            var sql = "SELECT * FROM ThanhPho ORDER BY TenThanhPho";
-            var dtThanhPho = DataProvider.TruyVanLayDuLieu(sql);
+            //var sql = "SELECT * FROM ThanhPho ORDER BY TenThanhPho";
+            //var dtThanhPho = DataProvider.TruyVanLayDuLieu(sql);
 
-            //đổ dữ liệu vào combo box thành phố (cboThanhPho)
-            cboThanhPho.DataSource = dtThanhPho;
-            cboThanhPho.DisplayMember = "TenThanhPho";
-            cboThanhPho.ValueMember = "MaThanhPho";
+            ////đổ dữ liệu vào combo box thành phố (cboThanhPho)
+            //cboThanhPho.DataSource = dtThanhPho;
+            //cboThanhPho.DisplayMember = "TenThanhPho";
+            //cboThanhPho.ValueMember = "MaThanhPho";
 
-            //đổ dữ liệu vào combo box thành phố trong DataGridView
-            var dgvCboThanhPho= dgvKhachHang.Columns["MaThanhPho"] as DataGridViewComboBoxColumn;
-            dgvCboThanhPho.DataSource = dtThanhPho;
-            dgvCboThanhPho.DisplayMember = "TenThanhPho";
-            dgvCboThanhPho.ValueMember = "MaThanhPho";
+            ////đổ dữ liệu vào combo box thành phố trong DataGridView
+            //var dgvCboThanhPho= dgvKhachHang.Columns["MaThanhPho"] as DataGridViewComboBoxColumn;
+            //dgvCboThanhPho.DataSource = dtThanhPho;
+            //dgvCboThanhPho.DisplayMember = "TenThanhPho";
+            //dgvCboThanhPho.ValueMember = "MaThanhPho";
 
         }
         //Thay đổi trạng thái các nút nhấn
@@ -109,21 +109,21 @@ namespace QuanLyBanHang
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (isEdit == true) //đang sửa
-            {
-                var sqlEdit = $"UPDATE KhachHang SET TenCty=N'{txtCongTy.Text}',DiaChi=N'{txtDiaChi.Text}',DienThoai='{txtDienThoai.Text}',MaThanhPho='{cboThanhPho.SelectedValue}' WHERE MaKH='{txtMaKH.Text}'";
+            //if (isEdit == true) //đang sửa
+            //{
+            //    var sqlEdit = $"UPDATE KhachHang SET TenCty=N'{txtCongTy.Text}',DiaChi=N'{txtDiaChi.Text}',DienThoai='{txtDienThoai.Text}',MaThanhPho='{cboThanhPho.SelectedValue}' WHERE MaKH='{txtMaKH.Text}'";
                 
-                DataProvider.TruyVanXuLiDuLieu(sqlEdit);
-                isEdit = false;
-            }
-            else
-            {
-                var sqlInsert = $"INSERT INTO KhachHang (MaKH, TenCty, DiaChi, DienThoai, MaThanhPho) VALUES ('{txtMaKH.Text}',N'{txtCongTy.Text}',N'{txtDiaChi.Text}','{txtDienThoai.Text}','{cboThanhPho.SelectedValue}')";
-                DataProvider.TruyVanXuLiDuLieu(sqlInsert);
-            }
+            //    DataProvider.TruyVanXuLiDuLieu(sqlEdit);
+            //    isEdit = false;
+            //}
+            //else
+            //{
+            //    var sqlInsert = $"INSERT INTO KhachHang (MaKH, TenCty, DiaChi, DienThoai, MaThanhPho) VALUES ('{txtMaKH.Text}',N'{txtCongTy.Text}',N'{txtDiaChi.Text}','{txtDienThoai.Text}','{cboThanhPho.SelectedValue}')";
+            //    DataProvider.TruyVanXuLiDuLieu(sqlInsert);
+            //}
 
-            LoadKhachHang();
-            SetEnable(false);
+            //LoadKhachHang();
+            //SetEnable(false);
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -139,28 +139,28 @@ namespace QuanLyBanHang
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (txtMaKH.Text==string.Empty){
-                MessageBox.Show("Vui lòng chọn khách hàng cần xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                var TraLoi = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (TraLoi == DialogResult.Yes)
-                {
-                    var sqlDelete = $"DELETE FROM KhachHang WHERE MaKH='{txtMaKH.Text}'";
-                    if (DataProvider.TruyVanXuLiDuLieu(sqlDelete))
-                    {
-                        MessageBox.Show("Xóa khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadKhachHang();
+            //if (txtMaKH.Text==string.Empty){
+            //    MessageBox.Show("Vui lòng chọn khách hàng cần xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
+            //else
+            //{
+            //    var TraLoi = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //    if (TraLoi == DialogResult.Yes)
+            //    {
+            //        var sqlDelete = $"DELETE FROM KhachHang WHERE MaKH='{txtMaKH.Text}'";
+            //        if (DataProvider.TruyVanXuLiDuLieu(sqlDelete))
+            //        {
+            //            MessageBox.Show("Xóa khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            LoadKhachHang();
 
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa khách hàng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Xóa khách hàng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
                     
-                }
-            }
+            //    }
+            //}
             
 
 

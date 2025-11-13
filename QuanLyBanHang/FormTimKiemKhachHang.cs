@@ -12,14 +12,31 @@ namespace QuanLyBanHang
 {
     public partial class FormTimKiemKhachHang : Form
     {
+        private QLBanHangContext db = DataProvider.Instance.db;
         public FormTimKiemKhachHang()
         {
             InitializeComponent();
         }
 
         private void cboThanhPho_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            layKhachHangTheoThanhPho();   
+        { 
+            if (cboThanhPho.SelectedValue != null)
+            {
+                string maThanhPho = cboThanhPho.SelectedValue.ToString();
+
+                var thongtinKH = from kh in db.KhachHangs
+                                 where kh.MaThanhPho.ToString() == maThanhPho
+                                 select new
+                                 {
+                                     kh.MaKH,
+                                     kh.TenCty,
+                                     kh.DiaChi,
+                                     kh.DienThoai
+                                 };
+                var soluong = thongtinKH.Count();
+                txtSoLuongKhachHang.Text = soluong.ToString();
+                dgvKhachHang.DataSource = thongtinKH.ToList();
+            }
 
         }
 
@@ -30,22 +47,32 @@ namespace QuanLyBanHang
 
         private void FormTimKiemKhachHang_Load(object sender, EventArgs e)
         {
-            cboThanhPho.DisplayMember = "TenThanhPho";
-            cboThanhPho.ValueMember = "MaThanhPho";
-            cboThanhPho.DataSource = DataProvider.TruyVanLayDuLieu
-                ("SELECT * FROM ThanhPho");
-
-            // ép chọn thành phố đầu tiên
-            cboThanhPho.SelectedIndex = 0;
             layKhachHangTheoThanhPho();
+            var thongtinKH = from kh in db.KhachHangs
+                             where kh.MaThanhPho.ToString() == cboThanhPho.SelectedValue.ToString()
+                             select new
+                             {
+                                 kh.MaKH,
+                                 kh.TenCty,
+                                 kh.DiaChi,
+                                 kh.DienThoai
+                             };
+            var soluong = thongtinKH.Count();
+            txtSoLuongKhachHang.Text = soluong.ToString();
+            dgvKhachHang.DataSource = thongtinKH.ToList();
         }
 
         private void layKhachHangTheoThanhPho()
         {
-            var sql = $"SELECT * FROM KhachHang WHERE MaThanhPho = '{cboThanhPho.SelectedValue.ToString()}'";
-            var dataKhachHang = DataProvider.TruyVanLayDuLieu(sql);
-            dgvKhachHang.DataSource = dataKhachHang;
-            txtSoLuongKhachHang.Text = dataKhachHang.Rows.Count.ToString();
+            var laytheoThanhPho = from tp in db.ThanhPhos
+                                  select new
+                                  {
+                                      tp.MaThanhPho,
+                                      tp.TenThanhPho
+                                  };
+            cboThanhPho.DataSource = laytheoThanhPho.ToList();
+            cboThanhPho.DisplayMember = "TenThanhPho";
+            cboThanhPho.ValueMember = "MaThanhPho";
         }
     }
 }

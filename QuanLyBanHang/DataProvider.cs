@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBanHang.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -12,6 +13,28 @@ namespace QuanLyBanHang
 {
     public class DataProvider
     {
-        private readonly 
+        private static DataProvider _instance;
+        public QLBanHangContext db;
+
+        public static DataProvider Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new DataProvider();
+                return _instance;
+            }
+        }
+
+        private DataProvider()
+        {
+            db = new QLBanHangContext();
+        }
+
+        public List<KhachHang> GetAllKhachHang()
+        {
+            return db.KhachHangs.ToList();
+        }
+
     }
 }

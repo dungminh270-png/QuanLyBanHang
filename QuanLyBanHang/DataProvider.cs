@@ -16,17 +16,36 @@ namespace QuanLyBanHang
         {
             get
             {
-                return @"Server=localhost\SQLEXPRESS;Database=QLBanHang;Trusted_Connection=True;";
+                return @"Server=.;Database=QLBanHang;Trusted_Connection=True;";
             }
 
         }
 
-        public static DataTable TruyVanLayDuLieu (string sql)
+        public static DataTable TruyVanLayDuLieu (string sql)   
         {
             DataTable dt = new DataTable();
             var connection =new SqlConnection(ChuoiKetNoi);
             var DataAdapter = new SqlDataAdapter(sql, connection);
             DataAdapter.Fill(dt);
+            return dt;
+        }
+
+        public static DataTable TruyVanLayDuLieu(string sql, SqlParameter[] parameters)
+        {
+            DataTable dt = new DataTable();
+            using (var connection = new SqlConnection(ChuoiKetNoi))
+            using (var command = new SqlCommand(sql, connection))
+            {
+                if (parameters != null)
+                {
+                    command.Parameters.AddRange(parameters);
+                }
+
+                using (var adapter = new SqlDataAdapter(command))
+                {
+                    adapter.Fill(dt);
+                }
+            }
             return dt;
         }
 
@@ -47,33 +66,5 @@ namespace QuanLyBanHang
                 return false;
             }
         }
-        //public static bool TruyVanXuLiDuLieu(string sql)
-        //{
-        //    try
-        //    {
-        //        using (SqlConnection connection = new SqlConnection(ChuoiKetNoi))
-        //        {
-        //            connection.Open();
-        //            using (SqlCommand command = new SqlCommand(sql, connection))
-        //            {
-        //                int rows = command.ExecuteNonQuery(); // trả về số dòng bị ảnh hưởng
-        //                if (rows > 0)
-        //                    return true;
-        //                else
-        //                {
-        //                    MessageBox.Show("Không có bản ghi nào bị ảnh hưởng.\nCó thể mã không tồn tại hoặc bị khóa ràng buộc.",
-        //                                    "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //                    return false;
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Lỗi SQL: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
-        //}
-
     }
 }

@@ -34,9 +34,7 @@ namespace QuanLyBanHang
         private void LoadKhachHang()
         {
             ////hiển thị hết khách hàng
-            //var sql= "SELECT * FROM KhachHang ORDER BY TenCty";
-            //dgvKhachHang.DataSource= DataProvider.TruyVanLayDuLieu(sql);
-
+            
         }
 
         private void LoadThanhPho()

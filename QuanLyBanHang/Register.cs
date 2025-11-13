@@ -41,8 +41,8 @@ namespace QuanLyBanHang
         {
             string fullname = txtFullname.Text.Trim();
             string email = txtEmail.Text.Trim();
-            string user = txtUser.Text.Trim();
-            string pass = txtPass.Text;
+            string username = txtUser.Text.Trim();
+            string password = txtPass.Text;
             string confirm = txtconfirm.Text;
 
             if (string.IsNullOrWhiteSpace(fullname))
@@ -59,14 +59,14 @@ namespace QuanLyBanHang
                 txtEmail.Focus();
                 return;
             }
-            if (string.IsNullOrWhiteSpace(user))
+            if (string.IsNullOrWhiteSpace(username))
             {
                 MessageBox.Show("Vui lòng nhập tên đăng nhập!", "Thiếu thông tin",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUser.Focus();
                 return;
             }
-            if (string.IsNullOrWhiteSpace(pass))
+            if (string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Vui lòng nhập mật khẩu!", "Thiếu thông tin",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -81,7 +81,7 @@ namespace QuanLyBanHang
                 return;
             }
 
-            if (pass != confirm)
+            if (password != confirm)
             {
                 MessageBox.Show("Mật khẩu không trùng khớp!", "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -89,7 +89,7 @@ namespace QuanLyBanHang
                 txtconfirm.SelectAll();
                 return;
             }
-            if (pass.Length < 7)
+            if (password.Length < 7)
             {
                 MessageBox.Show("Mật khẩu phải có ít nhất 7 ký tự!", "Yếu",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);

@@ -84,7 +84,7 @@
             this.Userlb.Name = "Userlb";
             this.Userlb.Size = new System.Drawing.Size(102, 20);
             this.Userlb.TabIndex = 2;
-            this.Userlb.Text = "Username";
+            this.Userlb.Text = "UserName";
             this.Userlb.Click += new System.EventHandler(this.Userlb_Click);
             // 
             // Passlb

@@ -12,6 +12,8 @@ namespace QuanLyBanHang
 {
     public partial class FormMain : Form
     {
+
+     
         public FormMain()
         {
             InitializeComponent();
@@ -20,7 +22,7 @@ namespace QuanLyBanHang
 
         private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var f = new Login();
+            var f = new Login(this);
             f.MdiParent = this;
             f.Show();
         }
@@ -37,6 +39,52 @@ namespace QuanLyBanHang
             var f = new FormTimKiemKhachHang();
             f.MdiParent = this;
             f.Show();
+        }
+
+        private void hóaĐơnToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            var f = new frmTimKiemHoaDon();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new DanhMucKhachHang();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            PhanQuyen();    
+        }
+
+        public bool DaDangNhap { get; set; } = true;
+        public string HoTenNhanVien { get; set; }
+
+        public void PhanQuyen()
+        {
+            menuStrip1.Enabled = DaDangNhap;
+            đăngXuấtToolStripMenuItem.Enabled = DaDangNhap;
+            đăngNhậpToolStripMenuItem.Enabled = !DaDangNhap;
+            lblHoTenNhanVien.Text= DaDangNhap ? $"Xin Chào: {HoTenNhanVien}" : "Chưa Đăng Nhập";
+
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblDongHo.Text = DateTime.Now.ToString("HH:mm:ss dd/MM/yyyy ");
         }
     }
 }

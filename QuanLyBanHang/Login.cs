@@ -12,8 +12,11 @@ namespace QuanLyBanHang
 {
     public partial class Login : Form
     {
-        public Login()
+
+        private FormMain forMain;
+        public Login( FormMain fmain)
         {
+            forMain = fmain;
             InitializeComponent();
         }
 
@@ -54,6 +57,11 @@ namespace QuanLyBanHang
         }
 
         private void Passlb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
         {
 
         }

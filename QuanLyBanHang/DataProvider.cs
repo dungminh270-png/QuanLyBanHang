@@ -55,6 +55,39 @@ namespace QuanLyBanHang
         {
             return db.ChiTietHoaDons.ToList();
         }
+        public bool UpdateKhachHang(KhachHang khachHang)
+        {
+            var existingKhachHang = db.KhachHangs.Find(khachHang.MaKH);
+            if (existingKhachHang != null)
+            {
+                existingKhachHang.TenCty = khachHang.TenCty;
+                existingKhachHang.DiaChi = khachHang.DiaChi;
+                existingKhachHang.DienThoai = khachHang.DienThoai;
+                existingKhachHang.MaThanhPho = khachHang.MaThanhPho;
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+        public bool AddKhachHang(KhachHang khachHang)
+        {
+            var existingKhachHang = db.KhachHangs.Find(khachHang.MaKH);
+            if (existingKhachHang == null)
+            {
+                db.KhachHangs.Add(khachHang);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+        public bool DeleteKhachHang(string maKH)
+        {
+            var kh = db.KhachHangs.Find(maKH) ?? db.KhachHangs.FirstOrDefault(k => k.MaKH == maKH);
+            if (kh == null) return false;
+
+            db.KhachHangs.Remove(kh);
+            return db.SaveChanges() > 0;
+        }
 
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cboThanhPho = new System.Windows.Forms.ComboBox();
@@ -55,13 +56,12 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,6 +72,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(327, 729);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::QuanLyBanHang.Properties.Resources.QuanLiKhachHang_;
+            this.pictureBox1.Image = global::QuanLyBanHang.Properties.Resources.QuanLiKhachHang_;
+            this.pictureBox1.Location = new System.Drawing.Point(-145, -25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(614, 971);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -222,6 +233,7 @@
             this.dgvKhachHang.Size = new System.Drawing.Size(715, 362);
             this.dgvKhachHang.TabIndex = 0;
             this.dgvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellClick);
+            this.dgvKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellContentClick);
             // 
             // MaKH
             // 
@@ -354,17 +366,6 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::QuanLyBanHang.Properties.Resources.QuanLiKhachHang_;
-            this.pictureBox1.Image = global::QuanLyBanHang.Properties.Resources.QuanLiKhachHang_;
-            this.pictureBox1.Location = new System.Drawing.Point(-145, -25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(614, 971);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmQuanLiKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -382,12 +383,12 @@
             this.Text = "frmQuanLiKhachHang";
             this.Load += new System.EventHandler(this.frmQuanLiKhachHang_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

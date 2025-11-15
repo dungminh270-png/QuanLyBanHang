@@ -55,47 +55,42 @@ namespace QuanLyBanHang
                 return;
             }
 
-            // Kiểm tra xem MaDN có tồn tại không
-            string sqlCheckUser = "SELECT MatKhau FROM NhanVien WHERE MaDN = @user";
-            SqlParameter[] p1 = { new SqlParameter("@user", user) };
-            var dtUser = DataProvider.TruyVanLayDuLieu(sqlCheckUser, p1);
-
-            if (dtUser == null || dtUser.Rows.Count == 0)
+            using (var db = new QLBanHangDataContext())
             {
-                // Không tìm thấy user => sai tài khoản
-                MessageBox.Show("Sai tài khoản. Vui lòng nhập lại !!!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (radNhanvien.Checked)
+                {
+                    var nv = db.NhanViens.FirstOrDefault(x => x.MaDN == user && x.MatKhau == pass);
+                    if (nv != null)
+                    {
+                        MessageBox.Show("Đăng nhập thành công (Nhân Viên)!");
+                        FormMain mainNV = new FormMain();
+                        mainNV.Show();
+                        this.Hide();
+                    }
+                    else 
+                    {
+                        MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Lỗi",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else if (radKhachHang.Checked)
+                {
+                    var kh = db.KhachHangs.FirstOrDefault(x => x.MaDN == user && x.MatKhau == pass);
+                    if (kh != null)
+                    {
+                        MessageBox.Show("Đăng nhập thành công (Khách Hàng)!");
+                        // chưa tạo FormMain cho Khach Hang
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Lỗi",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
-
-            // Lấy mật khẩu từ CSDL (ở đây giả sử lưu plain text)
-            var dbPassObj = dtUser.Rows[0]["MatKhau"];
-            string dbPass = dbPassObj == DBNull.Value ? "" : dbPassObj.ToString();
-
-            // So sánh mật khẩu
-            if (dbPass != pass)
-            {
-                MessageBox.Show("Sai mật khẩu. Vui lòng nhập lại !!!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (dbPass != pass)
-            {
-                MessageBox.Show("Sai mật khẩu. Vui lòng nhập lại !!!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            // Nếu tới đây => đúng tài khoản và mật khẩu
-            MessageBox.Show("Đăng nhập thành công", "Thông báo",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-            forMain.Show();
-            this.Hide();
-
-
         }
 
-
-
+       
         private void Userlb_Click(object sender, EventArgs e)
         {
 
@@ -106,19 +101,33 @@ namespace QuanLyBanHang
 
         }
 
-        private void btnSignup_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Login_Load(object sender, EventArgs e)
         {
+            radNhanvien.Text = "Nhân viên";
+            radKhachHang.Text = "Khách hàng";
+            radNhanvien.Checked = true;
             txtPass.UseSystemPasswordChar = true;
+           
+
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnSignin_Click(object sender, EventArgs e)
         {
+            if (!radKhachHang.Checked)
+            {
+                MessageBox.Show("Chỉ khách hàng mới được đăng ký!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            Register frm = new Register();
+            frm.ShowDialog();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgotPass fgp = new ForgotPass();
+            fgp.ShowDialog();
         }
     }
 }

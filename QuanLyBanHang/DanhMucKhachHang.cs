@@ -56,5 +56,10 @@ namespace QuanLyBanHang
                 dgvCboThanhPho.ValueMember = "MaThanhPho";
             }
         }
+
+        private void dgvKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

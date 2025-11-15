@@ -13,6 +13,7 @@ namespace QuanLyBanHang
 {
     public partial class frmQuanLiKhachHang : Form
     {
+        QLBanHangDataContext db = new QLBanHangDataContext();
         bool isEdit = false; //biến cờ để phân biệt thêm hay sửa
         public frmQuanLiKhachHang()
         {
@@ -77,7 +78,7 @@ namespace QuanLyBanHang
             btnSua.Enabled = !enable;
 
             //không cho xóa khi đang edit 
-            btnXoa.Enabled = !isEdit;
+            btnXoa.Enabled = !isEdit && !enable;
             btnLuu.Enabled = enable;
             btnHuy.Enabled = enable;
             //dgvKhachHang.Enabled = enable;
@@ -107,11 +108,18 @@ namespace QuanLyBanHang
             txtCongTy.Clear();
             txtDiaChi.Clear();
             txtDienThoai.Clear();
-            //cboThanhPho.SelectedIndex = 0;
+            //cboThanhPho.SelectedIndex = -1;
+            txtMaKH.Focus();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtMaKH.Text))
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng để sửa!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             SetEnable(true);
             isEdit = true;
             txtMaKH.Enabled = false; //không cho sửa mã khách hàng
@@ -155,6 +163,7 @@ namespace QuanLyBanHang
         {
             isEdit = false;
             SetEnable(false);
+            LoadKhachHang();
         }
 
         private void TaiLai_Click(object sender, EventArgs e)

@@ -16,6 +16,21 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -208,7 +223,9 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -300,20 +317,33 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CurrentUser.cs" />
     <Compile Include="DanhMucKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DanhMucKhachHang.Designer.cs">
       <DependentUpon>DanhMucKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataProvider.cs" />
-    <Compile Include="frmLapHoaDon.cs">
+    <Compile Include="DanhMucNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLapHoaDon.Designer.cs">
-      <DependentUpon>frmLapHoaDon.cs</DependentUpon>
+    <Compile Include="DanhMucNhanVien.Designer.cs">
+      <DependentUpon>DanhMucNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="DataProvider.cs" />
+    <Compile Include="ForgotPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPass.Designer.cs">
+      <DependentUpon>ForgotPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMaiN%28KH%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMaiN%28KH%29.Designer.cs">
+      <DependentUpon>FormMaiN%28KH%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain.Designer.cs">
@@ -324,6 +354,18 @@
     </Compile>
     <Compile Include="FormTimKiemKhachHang.Designer.cs">
       <DependentUpon>FormTimKiemKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDanhMucSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDanhMucSanPham.Designer.cs">
+      <DependentUpon>FrmDanhMucSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDanhMucThanhPho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDanhMucThanhPho.Designer.cs">
+      <DependentUpon>FrmDanhMucThanhPho.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQuanLiKhachHang.cs">
       <SubType>Form</SubType>
@@ -336,6 +378,12 @@
     </Compile>
     <Compile Include="frmTimKiemHoaDon.Designer.cs">
       <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTimKiemSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTimKiemSanPham.Designer.cs">
+      <DependentUpon>FrmTimKiemSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -356,18 +404,22 @@
     <Compile Include="Models\ThanhPho.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLBanHangContext.cs" />
+    <Compile Include="QLBanHangContext.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBanHangContext.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Signin.cs">
+    <Compile Include="Thongtincanhan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Signin.Designer.cs">
-      <DependentUpon>Signin.cs</DependentUpon>
+    <Compile Include="Thongtincanhan.Designer.cs">
+      <DependentUpon>Thongtincanhan.cs</DependentUpon>
     </Compile>
     <Compile Include="TimKiemmHoaDonUserControl.cs">
       <SubType>UserControl</SubType>
@@ -375,21 +427,44 @@
     <Compile Include="TimKiemmHoaDonUserControl.Designer.cs">
       <DependentUpon>TimKiemmHoaDonUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
-    <EmbeddedResource Include="frmLapHoaDon.resx">
-      <DependentUpon>frmLapHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="DanhMucKhachHang.resx">
+      <DependentUpon>DanhMucKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="DanhMucNhanVien.resx">
+      <DependentUpon>DanhMucNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPass.resx">
+      <DependentUpon>ForgotPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMaiN%28KH%29.resx">
+      <DependentUpon>FormMaiN%28KH%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTimKiemKhachHang.resx">
+      <DependentUpon>FormTimKiemKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDanhMucSanPham.resx">
+      <DependentUpon>FrmDanhMucSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDanhMucThanhPho.resx">
+      <DependentUpon>FrmDanhMucThanhPho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLiKhachHang.resx">
+      <DependentUpon>frmQuanLiKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTimKiemHoaDon.resx">
       <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTimKiemSanPham.resx">
+      <DependentUpon>FrmTimKiemSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -398,6 +473,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Thongtincanhan.resx">
+      <DependentUpon>Thongtincanhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TimKiemmHoaDonUserControl.resx">
       <DependentUpon>TimKiemmHoaDonUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -427,13 +508,34 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Avatar.jpg" />
+    <None Include="Resources\AvartarCaNhan.jpg" />
+    <Content Include="Resources\Avatar.png" />
+    <None Include="Resources\QuanLiKhachHang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QLBanHangContext.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>QLBanHangContext.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBanHangContext.dbml.layout">
+      <DependentUpon>QLBanHangContext.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\QuanLiKhachHang.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

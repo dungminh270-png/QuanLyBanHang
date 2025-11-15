@@ -55,6 +55,7 @@
 
         #endregion
 
-        private TimKiemmHoaDonUserControl timKiemmHoaDonUserControl1;
+        private QuanLyBanHang.TimKiemmHoaDonUserControl timKiemmHoaDonUserControl1;
+
     }
 }

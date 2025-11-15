@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace QuanLyBanHang
 {
     public partial class Register : Form
@@ -17,27 +19,56 @@ namespace QuanLyBanHang
             InitializeComponent();
         }
 
-        private void txtUser_TextChanged(object sender, EventArgs e)
+        private void btnRegister_Click(object sender, EventArgs e)
         {
+            string tenKH = txtHoten.Text.Trim();
+            string tenDN = txtTenDN.Text.Trim();
+            string matkhau = txtMatkhau.Text;
+            string xacnhan = txtXacnhanMK.Text;
+            int maTP = (int)cbbCity.SelectedValue;
 
+            if (string.IsNullOrEmpty(tenKH) || string.IsNullOrEmpty(tenDN) || string.IsNullOrEmpty(matkhau) || string.IsNullOrEmpty(xacnhan))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error );
+                return;
+            }
+            if (matkhau != xacnhan)
+            {
+                MessageBox.Show("Mật khẩu và xác nhận mật khẩu phải trùng khớp!", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error );
+                return;
+            }
+            using (var db = new QLBanHangDataContext())
+            {
+                // Kiểm tra tài khoản đã tồn tại
+                var CheckDN = db.KhachHangs.FirstOrDefault(x => x.MaDN == tenDN);
+                if (CheckDN != null)
+                {
+                    MessageBox.Show("Tài khoản đã tồn tại", "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error );   
+                    return;
+                }
+                // Tạo tài khoản mới
+                KhachHang kh = new KhachHang()
+                {
+                    MaKH = "KH" + DateTime.Now.Ticks.ToString().Substring(15),
+                    TenCty = tenKH,
+                    MaDN = tenDN,
+                    MatKhau = matkhau,
+                    MaThanhPho = maTP
+                    
+                };
+                db.KhachHangs.InsertOnSubmit(kh);
+                db.SubmitChanges();
+
+                MessageBox.Show("Đăng ký thành công!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information );
+                this.Close();
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPass_TextChanged(object sender, EventArgs e)
-        {
-            txtPass.UseSystemPasswordChar = true;
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            txtconfirm.UseSystemPasswordChar = true;
-        }
-
-        private void btnSignup_Click(object sender, EventArgs e)
+        private void cbbCity_SelectedIndexChanged(object sender, EventArgs e)
         {
             string fullname = txtFullname.Text.Trim();
             string email = txtEmail.Text.Trim();
@@ -51,53 +82,37 @@ namespace QuanLyBanHang
                     MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 txtFullname.Focus();
                 return;
-            }
-            if (string.IsNullOrWhiteSpace(email))
-            {
-                MessageBox.Show("Vui lòng nhập Email!", "Thiếu thông tin!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtEmail.Focus();
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(username))
-            {
-                MessageBox.Show("Vui lòng nhập tên đăng nhập!", "Thiếu thông tin",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtUser.Focus();
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(password))
-            {
-                MessageBox.Show("Vui lòng nhập mật khẩu!", "Thiếu thông tin",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtPass.Focus();
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(confirm))
-            {
-                MessageBox.Show("Vui lòng xác nhận mật khẩu!", "Thiếu thông tin",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtconfirm.Focus();
-                return;
-            }
-
-            if (password != confirm)
-            {
-                MessageBox.Show("Mật khẩu không trùng khớp!", "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtconfirm.Focus();
-                txtconfirm.SelectAll();
-                return;
-            }
-            if (password.Length < 7)
-            {
-                MessageBox.Show("Mật khẩu phải có ít nhất 7 ký tự!", "Yếu",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtPass.Focus();
-                return;
-            }
-
         }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+            using (var db = new QLBanHangDataContext())
+            {
+                cbbCity.DisplayMember = "TenThanhPho";
+                cbbCity.ValueMember = "MaThanhPho";
+                cbbCity.DataSource = db.ThanhPhos.ToList();
+            }
+            txtMatkhau.UseSystemPasswordChar = true;
+            txtXacnhanMK.UseSystemPasswordChar = true;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void chkShow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkShow.Checked)
+            {
+                txtMatkhau.UseSystemPasswordChar = false;
+                txtXacnhanMK.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtMatkhau.UseSystemPasswordChar = true;
+                txtXacnhanMK.UseSystemPasswordChar = true;
+            }
 
         private void Register_Load(object sender, EventArgs e)
         {

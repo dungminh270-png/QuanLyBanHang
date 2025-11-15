@@ -39,8 +39,10 @@ namespace QuanLyBanHang
             this.label1 = new System.Windows.Forms.Label();
             this.checkPass = new System.Windows.Forms.CheckBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.btnSignup = new System.Windows.Forms.Button();
+            this.btnSignin = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.radNhanvien = new System.Windows.Forms.RadioButton();
+            this.radKhachHang = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +64,6 @@ namespace QuanLyBanHang
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txtUser
             // 
@@ -133,7 +134,7 @@ namespace QuanLyBanHang
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // btnSignup
+            // btnSignin
             // 
             this.btnSignup.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignup.Location = new System.Drawing.Point(935, 331);
@@ -153,6 +154,31 @@ namespace QuanLyBanHang
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Forgot Password";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // radNhanvien
+            // 
+            this.radNhanvien.AutoSize = true;
+            this.radNhanvien.Location = new System.Drawing.Point(767, 284);
+            this.radNhanvien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radNhanvien.Name = "radNhanvien";
+            this.radNhanvien.Size = new System.Drawing.Size(90, 20);
+            this.radNhanvien.TabIndex = 6;
+            this.radNhanvien.TabStop = true;
+            this.radNhanvien.Text = "Nhân Viên";
+            this.radNhanvien.UseVisualStyleBackColor = true;
+            // 
+            // radKhachHang
+            // 
+            this.radKhachHang.AutoSize = true;
+            this.radKhachHang.Location = new System.Drawing.Point(935, 284);
+            this.radKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radKhachHang.Name = "radKhachHang";
+            this.radKhachHang.Size = new System.Drawing.Size(101, 20);
+            this.radKhachHang.TabIndex = 6;
+            this.radKhachHang.TabStop = true;
+            this.radKhachHang.Text = "Khách Hàng";
+            this.radKhachHang.UseVisualStyleBackColor = true;
             // 
             // Login
             // 
@@ -161,7 +187,7 @@ namespace QuanLyBanHang
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1097, 588);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.btnSignup);
+            this.Controls.Add(this.btnSignin);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.checkPass);
             this.Controls.Add(this.Passlb);
@@ -172,6 +198,7 @@ namespace QuanLyBanHang
             this.Controls.Add(this.panel1);
             this.Name = "Login";
             this.Text = "Login";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -196,8 +223,9 @@ namespace QuanLyBanHang
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkPass;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnSignup;
+        private System.Windows.Forms.Button btnSignin;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.RadioButton radNhanvien;
+        private System.Windows.Forms.RadioButton radKhachHang;
     }
 }
-

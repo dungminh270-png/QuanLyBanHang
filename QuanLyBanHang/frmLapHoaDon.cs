@@ -1,110 +1,139 @@
-﻿using QuanLyBanHang;
-using QuanLyBanHang.Models;
+﻿using QuanLyBanHang.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyBanHang
 {
     public partial class frmLapHoaDon : Form
     {
-
         public frmLapHoaDon()
         {
             InitializeComponent();
-            dgvHoaDon = new DataGridView();
-            this.Controls.Add(dgvHoaDon);
+            this.Load += frmLapHoaDon_Load;
         }
-
         private void frmLapHoaDon_Load(object sender, EventArgs e)
         {
-            using (var db = new QLBanHangContext())
-            {
-                cboKhachHang.DataSource = db.KhachHangs.ToList();
-                cboKhachHang.DisplayMember = "TenCty";
-                cboKhachHang.ValueMember = "MaKH";
-                cboKhachHang.SelectedIndex = -1;
+            var db = new QLBanHangContext();
+            //Đổ dữ liệu vào ComboBox Khách Hàng (cboKhachHang)
+            cboKhachHang.DataSource = db.KhachHangs
+                                        .Select(k => new { k.MaKH, k.TenCty })
+                                        .ToList();
+            cboKhachHang.DisplayMember = "TenCty";
+            cboKhachHang.ValueMember = "MaKH";
+            cboKhachHang.SelectedIndex = -1;
 
-                // Đổ dữ liệu Sản phẩm vào cột ComboBox trên lưới
-                DataGridViewComboBoxColumn colSanPham = new DataGridViewComboBoxColumn();
-                colSanPham.Name = "MaSP";
-                colSanPham.HeaderText = "Sản phẩm";
-                colSanPham.DataSource = db.SanPhams.ToList();
+            //Đổ dữ liệu Sản Phẩm vào cột ComboBox trên lưới (dgvHoaDon)
+            var colSanPham = dgvHoaDon.Columns["MaSP"] as DataGridViewComboBoxColumn;
+            if (colSanPham != null)
+            {
+                colSanPham.DataSource = db.SanPhams
+                                          .Select(s => new { s.MaSP, s.TenSP })
+                                          .ToList();
                 colSanPham.DisplayMember = "TenSP";
                 colSanPham.ValueMember = "MaSP";
-                dgvHoaDon.Columns.Add(colSanPham);
             }
-        }
 
+            // Ensure grid events are wired (designer may already wire some)
+            dgvHoaDon.CellValueChanged -= dgvHoaDon_CellValueChanged;
+            dgvHoaDon.CellValueChanged += dgvHoaDon_CellValueChanged;
+            dgvHoaDon.CurrentCellDirtyStateChanged -= dgvHoaDon_CurrentCellDirtyStateChanged;
+            dgvHoaDon.CurrentCellDirtyStateChanged += dgvHoaDon_CurrentCellDirtyStateChanged;
+            dgvHoaDon.CellEndEdit -= dgvHoaDon_CellEndEdit;
+            dgvHoaDon.CellEndEdit += dgvHoaDon_CellEndEdit;
+        }
         private void AutoFillOrderItem(int rowIndex)
         {
+            if (rowIndex < 0 || rowIndex >= dgvHoaDon.Rows.Count) return;
+
+            // Lấy Mã SP từ ô đang chọn
             var cellMaSP = dgvHoaDon.Rows[rowIndex].Cells["MaSP"].Value;
-            if (cellMaSP == null) return;
+            if (cellMaSP == null)
+            {
+                // If product not selected, clear price and thanh tien
+                dgvHoaDon.Rows[rowIndex].Cells["DonGia"].Value = 0;
+                dgvHoaDon.Rows[rowIndex].Cells["ThanhTien"].Value = 0;
+                TinhTongTienHoaDon();
+                return;
+            }
 
             int maSP = Convert.ToInt32(cellMaSP);
 
             using (var db = new QLBanHangContext())
             {
-                // Truy vấn LINQ lấy sản phẩm
                 var sp = db.SanPhams.FirstOrDefault(s => s.MaSP == maSP);
 
                 if (sp != null)
                 {
-                    // Điền đơn giá (cột index 2)
-                    // Lưu ý: Cột DonGia trong DB có thể là nullable, cần xử lý
                     double donGia = sp.DonGia ?? 0;
+                    // set the unit price from DB (or keep editable behavior if desired)
                     dgvHoaDon.Rows[rowIndex].Cells["DonGia"].Value = donGia;
 
-                    // Lấy số lượng (cột index 1)
                     var cellSoLuong = dgvHoaDon.Rows[rowIndex].Cells["SoLuong"].Value;
-                    int soLuong = (cellSoLuong == null) ? 0 : Convert.ToInt32(cellSoLuong);
+                    int soLuong = 0;
+                    if (cellSoLuong != null && int.TryParse(cellSoLuong.ToString(), out int parsed))
+                        soLuong = parsed;
 
-                    // Tính thành tiền (cột index 3)
                     dgvHoaDon.Rows[rowIndex].Cells["ThanhTien"].Value = soLuong * donGia;
                 }
             }
-            // Tính tổng tiền cả hóa đơn hiển thị lên Label
-            CapNhatTongTien();
+            TinhTongTienHoaDon();
         }
-    
-    private void CapNhatTongTien()
+
+        private void TinhTongTienHoaDon()
         {
             double tong = 0;
             foreach (DataGridViewRow row in dgvHoaDon.Rows)
             {
-                if (row.Cells["ThanhTien"].Value != null)
+                if (row.IsNewRow) continue;
+                var cell = row.Cells["ThanhTien"].Value;
+                if (cell != null && double.TryParse(cell.ToString(), out double val))
                 {
-                    tong += Convert.ToDouble(row.Cells["ThanhTien"].Value);
+                    tong += val;
                 }
             }
-            lblTongTien.Text = tong.ToString("N0"); // Định dạng số đẹp (vd: 100,000)
+            // format with thousands separator
+            lblTongTien.Text = tong.ToString("N0") + " VNĐ";
         }
 
         private void dgvHoaDon_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && (e.ColumnIndex == 0 || e.ColumnIndex == 1))
+            if (e.RowIndex < 0) return;
+            string colName = dgvHoaDon.Columns[e.ColumnIndex].Name;
+            if (colName == "MaSP" || colName == "SoLuong" || colName == "DonGia")
             {
                 AutoFillOrderItem(e.RowIndex);
             }
         }
 
-        public void BtnLuuHoaDon_Click(object sender, EventArgs e)
+        // Commit edits immediately for combo box / cell edits so CellValueChanged fires right away
+        private void dgvHoaDon_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
-            // 1. Kiểm tra dữ liệu đầu vào
+            if (dgvHoaDon.IsCurrentCellDirty)
+            {
+                dgvHoaDon.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
+        private void dgvHoaDon_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            // Ensure recalculation after user finishes editing (redundant safe-guard)
+            AutoFillOrderItem(e.RowIndex);
+            TinhTongTienHoaDon();
+        }
+
+        private void btnLuuHoaDon_Click(object sender, EventArgs e)
+        {
             if (cboKhachHang.SelectedValue == null)
             {
-                MessageBox.Show("Vui lòng chọn khách hàng!");
+                MessageBox.Show("Vui lòng chọn khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Kiểm tra lưới có hàng nào không
             bool coSanPham = false;
             foreach (DataGridViewRow row in dgvHoaDon.Rows)
             {
@@ -117,26 +146,24 @@ namespace QuanLyBanHang
 
             if (!coSanPham)
             {
-                MessageBox.Show("Vui lòng chọn ít nhất 1 sản phẩm!");
+                MessageBox.Show("Vui lòng nhập ít nhất 1 sản phẩm!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // 2. Bắt đầu Lưu bằng LINQ
+            //Lưu xuống CSDL
             using (var db = new QLBanHangContext())
             {
                 try
                 {
-                    // --- B1: Tạo và Lưu Hóa Đơn (Header) ---
                     HoaDon hd = new HoaDon();
                     hd.MaKH = cboKhachHang.SelectedValue.ToString();
-                    hd.MaNV = 1; // Thay bằng mã nhân viên đăng nhập thực tế
+                    hd.MaNV = 1;
                     hd.NgayLapHD = DateTime.Now;
-                    hd.NgayNhanHang = DateTime.Now.AddDays(3); // Ví dụ ngày nhận
+                    hd.NgayNhanHang = DateTime.Now.AddDays(3);
 
-                    db.HoaDons.Add(hd); // Đánh dấu để thêm
-                    db.SaveChanges(); // Lệnh này chạy xong, hd.MaHD sẽ tự động có giá trị mới
+                    db.HoaDons.Add(hd);
+                    db.SaveChanges();
 
-                    // --- B2: Lưu Chi Tiết Hóa Đơn (Details) ---
                     foreach (DataGridViewRow row in dgvHoaDon.Rows)
                     {
                         if (row.IsNewRow) continue;
@@ -148,7 +175,7 @@ namespace QuanLyBanHang
                         if (soLuong > 0)
                         {
                             ChiTietHoaDon ct = new ChiTietHoaDon();
-                            ct.MaHD = hd.MaHD; // Lấy mã hóa đơn vừa tạo ở trên
+                            ct.MaHD = hd.MaHD;
                             ct.MaSP = maSP;
                             ct.SoLuong = soLuong;
 
@@ -156,19 +183,23 @@ namespace QuanLyBanHang
                         }
                     }
 
-                    db.SaveChanges(); // Lưu toàn bộ chi tiết xuống DB
+                    db.SaveChanges();
 
-                    // --- B3: Hoàn tất ---
-                    MessageBox.Show($"Tạo hóa đơn thành công! Mã HĐ: {hd.MaHD}");
                     lblMaHD.Text = hd.MaHD.ToString();
+                    MessageBox.Show($"Tạo hóa đơn thành công! Mã số: {hd.MaHD}", "Chúc mừng");
 
-                    // Có thể reset form ở đây nếu muốn
+                    btnLuuHoaDon.Enabled = false;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi lưu hóa đơn: " + ex.Message);
+                    MessageBox.Show("Lỗi khi lưu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnInHoaDon_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chức năng đang phát triển");
         }
     }
 }

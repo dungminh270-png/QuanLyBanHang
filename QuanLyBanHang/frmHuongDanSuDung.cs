@@ -97,7 +97,7 @@ namespace QuanLyBanHang
 
         }
 
-        private void tctlMain_MouseMove(object sender, MouseEventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

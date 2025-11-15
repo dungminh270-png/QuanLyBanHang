@@ -157,8 +157,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1467, 938);
-            this.splitContainer1.SplitterDistance = 182;
+            this.splitContainer1.Size = new System.Drawing.Size(1325, 815);
+            this.splitContainer1.SplitterDistance = 133;
             this.splitContainer1.TabIndex = 0;
             // 
             // pnlTieuDe
@@ -181,6 +181,7 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "HƯỚNG DẪN SỬ DỤNG";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // splitContainer2
             // 
@@ -196,8 +197,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.panel3);
-            this.splitContainer2.Size = new System.Drawing.Size(1467, 752);
-            this.splitContainer2.SplitterDistance = 308;
+            this.splitContainer2.Size = new System.Drawing.Size(1325, 678);
+            this.splitContainer2.SplitterDistance = 276;
             this.splitContainer2.TabIndex = 0;
             // 
             // sideBarPanel
@@ -213,7 +214,7 @@
             this.sideBarPanel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sideBarPanel.Location = new System.Drawing.Point(0, 0);
             this.sideBarPanel.Name = "sideBarPanel";
-            this.sideBarPanel.Size = new System.Drawing.Size(308, 752);
+            this.sideBarPanel.Size = new System.Drawing.Size(276, 678);
             this.sideBarPanel.TabIndex = 0;
             // 
             // btnHoaDon
@@ -224,7 +225,7 @@
             this.btnHoaDon.ForeColor = System.Drawing.Color.FloralWhite;
             this.btnHoaDon.Location = new System.Drawing.Point(0, 400);
             this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.Size = new System.Drawing.Size(306, 80);
+            this.btnHoaDon.Size = new System.Drawing.Size(276, 80);
             this.btnHoaDon.TabIndex = 5;
             this.btnHoaDon.Text = "Hóa đơn";
             this.btnHoaDon.UseVisualStyleBackColor = false;
@@ -238,7 +239,7 @@
             this.btnBaoCao.ForeColor = System.Drawing.Color.FloralWhite;
             this.btnBaoCao.Location = new System.Drawing.Point(0, 320);
             this.btnBaoCao.Name = "btnBaoCao";
-            this.btnBaoCao.Size = new System.Drawing.Size(306, 80);
+            this.btnBaoCao.Size = new System.Drawing.Size(276, 80);
             this.btnBaoCao.TabIndex = 4;
             this.btnBaoCao.Text = "Báo cáo";
             this.btnBaoCao.UseVisualStyleBackColor = false;
@@ -252,7 +253,7 @@
             this.btnBanHang.ForeColor = System.Drawing.Color.FloralWhite;
             this.btnBanHang.Location = new System.Drawing.Point(0, 240);
             this.btnBanHang.Name = "btnBanHang";
-            this.btnBanHang.Size = new System.Drawing.Size(306, 80);
+            this.btnBanHang.Size = new System.Drawing.Size(276, 80);
             this.btnBanHang.TabIndex = 3;
             this.btnBanHang.Text = "Bán hàng";
             this.btnBanHang.UseVisualStyleBackColor = false;
@@ -266,7 +267,7 @@
             this.btnKhachHang.ForeColor = System.Drawing.Color.FloralWhite;
             this.btnKhachHang.Location = new System.Drawing.Point(0, 160);
             this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Size = new System.Drawing.Size(306, 80);
+            this.btnKhachHang.Size = new System.Drawing.Size(276, 80);
             this.btnKhachHang.TabIndex = 2;
             this.btnKhachHang.Text = "Khách hàng";
             this.btnKhachHang.UseVisualStyleBackColor = false;
@@ -280,7 +281,7 @@
             this.btnSanPham.ForeColor = System.Drawing.Color.FloralWhite;
             this.btnSanPham.Location = new System.Drawing.Point(0, 80);
             this.btnSanPham.Name = "btnSanPham";
-            this.btnSanPham.Size = new System.Drawing.Size(306, 80);
+            this.btnSanPham.Size = new System.Drawing.Size(276, 80);
             this.btnSanPham.TabIndex = 1;
             this.btnSanPham.Text = "Sản phẩm";
             this.btnSanPham.UseVisualStyleBackColor = false;
@@ -294,7 +295,7 @@
             this.btnDonHang.ForeColor = System.Drawing.Color.FloralWhite;
             this.btnDonHang.Location = new System.Drawing.Point(0, 0);
             this.btnDonHang.Name = "btnDonHang";
-            this.btnDonHang.Size = new System.Drawing.Size(306, 80);
+            this.btnDonHang.Size = new System.Drawing.Size(276, 80);
             this.btnDonHang.TabIndex = 0;
             this.btnDonHang.Text = "Đơn hàng";
             this.btnDonHang.UseVisualStyleBackColor = false;
@@ -307,7 +308,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1155, 752);
+            this.panel3.Size = new System.Drawing.Size(1045, 678);
             this.panel3.TabIndex = 0;
             // 
             // tctlMain
@@ -957,7 +958,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1467, 938);
+            this.ClientSize = new System.Drawing.Size(1325, 815);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MinimizeBox = false;

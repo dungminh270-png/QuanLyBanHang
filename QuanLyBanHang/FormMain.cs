@@ -113,14 +113,9 @@ namespace QuanLyBanHang
 
         }
 
-        private void chiTiếtHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        private void khoHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-         
-        }
-
-        private void hướngDẫnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var f=new frmHuongDanSuDung();
+            var f= new frmQuanLiKhoHang();
             f.MdiParent = this;
             f.Show();
         }

@@ -1,6 +1,6 @@
 ﻿namespace QuanLyBanHang
 {
-    partial class FormMain
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.

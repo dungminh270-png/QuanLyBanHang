@@ -337,12 +337,6 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\ChiTietHoaDon.cs" />
     <Compile Include="Models\QLBanHangContext.designer.cs">
       <AutoGen>True</AutoGen>

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyBanHang
 {
-    public partial class FormMain : Form
+    public partial class frmMain : Form
     {
 
      
-        public FormMain()
+        public frmMain()
         {
             InitializeComponent();
             this.IsMdiContainer = true;

@@ -247,6 +247,12 @@
     <Compile Include="DanhMucKhachHang.Designer.cs">
       <DependentUpon>DanhMucKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMucNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMucNhanVien.Designer.cs">
+      <DependentUpon>DanhMucNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataProvider.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -259,6 +265,18 @@
     </Compile>
     <Compile Include="FormTimKiemKhachHang.Designer.cs">
       <DependentUpon>FormTimKiemKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDanhMucSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDanhMucSanPham.Designer.cs">
+      <DependentUpon>FrmDanhMucSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDanhMucThanhPho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDanhMucThanhPho.Designer.cs">
+      <DependentUpon>FrmDanhMucThanhPho.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQuanLiKhachHang.cs">
       <SubType>Form</SubType>
@@ -295,11 +313,20 @@
     <EmbeddedResource Include="DanhMucKhachHang.resx">
       <DependentUpon>DanhMucKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DanhMucNhanVien.resx">
+      <DependentUpon>DanhMucNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTimKiemKhachHang.resx">
       <DependentUpon>FormTimKiemKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDanhMucSanPham.resx">
+      <DependentUpon>FrmDanhMucSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDanhMucThanhPho.resx">
+      <DependentUpon>FrmDanhMucThanhPho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLiKhachHang.resx">
       <DependentUpon>frmQuanLiKhachHang.cs</DependentUpon>

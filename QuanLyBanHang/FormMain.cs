@@ -86,5 +86,26 @@ namespace QuanLyBanHang
         {
             lblDongHo.Text = DateTime.Now.ToString("HH:mm:ss dd/MM/yyyy ");
         }
+
+        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new DanhMucNhanVien();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f=new FrmDanhMucSanPham();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void thànhPhốToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f= new FrmDanhMucThanhPho();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

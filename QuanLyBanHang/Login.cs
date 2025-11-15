@@ -20,7 +20,7 @@ namespace QuanLyBanHang
 
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
-            txtPass.UseSystemPasswordChar = true;
+            
         }
 
         private void checkPass_CheckedChanged(object sender, EventArgs e)
@@ -56,8 +56,8 @@ namespace QuanLyBanHang
                     if (nv != null)
                     {
                         MessageBox.Show("Đăng nhập thành công (Nhân Viên)!");
-                        FormMain main = new FormMain();
-                        main.Show();
+                        FormMain mainNV = new FormMain();
+                        mainNV.Show();
                         this.Hide();
                     }
                     else 
@@ -99,6 +99,9 @@ namespace QuanLyBanHang
             radNhanvien.Text = "Nhân viên";
             radKhachHang.Text = "Khách hàng";
             radNhanvien.Checked = true;
+            txtPass.UseSystemPasswordChar = true;
+           
+
         }
 
         private void btnSignin_Click(object sender, EventArgs e)
@@ -112,6 +115,12 @@ namespace QuanLyBanHang
 
             Register frm = new Register();
             frm.ShowDialog();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgotPass fgp = new ForgotPass();
+            fgp.ShowDialog();
         }
     }
 }

@@ -258,6 +258,12 @@
       <DependentUpon>DanhMucKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="DataProvider.cs" />
+    <Compile Include="ForgotPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPass.Designer.cs">
+      <DependentUpon>ForgotPass.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,12 @@
     </Compile>
     <Compile Include="frmQuanLiKhachHang.Designer.cs">
       <DependentUpon>frmQuanLiKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTimKiemSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTimKiemSanPham.Designer.cs">
+      <DependentUpon>FrmTimKiemSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -304,6 +316,9 @@
     <EmbeddedResource Include="DanhMucKhachHang.resx">
       <DependentUpon>DanhMucKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPass.resx">
+      <DependentUpon>ForgotPass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLiKhachHang.resx">
       <DependentUpon>frmQuanLiKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTimKiemSanPham.resx">
+      <DependentUpon>FrmTimKiemSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -81,11 +81,27 @@ namespace QuanLyBanHang
                 cbbCity.ValueMember = "MaThanhPho";
                 cbbCity.DataSource = db.ThanhPhos.ToList();
             }
+            txtMatkhau.UseSystemPasswordChar = true;
+            txtXacnhanMK.UseSystemPasswordChar = true;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void chkShow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkShow.Checked)
+            {
+                txtMatkhau.UseSystemPasswordChar = false;
+                txtXacnhanMK.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtMatkhau.UseSystemPasswordChar = true;
+                txtXacnhanMK.UseSystemPasswordChar = true;
+            }
         }
     }
 }

@@ -75,8 +75,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::QuanLyBanHang.Properties.Resources.QuanLiKhachHang;
-            this.pictureBox1.Image = global::QuanLyBanHang.Properties.Resources.QuanLiKhachHang;
+            this.pictureBox1.BackgroundImage = global::QuanLyBanHang.Properties.Resources.QuanLiKhachHang_;
+            this.pictureBox1.Image = global::QuanLyBanHang.Properties.Resources.QuanLiKhachHang_;
             this.pictureBox1.Location = new System.Drawing.Point(-145, -25);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(614, 971);
@@ -233,6 +233,7 @@
             this.dgvKhachHang.Size = new System.Drawing.Size(715, 362);
             this.dgvKhachHang.TabIndex = 0;
             this.dgvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellClick);
+            this.dgvKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellContentClick);
             // 
             // MaKH
             // 

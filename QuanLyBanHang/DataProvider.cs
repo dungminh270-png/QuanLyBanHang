@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBanHang.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -12,59 +13,81 @@ namespace QuanLyBanHang
 {
     public class DataProvider
     {
-        public static string ChuoiKetNoi
+        private static DataProvider _instance;
+        public QLBanHangContext db;
+
+        public static DataProvider Instance
         {
             get
             {
-                return @"Server=localhost\SQLEXPRESS;Database=QLBanHang;Trusted_Connection=True;";
+                if (_instance == null)
+                    _instance = new DataProvider();
+                return _instance;
             }
-
         }
 
-        public static DataTable TruyVanLayDuLieu (string sql)   
+        private DataProvider()
         {
-            DataTable dt = new DataTable();
-            var connection =new SqlConnection(ChuoiKetNoi);
-            var DataAdapter = new SqlDataAdapter(sql, connection);
-            DataAdapter.Fill(dt);
-            return dt;
+            db = new QLBanHangContext();
         }
 
-        public static DataTable TruyVanLayDuLieu(string sql, SqlParameter[] parameters)
+        public List<KhachHang> GetAllKhachHang()
         {
-            DataTable dt = new DataTable();
-            using (var connection = new SqlConnection(ChuoiKetNoi))
-            using (var command = new SqlCommand(sql, connection))
+            return db.KhachHangs.ToList();
+        }
+        public List<SanPham> GetAllSanPham()
+        {
+            return db.SanPhams.ToList();
+        }
+        public List<NhanVien> GetAllNhanVien()
+        {
+            return db.NhanViens.ToList();
+        }
+        public List<HoaDon> GetAllHoaDon()
+        {
+            return db.HoaDons.ToList();
+        }
+        public List<ThanhPho> GetAllThanhPho()
+        {
+            return db.ThanhPhos.ToList();
+        }
+        public List<ChiTietHoaDon> GetAllChiTietHoaDon()
+        {
+            return db.ChiTietHoaDons.ToList();
+        }
+        public bool UpdateKhachHang(KhachHang khachHang)
+        {
+            var existingKhachHang = db.KhachHangs.Find(khachHang.MaKH);
+            if (existingKhachHang != null)
             {
-                if (parameters != null)
-                {
-                    command.Parameters.AddRange(parameters);
-                }
-
-                using (var adapter = new SqlDataAdapter(command))
-                {
-                    adapter.Fill(dt);
-                }
-            }
-            return dt;
-        }
-
-        public static bool TruyVanXuLiDuLieu(string sql)
-        {
-            try
-            {
-                var connection = new SqlConnection(ChuoiKetNoi);
-                var command = new SqlCommand(sql, connection);
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-                command.Connection.Close();
+                existingKhachHang.TenCty = khachHang.TenCty;
+                existingKhachHang.DiaChi = khachHang.DiaChi;
+                existingKhachHang.DienThoai = khachHang.DienThoai;
+                existingKhachHang.MaThanhPho = khachHang.MaThanhPho;
+                db.SaveChanges();
                 return true;
             }
-            catch (Exception ex)
-            {
-                //handle error
-                return false;
-            }
+            return false;
         }
+        public bool AddKhachHang(KhachHang khachHang)
+        {
+            var existingKhachHang = db.KhachHangs.Find(khachHang.MaKH);
+            if (existingKhachHang == null)
+            {
+                db.KhachHangs.Add(khachHang);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+        public bool DeleteKhachHang(string maKH)
+        {
+            var kh = db.KhachHangs.Find(maKH) ?? db.KhachHangs.FirstOrDefault(k => k.MaKH == maKH);
+            if (kh == null) return false;
+
+            db.KhachHangs.Remove(kh);
+            return db.SaveChanges() > 0;
+        }
+
     }
 }

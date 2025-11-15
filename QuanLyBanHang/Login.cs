@@ -49,7 +49,7 @@ namespace QuanLyBanHang
                         MessageBox.Show("Đăng nhập thành công", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        FormMain f = new FormMain();
+                        frmMain f = new frmMain();
                         this.Hide();
                         f.ShowDialog();
                         this.Show();

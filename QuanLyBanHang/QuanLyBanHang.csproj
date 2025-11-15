@@ -350,25 +350,7 @@
     <Compile Include="Models\ThanhPho.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-    <Compile Include="TimKiemmHoaDonUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TimKiemmHoaDonUserControl.Designer.cs">
-      <DependentUpon>TimKiemmHoaDonUserControl.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="DanhMucKhachHang.resx">
-      <DependentUpon>DanhMucKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.resx">
-      <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormTimKiemKhachHang.resx">
-      <DependentUpon>FormTimKiemKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLiKhachHang.resx">
-      <DependentUpon>frmQuanLiKhachHang.cs</DependentUpon>
-=======
+
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -378,7 +360,7 @@
     <Compile Include="User.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
->>>>>>> 0c7ebc1614cb12ab722fa9d50996ff8c7ba21a22
+
     </EmbeddedResource>
     <EmbeddedResource Include="frmTimKiemHoaDon.resx">
       <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>
@@ -405,11 +387,11 @@
       <DependentUpon>QLBanHangContext.dbml</DependentUpon>
     </None>
     <None Include="packages.config" />
-=======
+
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> 0c7ebc1614cb12ab722fa9d50996ff8c7ba21a22
+
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

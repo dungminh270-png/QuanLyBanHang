@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBanHang.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,7 +40,7 @@ namespace QuanLyBanHang
                     MessageBoxButtons.OK, MessageBoxIcon.Error );
                 return;
             }
-            using (var db = new QLBanHangDataContext())
+            using (var db = new QLBanHangContext())
             {
                 // Kiểm tra tài khoản đã tồn tại
                 var CheckDN = db.KhachHangs.FirstOrDefault(x => x.MaDN == tenDN);
@@ -50,7 +51,7 @@ namespace QuanLyBanHang
                     return;
                 }
                 // Tạo tài khoản mới
-                KhachHang kh = new KhachHang()
+                var kh = new KhachHang()
                 {
                     MaKH = "KH" + DateTime.Now.Ticks.ToString().Substring(15),
                     TenCty = tenKH,
@@ -59,8 +60,8 @@ namespace QuanLyBanHang
                     MaThanhPho = maTP
                     
                 };
-                db.KhachHangs.InsertOnSubmit(kh);
-                db.SubmitChanges();
+                db.KhachHangs.Add(kh);
+                db.SaveChanges();
 
                 MessageBox.Show("Đăng ký thành công!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information );
@@ -70,23 +71,24 @@ namespace QuanLyBanHang
 
         private void cbbCity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string fullname = txtFullname.Text.Trim();
-            string email = txtEmail.Text.Trim();
-            string username = txtUser.Text.Trim();
-            string password = txtPass.Text;
-            string confirm = txtconfirm.Text;
+            string fullname = txtHoten.Text.Trim();
+            //string email = txtEmail.Text.Trim();
+            string username = txtTenDN.Text.Trim();
+            string password = txtMatkhau.Text;
+            string confirm = txtXacnhanMK.Text;
 
             if (string.IsNullOrWhiteSpace(fullname))
             {
                 MessageBox.Show("Vui lòng nhập Họ và tên!", "Thiếu thông tin",
-                    MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                txtFullname.Focus();
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtHoten.Focus();
                 return;
+            }
         }
 
         private void Register_Load(object sender, EventArgs e)
         {
-            using (var db = new QLBanHangDataContext())
+            using (var db = new QLBanHangContext())
             {
                 cbbCity.DisplayMember = "TenThanhPho";
                 cbbCity.ValueMember = "MaThanhPho";
@@ -113,10 +115,6 @@ namespace QuanLyBanHang
                 txtMatkhau.UseSystemPasswordChar = true;
                 txtXacnhanMK.UseSystemPasswordChar = true;
             }
-
-        private void Register_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

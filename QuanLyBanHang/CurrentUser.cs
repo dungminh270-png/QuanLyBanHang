@@ -10,6 +10,6 @@ namespace QuanLyBanHang
     {
         public static string MaKH { get; set; }
         public static string TenHienThi { get; set; }
-        public static void Clear() { MaKH = null, TenHienThi = null; }
+        public static void Clear() { MaKH = null; TenHienThi = null; }
     }
 }

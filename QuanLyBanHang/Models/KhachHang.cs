@@ -14,5 +14,10 @@ namespace QuanLyBanHang.Models
         public string DiaChi { get; set; }
         public string DienThoai { get; set; }
         public int MaThanhPho { get; set; }
+        public string MaDN { get; set; }
+        public string MatKhau { get; set; }
+        public DateTime? NgSinh { get; set; }
+        public bool? GTinh { get; set; }
+        public string Avatar { get; set; }
     }
 }

@@ -26,9 +26,7 @@ namespace QuanLyBanHang
 
         private void LoadNV()
         {
-            var sql = "SELECT * FROM NhanVien ";
-            dgvNhanVien.DataSource = DataProvider.TruyVanLayDuLieu(sql);
-
+            dgvNhanVien.DataSource = DataProvider.Instance.GetAllNhanVien();
         }
 
 

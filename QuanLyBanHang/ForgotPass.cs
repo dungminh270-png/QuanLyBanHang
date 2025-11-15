@@ -12,7 +12,7 @@ namespace QuanLyBanHang
 {
     public partial class ForgotPass : Form
     {
-        QLBanHangDataContext db = new QLBanHangDataContext();
+        QLBanHangContext db = new QLBanHangContext();
         public ForgotPass()
         {
             InitializeComponent();
@@ -51,7 +51,7 @@ namespace QuanLyBanHang
             }
             // cap nhat mat khau
             user.MatKhau = mkMoi;
-            db.SubmitChanges();
+            db.SaveChanges();
 
 
             MessageBox.Show("Đổi mật khẩu thành công!");

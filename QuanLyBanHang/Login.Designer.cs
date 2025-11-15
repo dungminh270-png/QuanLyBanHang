@@ -136,14 +136,14 @@ namespace QuanLyBanHang
             // 
             // btnSignin
             // 
-            this.btnSignup.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignup.Location = new System.Drawing.Point(935, 331);
-            this.btnSignup.Name = "btnSignup";
-            this.btnSignup.Size = new System.Drawing.Size(126, 45);
-            this.btnSignup.TabIndex = 4;
-            this.btnSignup.Text = "Sign up";
-            this.btnSignup.UseVisualStyleBackColor = true;
-            this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
+            this.btnSignin.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignin.Location = new System.Drawing.Point(935, 331);
+            this.btnSignin.Name = "btnSignup";
+            this.btnSignin.Size = new System.Drawing.Size(126, 45);
+            this.btnSignin.TabIndex = 4;
+            this.btnSignin.Text = "Sign up";
+            this.btnSignin.UseVisualStyleBackColor = true;
+            this.btnSignin.Click += new System.EventHandler(this.btnSignup_Click);
             // 
             // linkLabel1
             // 

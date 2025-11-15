@@ -343,12 +343,7 @@
     <Compile Include="FormMaiN%28KH%29.Designer.cs">
       <DependentUpon>FormMaiN%28KH%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
+    <Compile Include="frmMain.Designer.cs" />
     <Compile Include="FormTimKiemKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,6 +361,15 @@
     </Compile>
     <Compile Include="FrmDanhMucThanhPho.Designer.cs">
       <DependentUpon>FrmDanhMucThanhPho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLapHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLapHoaDon.Designer.cs">
+      <DependentUpon>frmLapHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmQuanLiKhachHang.cs">
       <SubType>Form</SubType>
@@ -404,16 +408,18 @@
     <Compile Include="Models\ThanhPho.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLBanHangContext.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLBanHangContext.dbml</DependentUpon>
-    </Compile>
+    <Compile Include="QLBanHangContext.cs" />
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Signin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Signin.Designer.cs">
+      <DependentUpon>Signin.cs</DependentUpon>
     </Compile>
     <Compile Include="Thongtincanhan.cs">
       <SubType>Form</SubType>
@@ -427,6 +433,7 @@
     <Compile Include="TimKiemmHoaDonUserControl.Designer.cs">
       <DependentUpon>TimKiemmHoaDonUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <EmbeddedResource Include="DanhMucKhachHang.resx">
       <DependentUpon>DanhMucKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -439,17 +446,21 @@
     <EmbeddedResource Include="FormMaiN%28KH%29.resx">
       <DependentUpon>FormMaiN%28KH%29.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.resx">
-      <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormTimKiemKhachHang.resx">
       <DependentUpon>FormTimKiemKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhMucKhachHang.resx" />
     <EmbeddedResource Include="FrmDanhMucSanPham.resx">
       <DependentUpon>FrmDanhMucSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDanhMucThanhPho.resx">
       <DependentUpon>FrmDanhMucThanhPho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLapHoaDon.resx">
+      <DependentUpon>frmLapHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLiKhachHang.resx">
       <DependentUpon>frmQuanLiKhachHang.cs</DependentUpon>
@@ -473,9 +484,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Register.resx">
-      <DependentUpon>Register.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Thongtincanhan.resx">
       <DependentUpon>Thongtincanhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -511,16 +519,6 @@
     <None Include="Resources\AvartarCaNhan.jpg" />
     <Content Include="Resources\Avatar.png" />
     <None Include="Resources\QuanLiKhachHang.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="QLBanHangContext.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>QLBanHangContext.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLBanHangContext.dbml.layout">
-      <DependentUpon>QLBanHangContext.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

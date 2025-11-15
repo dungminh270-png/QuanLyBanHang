@@ -13,7 +13,7 @@ namespace QuanLyBanHang
 {
     public partial class Thongtincanhan : Form
     {
-        QLBanHangDataContext db = new QLBanHangDataContext();
+        QLBanHangContext db = new QLBanHangContext();
         private string duongDanAnhMoi = "";
         public Thongtincanhan()
         {
@@ -104,7 +104,7 @@ namespace QuanLyBanHang
             if (opp.ShowDialog() == DialogResult.OK)
             {
                 duongDanAnhMoi = opp.FileName;
-                pctCanhan.Image = Image.FromFile.(duongDanAnhMoi);
+                pctCanhan.Image = Image.FromFile(duongDanAnhMoi);
                 pctCanhan.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 LuuAvatar(duongDanAnhMoi);
@@ -114,15 +114,12 @@ namespace QuanLyBanHang
         }
         private void LuuAvatar(string duongDan)
         {
-            try
-            {
-                var kh = db.KhachHangs
+            var kh = db.KhachHangs
                     .Where(k => k.MaKH == CurrentUser.MaKH)
                     .FirstOrDefault();
-                if (kh != null)
-                {
-                    kh.Avatar
-                }
+            if (kh != null)
+            {
+                kh.Avatar = duongDan;
             }
         }
     }

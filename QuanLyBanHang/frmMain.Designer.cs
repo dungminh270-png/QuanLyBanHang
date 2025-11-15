@@ -1,4 +1,6 @@
-﻿namespace QuanLyBanHang
+﻿using System;
+
+namespace QuanLyBanHang
 {
     partial class frmMain
     {
@@ -233,12 +235,12 @@
             // 
             // quảnLíToolStripMenuItem
             // 
-            this.quảnLíToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kháchHàngToolStripMenuItem2});
-            this.quảnLíToolStripMenuItem.Name = "quảnLíToolStripMenuItem";
-            this.quảnLíToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.quảnLíToolStripMenuItem.Text = "Quản lí";
-            this.quảnLíToolStripMenuItem.Click += new System.EventHandler(this.quảnLíToolStripMenuItem_Click);
+            //this.quảnLíToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            //this.kháchHàngToolStripMenuItem2});
+            //this.quảnLíToolStripMenuItem.Name = "quảnLíToolStripMenuItem";
+            //this.quảnLíToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            //this.quảnLíToolStripMenuItem.Text = "Quản lí";
+            //this.quảnLíToolStripMenuItem.Click += new System.EventHandler(this.quảnLíToolStripMenuItem_Click);
             // 
             // kháchHàngToolStripMenuItem2
             // 
@@ -297,6 +299,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void hóaĐơnToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

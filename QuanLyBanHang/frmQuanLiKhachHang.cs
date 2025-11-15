@@ -13,7 +13,7 @@ namespace QuanLyBanHang
 {
     public partial class frmQuanLiKhachHang : Form
     {
-        QLBanHangDataContext db = new QLBanHangDataContext();
+        QLBanHangContext db = new QLBanHangContext();
         bool isEdit = false; //biến cờ để phân biệt thêm hay sửa
         public frmQuanLiKhachHang()
         {

@@ -27,8 +27,7 @@ namespace QuanLyBanHang
 
         private void LoadThanhPho()
         {
-            var sql = "SELECT * FROM ThanhPho ORDER BY MaThanhPho ASC";
-            dgvThanhPho.DataSource = DataProvider.TruyVanLayDuLieu(sql);
+            dgvThanhPho.DataSource = DataProvider.Instance.GetAllThanhPho();
         }
     }
 }

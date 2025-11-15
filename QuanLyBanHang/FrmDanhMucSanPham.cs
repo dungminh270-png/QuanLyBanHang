@@ -19,8 +19,7 @@ namespace QuanLyBanHang
 
         private void FrmDanhMucSanPham_Load(object sender, EventArgs e)
         {
-            var sql = "SELECT * FROM SanPham ";
-            dgvSanPham.DataSource = DataProvider.TruyVanLayDuLieu(sql);
+            dgvSanPham.DataSource = DataProvider.Instance.GetAllSanPham();
         }
     }
 }

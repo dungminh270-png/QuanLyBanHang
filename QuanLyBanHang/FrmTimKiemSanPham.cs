@@ -13,7 +13,7 @@ namespace QuanLyBanHang
 {
     public partial class FrmTimKiemSanPham : Form
     {
-        QLBanHangDataContext db = new QLBanHangDataContext();
+        QLBanHangContext db = new QLBanHangContext();
         public FrmTimKiemSanPham()
         {
             InitializeComponent();

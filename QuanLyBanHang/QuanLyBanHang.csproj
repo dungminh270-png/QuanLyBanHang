@@ -307,6 +307,12 @@
       <DependentUpon>DanhMucKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="DataProvider.cs" />
+    <Compile Include="frmLapHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLapHoaDon.Designer.cs">
+      <DependentUpon>frmLapHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -370,6 +376,9 @@
       <DependentUpon>TimKiemmHoaDonUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="frmLapHoaDon.resx">
+      <DependentUpon>frmLapHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>

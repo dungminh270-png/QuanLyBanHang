@@ -165,13 +165,14 @@
             // hóaĐơnToolStripMenuItem1
             // 
             this.hóaĐơnToolStripMenuItem1.Name = "hóaĐơnToolStripMenuItem1";
-            this.hóaĐơnToolStripMenuItem1.Size = new System.Drawing.Size(198, 26);
+            this.hóaĐơnToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.hóaĐơnToolStripMenuItem1.Text = "Hóa đơn";
+            this.hóaĐơnToolStripMenuItem1.Click += new System.EventHandler(this.hóaĐơnToolStripMenuItem1_Click);
             // 
             // chiTiếtHóaĐơnToolStripMenuItem
             // 
             this.chiTiếtHóaĐơnToolStripMenuItem.Name = "chiTiếtHóaĐơnToolStripMenuItem";
-            this.chiTiếtHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.chiTiếtHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.chiTiếtHóaĐơnToolStripMenuItem.Text = "Chi tiết hóa đơn";
             // 
             // tìmKiếmToolStripMenuItem

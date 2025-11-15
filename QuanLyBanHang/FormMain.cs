@@ -107,5 +107,10 @@ namespace QuanLyBanHang
             f.MdiParent = this;
             f.Show();
         }
+
+        private void hóaĐơnToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

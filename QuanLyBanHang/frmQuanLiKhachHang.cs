@@ -139,13 +139,13 @@ namespace QuanLyBanHang
         {
             if (string.IsNullOrWhiteSpace(txtMaKH.Text) ||
                 string.IsNullOrWhiteSpace(txtCongTy.Text) ||
-                cboThanhPho.SelectedValue == null)
+                cboThanhPho.SelectedValue == null )
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            string matKhauMacDinh = "123456";
             try
             {
                 if (isEdit)
@@ -158,6 +158,7 @@ namespace QuanLyBanHang
                         kh.DiaChi = txtDiaChi.Text.Trim();
                         kh.DienThoai = txtDienThoai.Text.Trim();
                         kh.MaThanhPho = (int)cboThanhPho.SelectedValue;
+                        kh.MatKhau = matKhauMacDinh;
                         db.SubmitChanges();
                         MessageBox.Show("Sửa thành công!", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -172,6 +173,7 @@ namespace QuanLyBanHang
                         TenCty = txtCongTy.Text.Trim(),
                         DiaChi = txtDiaChi.Text.Trim(),
                         DienThoai = txtDienThoai.Text.Trim(),
+                        MatKhau = matKhauMacDinh,
                         MaThanhPho = (int)cboThanhPho.SelectedValue
                     };
 

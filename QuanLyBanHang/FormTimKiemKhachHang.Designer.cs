@@ -30,13 +30,13 @@
         {
             this.lblThanhPho = new System.Windows.Forms.Label();
             this.dgvKhachHang = new System.Windows.Forms.DataGridView();
-            this.cboThanhPho = new System.Windows.Forms.ComboBox();
-            this.lblSoKhachhang = new System.Windows.Forms.Label();
-            this.txtSoLuongKhachHang = new System.Windows.Forms.TextBox();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenCty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboThanhPho = new System.Windows.Forms.ComboBox();
+            this.lblSoKhachhang = new System.Windows.Forms.Label();
+            this.txtSoLuongKhachHang = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,33 +65,6 @@
             this.dgvKhachHang.Size = new System.Drawing.Size(893, 466);
             this.dgvKhachHang.TabIndex = 1;
             this.dgvKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellContentClick);
-            // 
-            // cboThanhPho
-            // 
-            this.cboThanhPho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboThanhPho.FormattingEnabled = true;
-            this.cboThanhPho.Location = new System.Drawing.Point(147, 33);
-            this.cboThanhPho.Name = "cboThanhPho";
-            this.cboThanhPho.Size = new System.Drawing.Size(166, 24);
-            this.cboThanhPho.TabIndex = 2;
-            this.cboThanhPho.SelectedIndexChanged += new System.EventHandler(this.cboThanhPho_SelectedIndexChanged);
-            // 
-            // lblSoKhachhang
-            // 
-            this.lblSoKhachhang.AutoSize = true;
-            this.lblSoKhachhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoKhachhang.Location = new System.Drawing.Point(623, 35);
-            this.lblSoKhachhang.Name = "lblSoKhachhang";
-            this.lblSoKhachhang.Size = new System.Drawing.Size(138, 20);
-            this.lblSoKhachhang.TabIndex = 3;
-            this.lblSoKhachhang.Text = "Số khách hàng:";
-            // 
-            // txtSoLuongKhachHang
-            // 
-            this.txtSoLuongKhachHang.Location = new System.Drawing.Point(783, 35);
-            this.txtSoLuongKhachHang.Name = "txtSoLuongKhachHang";
-            this.txtSoLuongKhachHang.Size = new System.Drawing.Size(93, 22);
-            this.txtSoLuongKhachHang.TabIndex = 4;
             // 
             // MaKH
             // 
@@ -125,6 +98,33 @@
             this.DienThoai.MinimumWidth = 6;
             this.DienThoai.Name = "DienThoai";
             // 
+            // cboThanhPho
+            // 
+            this.cboThanhPho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboThanhPho.FormattingEnabled = true;
+            this.cboThanhPho.Location = new System.Drawing.Point(147, 33);
+            this.cboThanhPho.Name = "cboThanhPho";
+            this.cboThanhPho.Size = new System.Drawing.Size(166, 24);
+            this.cboThanhPho.TabIndex = 2;
+            this.cboThanhPho.SelectedIndexChanged += new System.EventHandler(this.cboThanhPho_SelectedIndexChanged);
+            // 
+            // lblSoKhachhang
+            // 
+            this.lblSoKhachhang.AutoSize = true;
+            this.lblSoKhachhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoKhachhang.Location = new System.Drawing.Point(623, 35);
+            this.lblSoKhachhang.Name = "lblSoKhachhang";
+            this.lblSoKhachhang.Size = new System.Drawing.Size(138, 20);
+            this.lblSoKhachhang.TabIndex = 3;
+            this.lblSoKhachhang.Text = "Số khách hàng:";
+            // 
+            // txtSoLuongKhachHang
+            // 
+            this.txtSoLuongKhachHang.Location = new System.Drawing.Point(783, 35);
+            this.txtSoLuongKhachHang.Name = "txtSoLuongKhachHang";
+            this.txtSoLuongKhachHang.Size = new System.Drawing.Size(93, 22);
+            this.txtSoLuongKhachHang.TabIndex = 4;
+            // 
             // FormTimKiemKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -137,6 +137,7 @@
             this.Controls.Add(this.lblThanhPho);
             this.Name = "FormTimKiemKhachHang";
             this.Text = "FormTimKiemKhachHang";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormTimKiemKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.ResumeLayout(false);

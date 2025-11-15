@@ -17,6 +17,13 @@ namespace QuanLyBanHang
         {
             InitializeComponent();
         }
+        private FormMain forMain;
+        public Login( FormMain fmain)
+        {
+            
+            forMain = fmain;
+           
+        }
 
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
@@ -39,11 +46,11 @@ namespace QuanLyBanHang
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string user = txtUser.Text.Trim();
-            string pass = txtPass.Text;
+            string pass = txtPass.Text.Trim();
 
             if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo",
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin !!!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }

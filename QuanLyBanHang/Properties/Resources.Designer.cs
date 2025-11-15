@@ -75,7 +75,7 @@ namespace QuanLyBanHang.Properties {
         /// </summary>
         public static System.Drawing.Bitmap QuanLiKhachHang_ {
             get {
-                object obj = ResourceManager.GetObject("QuanLiKhachHang.", resourceCulture);
+                object obj = ResourceManager.GetObject("QuanLiKhachHang", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -51,7 +51,7 @@
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(810, 742);
+            this.panel1.Size = new System.Drawing.Size(720, 594);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -60,11 +60,10 @@
             this.pictureBox1.Location = new System.Drawing.Point(-3, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(813, 739);
+            this.pictureBox1.Size = new System.Drawing.Size(723, 591);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txtUser
             // 
@@ -87,9 +86,9 @@
             // 
             this.Userlb.AutoSize = true;
             this.Userlb.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Userlb.Location = new System.Drawing.Point(858, 168);
+            this.Userlb.Location = new System.Drawing.Point(763, 134);
             this.Userlb.Name = "Userlb";
-            this.Userlb.Size = new System.Drawing.Size(128, 25);
+            this.Userlb.Size = new System.Drawing.Size(103, 20);
             this.Userlb.TabIndex = 2;
             this.Userlb.Text = "UserName";
             this.Userlb.Click += new System.EventHandler(this.Userlb_Click);
@@ -98,9 +97,9 @@
             // 
             this.Passlb.AutoSize = true;
             this.Passlb.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Passlb.Location = new System.Drawing.Point(858, 240);
+            this.Passlb.Location = new System.Drawing.Point(763, 192);
             this.Passlb.Name = "Passlb";
-            this.Passlb.Size = new System.Drawing.Size(118, 25);
+            this.Passlb.Size = new System.Drawing.Size(97, 20);
             this.Passlb.TabIndex = 2;
             this.Passlb.Text = "Password";
             this.Passlb.Click += new System.EventHandler(this.Passlb_Click);
@@ -111,7 +110,7 @@
             this.label1.Font = new System.Drawing.Font("Georgia", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(799, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 46);
+            this.label1.Size = new System.Drawing.Size(210, 38);
             this.label1.TabIndex = 2;
             this.label1.Text = "WELCOME";
             // 
@@ -121,7 +120,7 @@
             this.checkPass.Location = new System.Drawing.Point(880, 218);
             this.checkPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkPass.Name = "checkPass";
-            this.checkPass.Size = new System.Drawing.Size(148, 24);
+            this.checkPass.Size = new System.Drawing.Size(125, 20);
             this.checkPass.TabIndex = 3;
             this.checkPass.Text = "Show Password";
             this.checkPass.UseVisualStyleBackColor = true;
@@ -157,7 +156,7 @@
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
             this.linkLabel1.Location = new System.Drawing.Point(877, 240);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(129, 20);
+            this.linkLabel1.Size = new System.Drawing.Size(109, 16);
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Forgot Password";
@@ -189,7 +188,7 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1097, 588);
@@ -234,4 +233,3 @@
         private System.Windows.Forms.RadioButton radKhachHang;
     }
 }
-

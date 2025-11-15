@@ -313,6 +313,7 @@
     </Compile>
     <Compile Include="frmTimKiemHoaDon.Designer.cs">
       <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTimKiemSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,6 +356,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMucNhanVien.resx">
       <DependentUpon>DanhMucNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ForgotPass.resx">
       <DependentUpon>ForgotPass.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,6 +377,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTimKiemHoaDon.resx">
       <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTimKiemSanPham.resx">
       <DependentUpon>FrmTimKiemSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -413,6 +416,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Avatar.png" />
+    <None Include="Resources\QuanLiKhachHang.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="QLBanHangContext.dbml">
@@ -423,7 +427,6 @@
     <None Include="QLBanHangContext.dbml.layout">
       <DependentUpon>QLBanHangContext.dbml</DependentUpon>
     </None>
-    <None Include="Resources\QuanLiKhachHang..png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

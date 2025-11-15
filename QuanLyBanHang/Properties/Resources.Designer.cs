@@ -73,7 +73,7 @@ namespace QuanLyBanHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap QuanLiKhachHang_ {
+        public static System.Drawing.Bitmap QuanLiKhachHang {
             get {
                 object obj = ResourceManager.GetObject("QuanLiKhachHang", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

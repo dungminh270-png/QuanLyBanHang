@@ -24,29 +24,37 @@ namespace QuanLyBanHang
             LoadKhachHang(); // đổ dữ liệu vào dgvKhachHang
 
         }
-
-        string ChuoiKetNoi = @"Server=localhost\SQLEXPRESS;Database=QLBanHang;Trusted_Connection=True;";
         private void LoadKhachHang()
         {
-            var connection = new SqlConnection(ChuoiKetNoi);
-            var DataAdapter = new SqlDataAdapter("SELECT * FROM KhachHang ORDER BY TenCty", connection);
-            var dtKhachHang = new DataTable();
-            DataAdapter.Fill(dtKhachHang);
-            dgvKhachHang.DataSource = dtKhachHang;
+            var gidData = DataProvider.Instance.GetAllKhachHang()
+                           .Select(kh => new
+                           {
+                               kh.MaKH,
+                               kh.TenCty,
+                               kh.DiaChi,
+                               kh.DienThoai,
+                               kh.MaThanhPho
+                           })
+                           .ToList();
+            dgvKhachHang.DataSource = gidData;
         }
 
         private void LoadThanhPho()
         {
-            var connection = new SqlConnection(ChuoiKetNoi);
-            var DataAdapter = new SqlDataAdapter("SELECT * FROM ThanhPho ORDER BY TenThanhPho", connection);
-            var dtThanhPho = new DataTable();
-            DataAdapter.Fill(dtThanhPho);
+            var thanhphos = DataProvider.Instance.GetAllThanhPho()
+                            .OrderBy(tp => tp.TenThanhPho)
+                            .ToList();
+            MaThanhPho.DataSource = thanhphos;
+            MaThanhPho.DisplayMember = "TenThanhPho";
+            MaThanhPho.ValueMember = "MaThanhPho";
 
-            //tìm combo box trong dataGridView
-            var cboThanhPho = dgvKhachHang.Columns["MaThanhPho"] as DataGridViewComboBoxColumn;
-            cboThanhPho.DataSource = dtThanhPho;
-            cboThanhPho.DisplayMember = "TenThanhPho";
-            cboThanhPho.ValueMember = "MaThanhPho";
+            var dgvCboThanhPho = dgvKhachHang.Columns["MaThanhPho"] as DataGridViewComboBoxColumn;
+            if (dgvCboThanhPho != null)
+            {
+                dgvCboThanhPho.DataSource = thanhphos;
+                dgvCboThanhPho.DisplayMember = "TenThanhPho";
+                dgvCboThanhPho.ValueMember = "MaThanhPho";
+            }
         }
     }
 }

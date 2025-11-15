@@ -18,6 +18,10 @@ namespace QuanLyBanHang
             InitializeComponent();
         }
 
+        public Login()
+        {
+        }
+
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
             txtPass.UseSystemPasswordChar = true;

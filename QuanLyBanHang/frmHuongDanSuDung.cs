@@ -74,7 +74,7 @@ namespace QuanLyBanHang
 
         private void label1_Click(object sender, EventArgs e)
         {
-            import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
+            //import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
         }
     }
 }

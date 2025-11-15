@@ -144,5 +144,10 @@ namespace QuanLyBanHang
         {
 
         }
+
+        private void dgvChiTietHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

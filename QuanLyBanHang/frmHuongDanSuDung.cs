@@ -17,7 +17,7 @@ namespace QuanLyBanHang
             InitializeComponent();
         }
 
-        
+
 
         private void SetActiveButton(Button activeBtn)
         {
@@ -25,7 +25,7 @@ namespace QuanLyBanHang
             {
                 if (ctrl is Button btn)
                 {
-                    btn.BackColor = SystemColors.Control; // màu mặc định
+                    btn.BackColor = Color.MidnightBlue; // màu mặc định của các nút chưa chọn
                 }
             }
             activeBtn.BackColor = Color.LightBlue; // nút đang chọn
@@ -74,7 +74,32 @@ namespace QuanLyBanHang
 
         private void label1_Click(object sender, EventArgs e)
         {
-            import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
+            
+        }
+
+        private void tpKhachHang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox18_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tpDonHang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tctlMain_MouseMove(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

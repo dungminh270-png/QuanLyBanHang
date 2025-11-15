@@ -112,5 +112,17 @@ namespace QuanLyBanHang
         {
 
         }
+
+        private void chiTiếtHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void hướngDẫnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f=new frmHuongDanSuDung();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

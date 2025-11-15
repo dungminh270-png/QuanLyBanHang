@@ -1,25 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace QuanLyBanHang
 {
     public partial class Login : Form
     {
-        public Login(FormMain formMain)
-        {
-            InitializeComponent();
-        }
-
         public Login()
         {
+            InitializeComponent();
         }
 
         private void txtPass_TextChanged(object sender, EventArgs e)
@@ -29,59 +18,72 @@ namespace QuanLyBanHang
 
         private void checkPass_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkPass.Checked)
-            {
-                txtPass.UseSystemPasswordChar = false;
-
-            }
-            else
-            {
-                txtPass.UseSystemPasswordChar = true;
-            }
+            txtPass.UseSystemPasswordChar = !checkPass.Checked;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //var SQl = $"SELECT * FROM NhanVien WHERE MaNV = '{txtUser.Text.Trim()}' AND MatKhau = '{txtPass.Text}'";
-            ////var dtNhanVien = DataProvider.TruyVanLayDuLieu(SQl);
-            //if(dtNhanVien.Rows.Count > 0 )
-            //{
-            //    MessageBox.Show("Đăng nhập thành công");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Đăng nhập thất bại");
-            //}
+            string user = txtUser.Text.Trim();
+            string pass = txtPass.Text.Trim();
 
-            //string user = txtUser.Text.Trim();
-            //string pass = txtPass.Text;
+            if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin !!!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            //if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
-            //{
-            //    MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-        }
+            using (var db = new QLBanHangContext())
+            {
+                // 1. Tìm nhân viên có MaDN trùng với user nhập vào
+                var taiKhoan = db.NhanViens.FirstOrDefault(nv => nv.MaDN == user);
 
-        private void Userlb_Click(object sender, EventArgs e)
-        {
+                if (taiKhoan != null)
+                {
+                    // User có tồn tại -> Kiểm tra mật khẩu
+                    string dbPass = taiKhoan.MatKhau ?? "";
 
-        }
+                    if (dbPass == pass)
+                    {
+                        // Đăng nhập thành công
+                        MessageBox.Show("Đăng nhập thành công", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        private void Passlb_Click(object sender, EventArgs e)
-        {
-
+                        FormMain f = new FormMain();
+                        this.Hide();
+                        f.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                    {
+                        // Sai mật khẩu
+                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không hợp lệ.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không hợp lệ.", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnSignup_Click(object sender, EventArgs e)
         {
-
+            Register reg = new Register();
+            reg.ShowDialog();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
+        private void Userlb_Click(object sender, EventArgs e) {
+        }
+        private void Passlb_Click(object sender, EventArgs e) { 
+        }
+        private void Login_Load(object sender, EventArgs e) { 
+        }
+        private void pictureBox1_Click(object sender, EventArgs e) {
+        }
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
         }
     }
 }

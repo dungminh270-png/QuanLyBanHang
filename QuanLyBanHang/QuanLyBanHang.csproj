@@ -319,12 +319,6 @@
     <Compile Include="FormTimKiemKhachHang.Designer.cs">
       <DependentUpon>FormTimKiemKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDanhMucKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDanhMucKhachHang.Designer.cs">
-      <DependentUpon>frmDanhMucKhachHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmQuanLiKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>

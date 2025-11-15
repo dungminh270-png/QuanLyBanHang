@@ -22,7 +22,7 @@ namespace QuanLyBanHang
 
         private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var f = new Login(this);
+            var f = new Login();
             f.MdiParent = this;
             f.Show();
         }

@@ -180,10 +180,10 @@ namespace QuanLyBanHang
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        //private void pictureBox1_Click(object sender, EventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         #endregion
 

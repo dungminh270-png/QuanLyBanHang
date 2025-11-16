@@ -275,12 +275,13 @@ namespace QuanLyBanHang
             this.statusStrip1.Size = new System.Drawing.Size(1157, 26);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // lblDongHo
             // 
             this.lblDongHo.Name = "lblDongHo";
-            this.lblDongHo.Size = new System.Drawing.Size(151, 20);
-            this.lblDongHo.Text = "toolStripStatusLabel1";
+            this.lblDongHo.Size = new System.Drawing.Size(44, 20);
+            this.lblDongHo.Text = "00:00";
             this.lblDongHo.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // lblHoTenNhanVien

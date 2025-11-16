@@ -50,8 +50,7 @@ namespace QuanLyBanHang
 
             if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin !!!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -64,32 +63,45 @@ namespace QuanLyBanHang
                     {
                         string hoten = nv.Ho + " " + nv.Ten;
                         MessageBox.Show("Đăng nhập thành công (Nhân Viên)!");
-                        _frmMain.HoTenNhanVien = hoten;
-                        _frmMain.DaDangNhap = true;
-                        _frmMain.PhanQuyen();
-                        frmMain mainNV = new frmMain();
-                        mainNV.Show();
-                        this.Hide();
+
+                        if (_frmMain != null)
+                        {
+                            _frmMain.HoTenNhanVien = hoten;
+                            _frmMain.DaDangNhap = true;
+                            _frmMain.PhanQuyen();
+                            this.Close();
+                        }
+                        else
+                        {
+                            frmMain mainNV = new frmMain();
+                            mainNV.HoTenNhanVien = hoten;
+                            mainNV.DaDangNhap = true;
+
+                            mainNV.PhanQuyen();
+                            mainNV.Show();
+                            this.Hide();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Lỗi",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else if (radKhachHang.Checked)
                 {
+
                     var kh = db.KhachHangs.FirstOrDefault(x => x.MaDN == user && x.MatKhau == pass);
                     if (kh != null)
                     {
-                        //string hotenKH = kh.Ho
+                        string hotenKH = kh.TenCty;
                         MessageBox.Show("Đăng nhập thành công (Khách Hàng)!");
-                        // chưa tạo FormMain cho Khach Hang
+                        var panelMainKH = new FormMaiN_KH_();
+                        panelMainKH.Show();
+                        this.Hide();
                     }
                     else
                     {
-                        MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Lỗi",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

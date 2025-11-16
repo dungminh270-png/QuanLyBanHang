@@ -24,14 +24,14 @@ namespace QuanLyBanHang
             PhanQuyen();
         }
 
-        public bool DaDangNhap { get; set; } = true;
+        public bool DaDangNhap { get; set; } = false;
         public string HoTenNhanVien { get; set; }
 
 
         public void PhanQuyen()
         {
-            MnuDangXuat.Enabled = !DaDangNhap;
-            MnuDangNhap.Enabled = DaDangNhap;
+            MnuDangXuat.Enabled = DaDangNhap;
+            MnuDangNhap.Enabled = !DaDangNhap;
            
             lblHoTenNhanVien.Text = DaDangNhap ? $"Xin chào: " + $"{HoTenNhanVien}" : "Chưa đăng nhập";
             // xét quyền theo vai trò
@@ -144,6 +144,11 @@ namespace QuanLyBanHang
         }
 
         private void lblHoTenNhanVien_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

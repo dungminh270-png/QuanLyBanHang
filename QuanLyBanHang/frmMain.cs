@@ -136,7 +136,9 @@ namespace QuanLyBanHang
 
         private void hóaĐơnToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
+            var f = new frmLichSuMuaHang();
+            f.MdiParent = this;
+            f.Show();
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
@@ -151,6 +153,28 @@ namespace QuanLyBanHang
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void muaHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new frmLichSuMuaHang();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void MnuThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn thoát chương trình không?",
+                "Xác nhận thoát",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

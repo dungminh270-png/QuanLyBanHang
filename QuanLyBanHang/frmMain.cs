@@ -107,6 +107,10 @@ namespace QuanLyBanHang
             f.MdiParent = this;
             f.Show();
         }
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 //using System;

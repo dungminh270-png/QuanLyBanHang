@@ -117,34 +117,56 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="MaSP.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>1. Tạo Đơn hàng Mới: Nhấn nút [Tạo mới] -&gt; Chọn Khách hàng -&gt; Thêm các Sản phẩm và nhập số lượng -&gt; Áp dụng Chiết khấu (nếu có) -&gt; Nhấn [Lưu] (để lưu nháp) hoặc [Xác nhận] (để chuyển sang xử lý).
+2. Cập nhật: Chọn đơn hàng cần sửa -&gt; Điều chỉnh thông tin (số lượng, sản phẩm, trạng thái) -&gt; Nhấn [Cập nhật]. 
+3. Tra cứu: Sử dụng thanh tìm kiếm theo Mã Đơn hàng, Tên Khách hàng hoặc bộ lọc theo Ngày tạo, Trạng thái.</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>- Tạo đơn hàng mới, bao gồm cả đơn hàng sỉ/lẻ. 
+- Cập nhật trạng thái và thông tin đơn hàng. 
+- Tìm kiếm và lọc đơn hàng theo nhiều tiêu chí. 
+- Liên kết đơn hàng với giao dịch thanh toán và hóa đơn.</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>1. Thêm Sản phẩm: Nhấn nút [Thêm mới] -&gt; Nhập đầy đủ Tên, Mã SP, Giá Bán, Giá Nhập, và Đơn vị tính -&gt; Chọn Nhóm hàng -&gt; Nhấn [Lưu].
+2. Chỉnh sửa: Chọn sản phẩm cần sửa trong danh sách -&gt; Nhấn [Sửa] -&gt; Cập nhật thông tin (ví dụ: Tăng giá bán) -&gt; Nhấn [Lưu].
+3. Cập nhật Tồn Kho: Sử dụng chức năng [Nhập Kho] hoặc [Điều chỉnh Tồn] để thay đổi số lượng tồn kho hiện tại.</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>1. Thêm Khách hàng: Nhấn nút [Thêm Khách hàng mới] -&gt; Nhập Tên Khách hàng và Số điện thoại (bắt buộc -&gt; Thêm thông tin bổ sung (Địa chỉ, Email) -&gt; Nhấn [Lưu].
+2. Tra cứu Lịch sử Giao dịch: Chọn khách hàng trong danh sách -&gt; Nhấn [Xem chi tiết] -&gt; Chuyển sang tab Lịch sử mua hàng để xem các đơn hàng đã thực hiện.</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>1. Tạo Giao dịch: Sử dụng máy quét mã vạch hoặc chức năng tìm kiếm để thêm sản phẩm vào giỏ hàng -&gt; Kiểm tra số lượng và điều chỉnh (nếu cần).
+2. Thanh toán: Nhấn nút [Thanh toán] -&gt; Chọn Khách hàng (hoặc để trống) -&gt; Chọn Hình thức Thanh toán (Ví dụ: 800.000 Tiền mặt) -&gt; Nhấn [Hoàn tất] để kết thúc giao dịch và in hóa đơn.</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>- Tạo giao dịch bán hàng, bao gồm việc quét mã vạch sản phẩm. 
+- Tính toán tổng tiền, chiết khấu và thuế (nếu có). 
+- Quản lý các hình thức thanh toán (tiền mặt, chuyển khoản, thẻ). 
+- Hoàn tất giao dịch và in hóa đơn tức thì.</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>1. Chọn Báo cáo: Chọn loại báo cáo cần xem (Ví dụ: Báo cáo Doanh thu).
+2. Thiết lập Bộ lọc: Chọn khoảng thời gian (Từ ngày A đến Ngày B) và các tiêu chí lọc khác (theo Nhóm hàng, theo Chi nhánh) -&gt; Nhấn [Xem Báo cáo].
+3. Xuất dữ liệu: Nhấn nút [Xuất Excel] hoặc [In PDF] để trích xuất dữ liệu phục vụ cho công việc.</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>- Báo cáo doanh thu theo thời gian (ngày, tháng, năm). 
+- Báo cáo lãi gộp (Doanh thu - Giá vốn). 
+- Báo cáo tồn kho (tồn tối thiểu, tồn kho vượt định mức). 
+- Báo cáo hiệu suất bán hàng của nhân viên.</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>1. Tra cứu: Sử dụng thanh tìm kiếm theo Mã Hóa đơn, Ngày lập hoặc Tổng tiền -&gt; Nhấn [Tìm kiếm].
+2. Xem chi tiết: Chọn hóa đơn muốn kiểm tra -&gt; Nhấn [Xem chi tiết] để hiển thị các thông tin về sản phẩm, chiết khấu, và phương thức thanh toán.
+3. In lại: Sau khi xem chi tiết, nhấn nút [In lại] để in bản sao hóa đơn.</value>
+  </data>
+  <metadata name="sqlCommandBuilder1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
-  <metadata name="TenSP.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DonViTinh.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DonGia.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Hinh.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="MaSP.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="TenSP.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DonViTinh.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DonGia.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Hinh.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="notifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>216, 17</value>
   </metadata>
 </root>

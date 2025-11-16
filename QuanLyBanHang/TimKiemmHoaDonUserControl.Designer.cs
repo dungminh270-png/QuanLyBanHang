@@ -260,6 +260,7 @@
             this.dgvChiTietHoaDon.RowTemplate.Height = 24;
             this.dgvChiTietHoaDon.Size = new System.Drawing.Size(1012, 198);
             this.dgvChiTietHoaDon.TabIndex = 0;
+            this.dgvChiTietHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHoaDon_CellContentClick);
             // 
             // CTMaHD
             // 
@@ -340,10 +341,10 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txbSLKhachHang);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1123, 787);
+            this.panel1.Size = new System.Drawing.Size(1100, 800);
             this.panel1.TabIndex = 8;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -354,7 +355,7 @@
             this.BackColor = System.Drawing.Color.Pink;
             this.Controls.Add(this.panel1);
             this.Name = "TimKiemmHoaDonUserControl";
-            this.Size = new System.Drawing.Size(1123, 787);
+            this.Size = new System.Drawing.Size(1200, 800);
             this.Load += new System.EventHandler(this.TimKiemmHoaDonUserControl_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();

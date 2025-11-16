@@ -48,7 +48,7 @@
             this.dgvThanhPho.ReadOnly = true;
             this.dgvThanhPho.RowHeadersWidth = 51;
             this.dgvThanhPho.RowTemplate.Height = 24;
-            this.dgvThanhPho.Size = new System.Drawing.Size(800, 450);
+            this.dgvThanhPho.Size = new System.Drawing.Size(1182, 753);
             this.dgvThanhPho.TabIndex = 0;
             // 
             // MaThanhPho
@@ -74,9 +74,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1182, 753);
             this.Controls.Add(this.dgvThanhPho);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimizeBox = false;
             this.Name = "FrmDanhMucThanhPho";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDanhMucThanhPho";
             this.Load += new System.EventHandler(this.FrmDanhMucThanhPho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvThanhPho)).EndInit();

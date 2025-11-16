@@ -21,5 +21,10 @@ namespace QuanLyBanHang
         {
 
         }
+
+        private void timKiemmHoaDonUserControl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

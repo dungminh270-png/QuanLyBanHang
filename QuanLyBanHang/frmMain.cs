@@ -107,31 +107,17 @@ namespace QuanLyBanHang
             f.MdiParent = this;
             f.Show();
         }
-        private void frmMain_Load(object sender, EventArgs e)
+
+        private void hóaĐơnToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void khoHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f= new frmQuanLiKhoHang();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Threading.Tasks;
-//using System.Windows.Forms;
-
-//namespace QuanLyBanHang
-//{
-//    internal static class Program
-//    {
-//        /// <summary>
-//        /// The main entry point for the application.
-//        /// </summary>
-//        [STAThread]
-//        static void Main()
-//        {
-//            Application.EnableVisualStyles();
-//            Application.SetCompatibleTextRenderingDefault(false);
-//            Application.Run(new frmMain());
-//        }
-//    }
-//}

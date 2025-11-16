@@ -101,5 +101,10 @@ namespace QuanLyBanHang
         {
 
         }
+
+        private void pnlTieuDe_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

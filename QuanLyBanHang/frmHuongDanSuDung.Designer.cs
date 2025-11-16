@@ -157,25 +157,27 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1325, 815);
-            this.splitContainer1.SplitterDistance = 133;
+            this.splitContainer1.Size = new System.Drawing.Size(1417, 909);
+            this.splitContainer1.SplitterDistance = 148;
             this.splitContainer1.TabIndex = 0;
             // 
             // pnlTieuDe
             // 
-            this.pnlTieuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.pnlTieuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(19)))), ((int)(((byte)(34)))));
             this.pnlTieuDe.Controls.Add(this.label2);
+            this.pnlTieuDe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTieuDe.Location = new System.Drawing.Point(0, 0);
             this.pnlTieuDe.Name = "pnlTieuDe";
-            this.pnlTieuDe.Size = new System.Drawing.Size(1597, 192);
+            this.pnlTieuDe.Size = new System.Drawing.Size(1417, 148);
             this.pnlTieuDe.TabIndex = 0;
+            this.pnlTieuDe.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTieuDe_Paint);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FloralWhite;
-            this.label2.Location = new System.Drawing.Point(324, 51);
+            this.label2.Location = new System.Drawing.Point(606, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(707, 81);
             this.label2.TabIndex = 1;
@@ -197,8 +199,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.panel3);
-            this.splitContainer2.Size = new System.Drawing.Size(1325, 678);
-            this.splitContainer2.SplitterDistance = 276;
+            this.splitContainer2.Size = new System.Drawing.Size(1417, 757);
+            this.splitContainer2.SplitterDistance = 208;
             this.splitContainer2.TabIndex = 0;
             // 
             // sideBarPanel
@@ -214,7 +216,7 @@
             this.sideBarPanel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sideBarPanel.Location = new System.Drawing.Point(0, 0);
             this.sideBarPanel.Name = "sideBarPanel";
-            this.sideBarPanel.Size = new System.Drawing.Size(276, 678);
+            this.sideBarPanel.Size = new System.Drawing.Size(208, 757);
             this.sideBarPanel.TabIndex = 0;
             // 
             // btnHoaDon
@@ -225,7 +227,7 @@
             this.btnHoaDon.ForeColor = System.Drawing.Color.FloralWhite;
             this.btnHoaDon.Location = new System.Drawing.Point(0, 400);
             this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.Size = new System.Drawing.Size(276, 80);
+            this.btnHoaDon.Size = new System.Drawing.Size(206, 80);
             this.btnHoaDon.TabIndex = 5;
             this.btnHoaDon.Text = "Hóa đơn";
             this.btnHoaDon.UseVisualStyleBackColor = false;
@@ -239,7 +241,7 @@
             this.btnBaoCao.ForeColor = System.Drawing.Color.FloralWhite;
             this.btnBaoCao.Location = new System.Drawing.Point(0, 320);
             this.btnBaoCao.Name = "btnBaoCao";
-            this.btnBaoCao.Size = new System.Drawing.Size(276, 80);
+            this.btnBaoCao.Size = new System.Drawing.Size(206, 80);
             this.btnBaoCao.TabIndex = 4;
             this.btnBaoCao.Text = "Báo cáo";
             this.btnBaoCao.UseVisualStyleBackColor = false;
@@ -253,7 +255,7 @@
             this.btnBanHang.ForeColor = System.Drawing.Color.FloralWhite;
             this.btnBanHang.Location = new System.Drawing.Point(0, 240);
             this.btnBanHang.Name = "btnBanHang";
-            this.btnBanHang.Size = new System.Drawing.Size(276, 80);
+            this.btnBanHang.Size = new System.Drawing.Size(206, 80);
             this.btnBanHang.TabIndex = 3;
             this.btnBanHang.Text = "Bán hàng";
             this.btnBanHang.UseVisualStyleBackColor = false;
@@ -267,7 +269,7 @@
             this.btnKhachHang.ForeColor = System.Drawing.Color.FloralWhite;
             this.btnKhachHang.Location = new System.Drawing.Point(0, 160);
             this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Size = new System.Drawing.Size(276, 80);
+            this.btnKhachHang.Size = new System.Drawing.Size(206, 80);
             this.btnKhachHang.TabIndex = 2;
             this.btnKhachHang.Text = "Khách hàng";
             this.btnKhachHang.UseVisualStyleBackColor = false;
@@ -281,7 +283,7 @@
             this.btnSanPham.ForeColor = System.Drawing.Color.FloralWhite;
             this.btnSanPham.Location = new System.Drawing.Point(0, 80);
             this.btnSanPham.Name = "btnSanPham";
-            this.btnSanPham.Size = new System.Drawing.Size(276, 80);
+            this.btnSanPham.Size = new System.Drawing.Size(206, 80);
             this.btnSanPham.TabIndex = 1;
             this.btnSanPham.Text = "Sản phẩm";
             this.btnSanPham.UseVisualStyleBackColor = false;
@@ -295,7 +297,7 @@
             this.btnDonHang.ForeColor = System.Drawing.Color.FloralWhite;
             this.btnDonHang.Location = new System.Drawing.Point(0, 0);
             this.btnDonHang.Name = "btnDonHang";
-            this.btnDonHang.Size = new System.Drawing.Size(276, 80);
+            this.btnDonHang.Size = new System.Drawing.Size(206, 80);
             this.btnDonHang.TabIndex = 0;
             this.btnDonHang.Text = "Đơn hàng";
             this.btnDonHang.UseVisualStyleBackColor = false;
@@ -308,7 +310,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1045, 678);
+            this.panel3.Size = new System.Drawing.Size(1205, 757);
             this.panel3.TabIndex = 0;
             // 
             // tctlMain
@@ -327,7 +329,6 @@
             this.tctlMain.Size = new System.Drawing.Size(1254, 814);
             this.tctlMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tctlMain.TabIndex = 0;
-            this.tctlMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tctlMain_MouseMove);
             // 
             // tpDonHang
             // 
@@ -662,7 +663,7 @@
             this.panel8.Controls.Add(this.label10);
             this.panel8.Location = new System.Drawing.Point(28, 360);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(862, 152);
+            this.panel8.Size = new System.Drawing.Size(1069, 152);
             this.panel8.TabIndex = 39;
             // 
             // label10
@@ -670,7 +671,7 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label10.Location = new System.Drawing.Point(0, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(855, 152);
+            this.label10.Size = new System.Drawing.Size(1069, 152);
             this.label10.TabIndex = 32;
             this.label10.Text = resources.GetString("label10.Text");
             // 
@@ -680,7 +681,7 @@
             this.panel9.Controls.Add(this.label11);
             this.panel9.Location = new System.Drawing.Point(28, 188);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(862, 100);
+            this.panel9.Size = new System.Drawing.Size(1069, 100);
             this.panel9.TabIndex = 37;
             // 
             // label11
@@ -688,7 +689,7 @@
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label11.Location = new System.Drawing.Point(-4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(859, 100);
+            this.label11.Size = new System.Drawing.Size(1073, 100);
             this.label11.TabIndex = 32;
             this.label11.Text = resources.GetString("label11.Text");
             // 
@@ -698,7 +699,7 @@
             this.panel16.Controls.Add(this.label12);
             this.panel16.Location = new System.Drawing.Point(28, 43);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(862, 77);
+            this.panel16.Size = new System.Drawing.Size(1069, 77);
             this.panel16.TabIndex = 38;
             // 
             // label12
@@ -762,7 +763,7 @@
             this.panel10.Controls.Add(this.label13);
             this.panel10.Location = new System.Drawing.Point(24, 360);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(862, 152);
+            this.panel10.Size = new System.Drawing.Size(1060, 152);
             this.panel10.TabIndex = 39;
             // 
             // label13
@@ -771,7 +772,7 @@
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label13.Location = new System.Drawing.Point(0, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(862, 152);
+            this.label13.Size = new System.Drawing.Size(1057, 152);
             this.label13.TabIndex = 32;
             this.label13.Text = resources.GetString("label13.Text");
             // 
@@ -781,15 +782,15 @@
             this.panel11.Controls.Add(this.label14);
             this.panel11.Location = new System.Drawing.Point(24, 188);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(862, 100);
+            this.panel11.Size = new System.Drawing.Size(1060, 100);
             this.panel11.TabIndex = 37;
             // 
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label14.Location = new System.Drawing.Point(-4, 0);
+            this.label14.Location = new System.Drawing.Point(0, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(859, 100);
+            this.label14.Size = new System.Drawing.Size(1063, 100);
             this.label14.TabIndex = 32;
             this.label14.Text = resources.GetString("label14.Text");
             // 
@@ -799,7 +800,7 @@
             this.panel15.Controls.Add(this.label15);
             this.panel15.Location = new System.Drawing.Point(24, 43);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(862, 77);
+            this.panel15.Size = new System.Drawing.Size(1063, 77);
             this.panel15.TabIndex = 38;
             // 
             // label15
@@ -807,7 +808,7 @@
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label15.Location = new System.Drawing.Point(0, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(859, 77);
+            this.label15.Size = new System.Drawing.Size(1060, 77);
             this.label15.TabIndex = 32;
             this.label15.Text = "Cung cấp cái nhìn tổng quan và chi tiết về hiệu suất kinh doanh qua các biểu đồ v" +
     "à bảng số liệu, hỗ trợ ra quyết định.";
@@ -864,7 +865,7 @@
             this.panel14.Controls.Add(this.label21);
             this.panel14.Location = new System.Drawing.Point(26, 360);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(862, 152);
+            this.panel14.Size = new System.Drawing.Size(1071, 152);
             this.panel14.TabIndex = 33;
             // 
             // label21
@@ -873,7 +874,7 @@
             this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label21.Location = new System.Drawing.Point(0, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(862, 152);
+            this.label21.Size = new System.Drawing.Size(1071, 152);
             this.label21.TabIndex = 32;
             this.label21.Text = resources.GetString("label21.Text");
             this.label21.Click += new System.EventHandler(this.label19_Click);
@@ -884,15 +885,15 @@
             this.panel12.Controls.Add(this.label20);
             this.panel12.Location = new System.Drawing.Point(26, 188);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(862, 100);
+            this.panel12.Size = new System.Drawing.Size(1071, 100);
             this.panel12.TabIndex = 30;
             // 
             // label20
             // 
             this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label20.Location = new System.Drawing.Point(-4, 0);
+            this.label20.Location = new System.Drawing.Point(-34, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(859, 100);
+            this.label20.Size = new System.Drawing.Size(1102, 100);
             this.label20.TabIndex = 32;
             this.label20.Text = "- Tra cứu và xem chi tiết mọi hóa đơn đã phát hành. \r\n- In lại hóa đơn (Receipt/I" +
     "nvoice) cho khách hàng.\r\n- Quản lý chuỗi số hóa đơn tự động và liên tục.";
@@ -904,7 +905,7 @@
             this.panel13.Controls.Add(this.label19);
             this.panel13.Location = new System.Drawing.Point(26, 43);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(862, 77);
+            this.panel13.Size = new System.Drawing.Size(1071, 77);
             this.panel13.TabIndex = 31;
             // 
             // label19
@@ -913,7 +914,7 @@
             this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label19.Location = new System.Drawing.Point(0, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(859, 77);
+            this.label19.Size = new System.Drawing.Size(1071, 77);
             this.label19.TabIndex = 32;
             this.label19.Text = "Quản lý bản ghi chính thức của các giao dịch đã hoàn thành. Mọi hóa đơn đều được " +
     "lưu trữ và có thể tra cứu, in lại khi cần.";
@@ -958,15 +959,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1325, 815);
+            this.ClientSize = new System.Drawing.Size(1417, 909);
             this.Controls.Add(this.splitContainer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmHuongDanSuDung";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmHuongDanSuDung";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

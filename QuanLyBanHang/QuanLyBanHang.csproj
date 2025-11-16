@@ -284,6 +284,12 @@
     <Compile Include="frmHuongDanSuDung.Designer.cs">
       <DependentUpon>frmHuongDanSuDung.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLichSuMuaHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLichSuMuaHang.Designer.cs">
+      <DependentUpon>frmLichSuMuaHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmQuanLiKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,12 +336,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDanhMucSanPham.resx">
       <DependentUpon>FrmDanhMucSanPham.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDanhMucThanhPho.resx">
       <DependentUpon>FrmDanhMucThanhPho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHuongDanSuDung.resx">
       <DependentUpon>frmHuongDanSuDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLichSuMuaHang.resx">
+      <DependentUpon>frmLichSuMuaHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLiKhachHang.resx">
       <DependentUpon>frmQuanLiKhachHang.cs</DependentUpon>
@@ -358,6 +368,7 @@
     </Compile>
     <EmbeddedResource Include="TimKiemmHoaDonUserControl.resx">
       <DependentUpon>TimKiemmHoaDonUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

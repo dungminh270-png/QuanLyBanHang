@@ -115,7 +115,12 @@ namespace QuanLyBanHang
 
         private void khoHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var f= new frmQuanLiKhoHang();
+
+        }
+
+        private void hướngDẫnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new frmHuongDanSuDung();
             f.MdiParent = this;
             f.Show();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBanHang.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +13,38 @@ namespace QuanLyBanHang
 {
     public partial class frmMain : Form
     {
-
-     
         public frmMain()
         {
             InitializeComponent();
             this.IsMdiContainer = true;
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            PhanQuyen();
+        }
+
+        public bool DaDangNhap { get; set; } = true;
+        public string HoTenNhanVien { get; set; }
+
+
+        public void PhanQuyen()
+        {
+            MnuDangXuat.Enabled = !DaDangNhap;
+            MnuDangNhap.Enabled = DaDangNhap;
+           
+            lblHoTenNhanVien.Text = DaDangNhap ? $"Xin chào: " + $"{HoTenNhanVien}" : "Chưa đăng nhập";
+            // xét quyền theo vai trò
+            //MnuCauHinhHeThong.Enabled = DaDangNhap && Quyen == VaiTro.QuanTri;
+            //MnuQLNhanVien.Enabled = DaDangNhap && Quyen == VaiTro.QuanTri;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (lblDongHo != null)
+            {
+                lblDongHo.Text = DateTime.Now.ToString("HH:mm:ss dd/MM/yyyy ");
+            }
         }
 
         private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -25,6 +52,19 @@ namespace QuanLyBanHang
             var f = new Login();
             f.MdiParent = this;
             f.Show();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DaDangNhap = false;
+            HoTenNhanVien = "";
+            PhanQuyen();
+
+            foreach(Form childForm in this.MdiChildren)
+            {
+                childForm.Close();
+            }
+            MessageBox.Show("Đã đăng xuất!!");
         }
 
         private void kháchHàngToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -55,38 +95,6 @@ namespace QuanLyBanHang
             f.Show();
         }
 
-        private void FormMain_Load(object sender, EventArgs e)
-        {
-            PhanQuyen();    
-        }
-
-        public bool DaDangNhap { get; set; } = true;
-        public string HoTenNhanVien { get; set; }
-
-        public void PhanQuyen()
-        {
-            menuStrip1.Enabled = DaDangNhap;
-            đăngXuấtToolStripMenuItem.Enabled = DaDangNhap;
-            đăngNhậpToolStripMenuItem.Enabled = !DaDangNhap;
-            lblHoTenNhanVien.Text= DaDangNhap ? $"Xin Chào: {HoTenNhanVien}" : "Chưa Đăng Nhập";
-
-        }
-
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            lblDongHo.Text = DateTime.Now.ToString("HH:mm:ss dd/MM/yyyy ");
-        }
-
         private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var f = new DanhMucNhanVien();
@@ -96,28 +104,48 @@ namespace QuanLyBanHang
 
         private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var f=new FrmDanhMucSanPham();
+            var f = new FrmDanhMucSanPham();
             f.MdiParent = this;
             f.Show();
         }
 
         private void thànhPhốToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var f= new FrmDanhMucThanhPho();
+            var f = new FrmDanhMucThanhPho();
             f.MdiParent = this;
             f.Show();
         }
 
-        private void hóaĐơnToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void hướngDẫnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
         {
+           var hdsd = new frmHuongDanSuDung();
+           hdsd.MdiParent = this;
+           hdsd.Show();
+        }
 
+        private void quảnLíToolStripMenuItem_Click(object sender, EventArgs e)
+        {
         }
 
         private void khoHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var f= new frmQuanLiKhoHang();
-            f.MdiParent = this;
-            f.Show();
+            //var f = new frmQuanLiKhoHang();
+            //f.MdiParent = this;
+            //f.Show();
+        }
+
+        private void hóaĐơnToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblHoTenNhanVien_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

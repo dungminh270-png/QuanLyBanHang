@@ -327,7 +327,7 @@
             this.tctlMain.Size = new System.Drawing.Size(1254, 814);
             this.tctlMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tctlMain.TabIndex = 0;
-            this.tctlMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tctlMain_MouseMove);
+            //this.tctlMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tctlMain_MouseMove);
             // 
             // tpDonHang
             // 

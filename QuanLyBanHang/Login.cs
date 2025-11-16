@@ -1,5 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyBanHang
@@ -10,15 +17,30 @@ namespace QuanLyBanHang
         {
             InitializeComponent();
         }
+        private frmMain _frmMain;
+        public Login(frmMain fmain)
+        {
+
+            _frmMain = fmain;
+
+        }
 
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
-            txtPass.UseSystemPasswordChar = true;
+
         }
 
         private void checkPass_CheckedChanged(object sender, EventArgs e)
         {
-            txtPass.UseSystemPasswordChar = !checkPass.Checked;
+            if (checkPass.Checked)
+            {
+                txtPass.UseSystemPasswordChar = false;
+
+            }
+            else
+            {
+                txtPass.UseSystemPasswordChar = true;
+            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -35,55 +57,89 @@ namespace QuanLyBanHang
 
             using (var db = new QLBanHangContext())
             {
-                // 1. Tìm nhân viên có MaDN trùng với user nhập vào
-                var taiKhoan = db.NhanViens.FirstOrDefault(nv => nv.MaDN == user);
-
-                if (taiKhoan != null)
+                if (radNhanvien.Checked)
                 {
-                    // User có tồn tại -> Kiểm tra mật khẩu
-                    string dbPass = taiKhoan.MatKhau ?? "";
-
-                    if (dbPass == pass)
+                    var nv = db.NhanViens.FirstOrDefault(x => x.MaDN == user && x.MatKhau == pass);
+                    if (nv != null)
                     {
-                        // Đăng nhập thành công
-                        MessageBox.Show("Đăng nhập thành công", "Thông báo",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        frmMain f = new frmMain();
+                        string hoten = nv.Ho + " " + nv.Ten;
+                        MessageBox.Show("Đăng nhập thành công (Nhân Viên)!");
+                        _frmMain.HoTenNhanVien = hoten;
+                        _frmMain.DaDangNhap = true;
+                        _frmMain.PhanQuyen();
+                        frmMain mainNV = new frmMain();
+                        mainNV.Show();
                         this.Hide();
-                        f.ShowDialog();
-                        this.Show();
                     }
                     else
                     {
-                        // Sai mật khẩu
-                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không hợp lệ.", "Thông báo",
+                        MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Lỗi",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
+                else if (radKhachHang.Checked)
                 {
-                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không hợp lệ.", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    var kh = db.KhachHangs.FirstOrDefault(x => x.MaDN == user && x.MatKhau == pass);
+                    if (kh != null)
+                    {
+                        //string hotenKH = kh.Ho
+                        MessageBox.Show("Đăng nhập thành công (Khách Hàng)!");
+                        // chưa tạo FormMain cho Khach Hang
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Lỗi",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
 
-        private void btnSignup_Click(object sender, EventArgs e)
+
+        private void Userlb_Click(object sender, EventArgs e)
         {
-            Register reg = new Register();
-            reg.ShowDialog();
+
         }
 
-        private void Userlb_Click(object sender, EventArgs e) {
+        private void Passlb_Click(object sender, EventArgs e)
+        {
+
         }
-        private void Passlb_Click(object sender, EventArgs e) { 
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            radNhanvien.Text = "Nhân viên";
+            radKhachHang.Text = "Khách hàng";
+            radNhanvien.Checked = true;
+            txtPass.UseSystemPasswordChar = true;
+
+
         }
-        private void Login_Load(object sender, EventArgs e) { 
+
+        private void btnSignin_Click(object sender, EventArgs e)
+        {
+            if (!radKhachHang.Checked)
+            {
+                MessageBox.Show("Chỉ khách hàng mới được đăng ký!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Register frm = new Register();
+            frm.ShowDialog();
         }
-        private void pictureBox1_Click(object sender, EventArgs e) {
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgotPass fgp = new ForgotPass();
+            fgp.ShowDialog();
         }
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+        private void btnSignup_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Sign Up button clicked!");
+        }
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

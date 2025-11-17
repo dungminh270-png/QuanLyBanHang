@@ -34,9 +34,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SoLuong = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SoLuong)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -73,6 +75,8 @@
             this.btnXacNhanMua2.Size = new System.Drawing.Size(135, 50);
             this.btnXacNhanMua2.TabIndex = 19;
             this.btnXacNhanMua2.Text = "Xác Nhận Mua";
+            this.btnXacNhanMua2.UseVisualStyleBackColor = true;
+            this.btnXacNhanMua2.Click += new System.EventHandler(this.btnXacNhanMua2_Click);
             this.btnXacNhanMua2.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
@@ -87,7 +91,7 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // numericUpDown1
+            // SoLuong
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown1.Location = new System.Drawing.Point(405, 262);
@@ -119,13 +123,11 @@
             this.ClientSize = new System.Drawing.Size(961, 386);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.SoLuong);
             this.Controls.Add(this.btnXacNhanMua2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Name = "frmChiTiet2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmChiTiet2";
@@ -133,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SoLuong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +149,6 @@
         private System.Windows.Forms.Button btnXacNhanMua2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.NumericUpDown SoLuong;
     }
 }

@@ -35,6 +35,10 @@ namespace QuanLyBanHang
         {
             return db.KhachHangs.ToList();
         }
+        public List<GioHang> GetGioHangs()
+        {
+            return db.GioHangs.ToList();
+        }
         public List<SanPham> GetAllSanPham()
         {
             return db.SanPhams.ToList();
@@ -71,9 +75,23 @@ namespace QuanLyBanHang
         }
         public bool AddKhachHang(KhachHang khachHang)
         {
+
             var existingKhachHang = db.KhachHangs.Find(khachHang.MaKH);
             if (existingKhachHang == null)
             {
+                if (string.IsNullOrEmpty(khachHang.HinhAnh))
+                {
+                    khachHang.HinhAnh = "noimage.png";  
+                }
+                if (string.IsNullOrEmpty(khachHang.MaDN))
+                {
+                    khachHang.MaDN = "DEFAULT";  
+                }
+                if (string.IsNullOrEmpty(khachHang.MatKhau))
+                {
+                    khachHang.MatKhau = "123456";
+                }
+
                 db.KhachHangs.Add(khachHang);
                 db.SaveChanges();
                 return true;
@@ -88,6 +106,6 @@ namespace QuanLyBanHang
             db.KhachHangs.Remove(kh);
             return db.SaveChanges() > 0;
         }
-
+       
     }
 }

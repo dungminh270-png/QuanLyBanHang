@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Internal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,12 +49,14 @@ namespace QuanLyBanHang
             using (var db = new QLBanHangContext())
             {
                 var listHD = db.HoaDons
-                               .Where(hd => hd.MaKH == maKH)
+                               .Where(hd => hd.MaKH != null && hd.MaKH == maKH)
                                .Select(hd => new
                                {
                                    hd.MaHD,
-                                   hd.NgayLapHD,
-                                   hd.NgayNhanHang,
+                                   NgayLapHD = hd.NgayLapHD.HasValue ? hd.NgayLapHD.Value.ToString("dd/MM/yyyy") : "",
+                                   NgayNhanHang = hd.NgayNhanHang.HasValue ? hd.NgayNhanHang.Value.ToString("dd/MM/yyyy") : "Chưa nhận",
+
+
                                    hd.MaNV
                                })
                                .ToList();
@@ -69,21 +72,25 @@ namespace QuanLyBanHang
 
             using (var db = new QLBanHangContext())
             {
-                // Thực hiện Join bảng ChiTietHoaDon với SanPham để lấy Tên và Giá
 
-                var listChiTiet = (from cthd in db.ChiTietHoaDons
-                                   join sp in db.SanPhams on cthd.MaSP equals sp.MaSP
-                                   where cthd.MaHD == maHD
-                                   select new
-                                   {
-                                       cthd.MaSP,
-                                       sp.TenSP,
-                                       DonGia = (double)sp.DonGiaBan,
-                                       cthd.SoLuong,
-                                       ThanhTien = (decimal)(sp.DonGiaBan * cthd.SoLuong)
-                                   }).ToList();
-
+                var listChiTiet = db.ChiTietHoaDons
+                                   .Where(ct => ct.MaHD == maHD)
+                                   .Join(db.SanPhams,
+                                       ct => ct.MaSP,
+                                       sp => sp.MaSP,
+                                       (ct, sp) => new
+                                       {
+                                           ct.MaSP,
+                                           TenSP = sp.TenSP,
+                                           DonGia = sp.DonGiaBan ?? 0,
+                                           ct.SoLuong,
+                                           ThanhTien = (sp.DonGiaBan ?? 0) * ct.SoLuong
+                                       }).ToList();
                 dgvChiTietHoaDon.DataSource = listChiTiet;
+
+
+
+
 
                 decimal total = listChiTiet.Sum(x => x.ThanhTien);
 

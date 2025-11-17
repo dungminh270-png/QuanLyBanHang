@@ -105,7 +105,6 @@ namespace QuanLyBanHang
                         string hotenKH = kh.TenKH;
                         MessageBox.Show("Đăng nhập thành công (Khách Hàng)!");
 
-                        //Đang ở frmMain, chuyển sang frmMainKH (ĐÃ SỬA LỖI)
                         if (_frmMain != null)
                         {
                             _frmMain.Hide();
@@ -113,6 +112,10 @@ namespace QuanLyBanHang
                             mainKH.DaDangNhapKH = true;
                             mainKH.HoTenKH = hotenKH;
                             mainKH.FormClosed += (s, args) => Application.Exit();
+
+                            UserSession.MaKH = kh.MaKH;
+                            UserSession.HoTenKH = hotenKH;
+                            UserSession.DaDangNhap = true;
                             mainKH.Show();
 
                             this.Close();
@@ -123,6 +126,10 @@ namespace QuanLyBanHang
                             _frmMainKH.HoTenKH = hotenKH;
                             _frmMainKH.DaDangNhapKH = true;
                             _frmMainKH.PhanQuyen();
+
+                            UserSession.MaKH = kh.MaKH;
+                            UserSession.HoTenKH = hotenKH;
+                            UserSession.DaDangNhap = true;
                             this.Close();
                         }
                     }

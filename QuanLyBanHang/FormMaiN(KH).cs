@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,7 +63,7 @@ namespace QuanLyBanHang
             profile.WindowState = FormWindowState.Maximized;
             profile.Show();
 
-
+            
             //else
             //{
             //    MessageBox.Show("Vui lòng đăng nhập để xem thông tin cá nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -89,7 +90,13 @@ namespace QuanLyBanHang
             {
                 childForm.Close();
             }
+            using (var db = new QLBanHangContext())
+            {
+                db.Database.ExecuteSqlCommand("TRUNCATE TABLE GioHang");
+            }
+            UserSession.Clear();
             MessageBox.Show("Đã đăng xuất!!");
+
         }
 
         private void Thoat_Click(object sender, EventArgs e)
@@ -100,7 +107,10 @@ namespace QuanLyBanHang
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
             );
-
+            using (var db = new QLBanHangContext())
+            {
+                db.Database.ExecuteSqlCommand("TRUNCATE TABLE GioHang");
+            }
             if (result == DialogResult.Yes)
             {
                 Application.Exit();
@@ -152,13 +162,25 @@ namespace QuanLyBanHang
         private void khuyếnMãiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             picFullView.Image = Properties.Resources.hotsale2; 
-            picFullView.Visible = false;
+            picFullView.Visible = true;
             picFullView.BringToFront();
         }
 
         private void SanPham_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void picFullView_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var f = new frmLapHoaDon();
+            f.MdiParent = this;
+            f.Show();
         }
     }
 }

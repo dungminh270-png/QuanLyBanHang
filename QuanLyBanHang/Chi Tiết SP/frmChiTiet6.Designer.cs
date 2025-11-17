@@ -35,9 +35,11 @@
             this.btnXacNhanMua6 = new System.Windows.Forms.Button();
             this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SoLuong = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SoLuong)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -87,7 +89,7 @@
             this.btnXacNhanMua6.Text = "Xác Nhận Mua";
             this.btnXacNhanMua6.UseVisualStyleBackColor = false;
             // 
-            // numericUpDown6
+            // SoLuong
             // 
             this.numericUpDown6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown6.Location = new System.Drawing.Point(415, 287);
@@ -126,12 +128,15 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.Controls.Add(this.pictureBox1);
+
             this.Name = "frmChiTiet6";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmChiTiet6";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SoLuong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,5 +150,6 @@
         private System.Windows.Forms.Button btnXacNhanMua6;
         private System.Windows.Forms.NumericUpDown numericUpDown6;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.NumericUpDown SoLuong;
     }
 }

@@ -148,13 +148,5 @@ namespace QuanLyBanHang
             CauHinhDataGridView();
             LoadDuLieu();
         }
-
-        private void txtTenSP_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtTenSP.Text))
-                LoadDuLieu();
-            else
-                btnTim.PerformClick();
-        }
     }
 }

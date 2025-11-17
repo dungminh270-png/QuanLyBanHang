@@ -134,9 +134,9 @@ namespace QuanLyBanHang
 
         private void khoHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //var f = new frmQuanLiKhoHang();
-            //f.MdiParent = this;
-            //f.Show();
+            var f = new frmQuanLiTonKho();
+            f.MdiParent = this;
+            f.Show();
         }
 
         private void hóaĐơnToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -190,6 +190,18 @@ namespace QuanLyBanHang
         private void danhMụcToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void sảnPhẩmToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var tim = new FrmTimKiemSanPham();
+            tim.MdiParent = this;
+            tim.Show();
+        }
+
+        private void đơnHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chức năng đang được phát triển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

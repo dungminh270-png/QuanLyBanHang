@@ -35,9 +35,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SoLuong = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SoLuong)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -74,6 +76,7 @@
             this.btnXacNhanMua4.TabIndex = 21;
             this.btnXacNhanMua4.Text = "Xác Nhận Mua";
             this.btnXacNhanMua4.UseVisualStyleBackColor = false;
+            this.btnXacNhanMua4.Click += new System.EventHandler(this.btnXacNhanMua4_Click);
             // 
             // pictureBox1
             // 
@@ -86,7 +89,7 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // numericUpDown4
+            // SoLuong
             // 
             this.numericUpDown4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown4.Location = new System.Drawing.Point(418, 278);
@@ -118,6 +121,7 @@
             this.ClientSize = new System.Drawing.Size(1071, 365);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.numericUpDown4);
+            this.Controls.Add(this.SoLuong);
             this.Controls.Add(this.btnXacNhanMua4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -125,12 +129,14 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Name = "frmChiTiet4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmChiTiet4";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SoLuong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,5 +150,6 @@
         private System.Windows.Forms.Button btnXacNhanMua4;
         private System.Windows.Forms.NumericUpDown numericUpDown4;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.NumericUpDown SoLuong;
     }
 }

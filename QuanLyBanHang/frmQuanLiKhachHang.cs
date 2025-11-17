@@ -30,6 +30,7 @@ namespace QuanLyBanHang
             LoadThanhPho();
             LoadKhachHang();
             SetEnable(false);
+
         }
 
         private void LoadKhachHang()
@@ -90,7 +91,6 @@ namespace QuanLyBanHang
 
             var row = dgvKhachHang.Rows[e.RowIndex];
             txtMaKH.Text = row.Cells["MaKH"].Value.ToString();
-            txtCongTy.Text = row.Cells["TenCty"].Value.ToString();
             txtDiaChi.Text = row.Cells["DiaChi"].Value.ToString();
             txtDienThoai.Text = row.Cells["DienThoai"].Value.ToString();
 
@@ -100,6 +100,7 @@ namespace QuanLyBanHang
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+
             SetEnable(true);
             isEdit = false; // reset cờ để thêm mới
 

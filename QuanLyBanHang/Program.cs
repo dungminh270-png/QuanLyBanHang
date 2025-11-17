@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.Interfaces;
+using QuanLyBanHang.Chi_Tiết_SP;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,7 @@ namespace QuanLyBanHang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMuaHang());
+            Application.Run(new frmMain());
         }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
-            this.MaSP = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,14 +38,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cboKhachHang = new System.Windows.Forms.ComboBox();
-            this.btnThemKhachHang = new System.Windows.Forms.Button();
             this.lblMaHD = new System.Windows.Forms.Label();
             this.lblTongTien = new System.Windows.Forms.Label();
-            this.btnLuuHoaDon = new System.Windows.Forms.Button();
             this.btnInHoaDon = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtKhachHang = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -74,6 +72,8 @@
             this.MaSP.HeaderText = "Sản phẩm";
             this.MaSP.MinimumWidth = 6;
             this.MaSP.Name = "MaSP";
+            this.MaSP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.MaSP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // SoLuong
             // 
@@ -157,28 +157,6 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Tổng tiền: ";
             // 
-            // cboKhachHang
-            // 
-            this.cboKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboKhachHang.FormattingEnabled = true;
-            this.cboKhachHang.Location = new System.Drawing.Point(211, 117);
-            this.cboKhachHang.Name = "cboKhachHang";
-            this.cboKhachHang.Size = new System.Drawing.Size(478, 33);
-            this.cboKhachHang.TabIndex = 6;
-            // 
-            // btnThemKhachHang
-            // 
-            this.btnThemKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemKhachHang.BackColor = System.Drawing.Color.Azure;
-            this.btnThemKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemKhachHang.Location = new System.Drawing.Point(758, 117);
-            this.btnThemKhachHang.Name = "btnThemKhachHang";
-            this.btnThemKhachHang.Size = new System.Drawing.Size(119, 42);
-            this.btnThemKhachHang.TabIndex = 7;
-            this.btnThemKhachHang.Text = "Thêm KH";
-            this.btnThemKhachHang.UseVisualStyleBackColor = false;
-            // 
             // lblMaHD
             // 
             this.lblMaHD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -190,6 +168,7 @@
             this.lblMaHD.Size = new System.Drawing.Size(24, 25);
             this.lblMaHD.TabIndex = 8;
             this.lblMaHD.Text = "0";
+            this.lblMaHD.Click += new System.EventHandler(this.lblMaHD_Click);
             // 
             // lblTongTien
             // 
@@ -203,19 +182,6 @@
             this.lblTongTien.TabIndex = 9;
             this.lblTongTien.Text = "0";
             // 
-            // btnLuuHoaDon
-            // 
-            this.btnLuuHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLuuHoaDon.BackColor = System.Drawing.Color.Azure;
-            this.btnLuuHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuHoaDon.Location = new System.Drawing.Point(488, 19);
-            this.btnLuuHoaDon.Name = "btnLuuHoaDon";
-            this.btnLuuHoaDon.Size = new System.Drawing.Size(189, 42);
-            this.btnLuuHoaDon.TabIndex = 10;
-            this.btnLuuHoaDon.Text = "Tạo hóa đơn mới";
-            this.btnLuuHoaDon.UseVisualStyleBackColor = false;
-            // 
             // btnInHoaDon
             // 
             this.btnInHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -228,6 +194,7 @@
             this.btnInHoaDon.TabIndex = 11;
             this.btnInHoaDon.Text = "In hóa đơn";
             this.btnInHoaDon.UseVisualStyleBackColor = false;
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click_1);
             // 
             // panel1
             // 
@@ -242,7 +209,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(19)))), ((int)(((byte)(34)))));
-            this.panel2.Controls.Add(this.btnLuuHoaDon);
             this.panel2.Controls.Add(this.btnInHoaDon);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 674);
@@ -250,18 +216,26 @@
             this.panel2.Size = new System.Drawing.Size(1020, 82);
             this.panel2.TabIndex = 13;
             // 
+            // txtKhachHang
+            // 
+            this.txtKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKhachHang.Location = new System.Drawing.Point(229, 121);
+            this.txtKhachHang.Name = "txtKhachHang";
+            this.txtKhachHang.Size = new System.Drawing.Size(453, 30);
+            this.txtKhachHang.TabIndex = 14;
+            this.txtKhachHang.TextChanged += new System.EventHandler(this.txtKhachHang_TextChanged);
+            // 
             // frmLapHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1020, 756);
+            this.Controls.Add(this.txtKhachHang);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTongTien);
             this.Controls.Add(this.lblMaHD);
-            this.Controls.Add(this.btnThemKhachHang);
-            this.Controls.Add(this.cboKhachHang);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -290,18 +264,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewComboBoxColumn MaSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cboKhachHang;
-        private System.Windows.Forms.Button btnThemKhachHang;
         private System.Windows.Forms.Label lblMaHD;
         private System.Windows.Forms.Label lblTongTien;
-        private System.Windows.Forms.Button btnLuuHoaDon;
         private System.Windows.Forms.Button btnInHoaDon;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtKhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
     }
 }

@@ -353,6 +353,16 @@ namespace QuanLyBanHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap kimthanh36 {
+            get {
+                object obj = ResourceManager.GetObject("kimthanh36", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Lịch_Sử_mua_hàng {
             get {
                 object obj = ResourceManager.GetObject("Lịch Sử mua hàng", resourceCulture);
@@ -396,6 +406,26 @@ namespace QuanLyBanHang.Properties {
         public static System.Drawing.Bitmap point_of_sale_bill {
             get {
                 object obj = ResourceManager.GetObject("point-of-sale-bill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap point_of_sale_bill1 {
+            get {
+                object obj = ResourceManager.GetObject("point-of-sale-bill1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap point_of_sale_bill2 {
+            get {
+                object obj = ResourceManager.GetObject("point-of-sale-bill2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -493,9 +523,9 @@ namespace QuanLyBanHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap warehouse_alt {
+        public static System.Drawing.Bitmap vietmacdinh {
             get {
-                object obj = ResourceManager.GetObject("warehouse-alt", resourceCulture);
+                object obj = ResourceManager.GetObject("vietmacdinh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -503,9 +533,9 @@ namespace QuanLyBanHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap vietmacdinh {
+        public static System.Drawing.Bitmap warehouse_alt {
             get {
-                object obj = ResourceManager.GetObject("vietmacdinh", resourceCulture);
+                object obj = ResourceManager.GetObject("warehouse-alt", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

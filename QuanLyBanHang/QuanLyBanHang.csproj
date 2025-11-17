@@ -569,9 +569,6 @@
     <EmbeddedResource Include="frmQuanLiTonKho.resx">
       <DependentUpon>frmQuanLiTonKho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTimKiemHoaDon.resx">
-      <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmTimKiemSanPham.resx">
       <DependentUpon>FrmTimKiemSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -616,6 +613,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\point-of-sale-bill.png" />
     <None Include="Resources\icons8-sell-stock-24.png" />
     <None Include="Resources\Đăng nhập.png" />
     <None Include="Resources\hotsale2.jpg" />

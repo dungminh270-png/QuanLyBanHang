@@ -18,11 +18,17 @@ namespace QuanLyBanHang
             InitializeComponent();
         }
         private frmMain _frmMain;
+        private FormMaiN_KH_ _frmMainKH;
         public Login(frmMain fmain)
         {
             InitializeComponent();
             _frmMain = fmain;
 
+        }
+        public Login(FormMaiN_KH_ fmainKH)
+        {
+            InitializeComponent();
+            _frmMainKH = fmainKH;
         }
 
         private void txtPass_TextChanged(object sender, EventArgs e)
@@ -63,7 +69,7 @@ namespace QuanLyBanHang
                     {
                         string hoten = nv.Ho + " " + nv.Ten;
                         MessageBox.Show("Đăng nhập thành công (Nhân Viên)!");
-
+                        _frmMainKH.Hide();
                         if (_frmMain != null)
                         {
                             
@@ -97,13 +103,14 @@ namespace QuanLyBanHang
                     {
                         string hotenKH = kh.TenCty;
                         MessageBox.Show("Đăng nhập thành công (Khách Hàng)!");
-                        if (_frmMain != null)
+                        if (_frmMainKH != null)
                         {
-                            _frmMain.Hide();
+                            _frmMainKH.HoTenKH = hotenKH;
+                            _frmMainKH.DaDangNhapKH = true;
+                            _frmMainKH.PhanQuyen();
+                            this.Hide();
                         }
-                        var panelMainKH = new FormMaiN_KH_();
-                        panelMainKH.Show();
-
+                        
                         this.Close();
                     }
                     else

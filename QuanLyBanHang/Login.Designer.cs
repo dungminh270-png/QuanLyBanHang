@@ -85,10 +85,11 @@
             // Userlb
             // 
             this.Userlb.AutoSize = true;
-            this.Userlb.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Userlb.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Userlb.ForeColor = System.Drawing.Color.FloralWhite;
             this.Userlb.Location = new System.Drawing.Point(763, 134);
             this.Userlb.Name = "Userlb";
-            this.Userlb.Size = new System.Drawing.Size(103, 20);
+            this.Userlb.Size = new System.Drawing.Size(99, 25);
             this.Userlb.TabIndex = 2;
             this.Userlb.Text = "UserName";
             this.Userlb.Click += new System.EventHandler(this.Userlb_Click);
@@ -96,10 +97,11 @@
             // Passlb
             // 
             this.Passlb.AutoSize = true;
-            this.Passlb.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Passlb.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Passlb.ForeColor = System.Drawing.Color.FloralWhite;
             this.Passlb.Location = new System.Drawing.Point(763, 192);
             this.Passlb.Name = "Passlb";
-            this.Passlb.Size = new System.Drawing.Size(97, 20);
+            this.Passlb.Size = new System.Drawing.Size(90, 25);
             this.Passlb.TabIndex = 2;
             this.Passlb.Text = "Password";
             this.Passlb.Click += new System.EventHandler(this.Passlb_Click);
@@ -107,10 +109,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(799, 66);
+            this.label1.Font = new System.Drawing.Font("Georgia", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FloralWhite;
+            this.label1.Location = new System.Drawing.Point(783, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 38);
+            this.label1.Size = new System.Drawing.Size(253, 46);
             this.label1.TabIndex = 2;
             this.label1.Text = "WELCOME";
             // 
@@ -165,10 +168,12 @@
             // radNhanvien
             // 
             this.radNhanvien.AutoSize = true;
+            this.radNhanvien.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radNhanvien.ForeColor = System.Drawing.Color.FloralWhite;
             this.radNhanvien.Location = new System.Drawing.Point(767, 284);
             this.radNhanvien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radNhanvien.Name = "radNhanvien";
-            this.radNhanvien.Size = new System.Drawing.Size(90, 20);
+            this.radNhanvien.Size = new System.Drawing.Size(88, 21);
             this.radNhanvien.TabIndex = 6;
             this.radNhanvien.TabStop = true;
             this.radNhanvien.Text = "Nhân Viên";
@@ -177,10 +182,12 @@
             // radKhachHang
             // 
             this.radKhachHang.AutoSize = true;
+            this.radKhachHang.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radKhachHang.ForeColor = System.Drawing.Color.FloralWhite;
             this.radKhachHang.Location = new System.Drawing.Point(935, 284);
             this.radKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radKhachHang.Name = "radKhachHang";
-            this.radKhachHang.Size = new System.Drawing.Size(101, 20);
+            this.radKhachHang.Size = new System.Drawing.Size(98, 21);
             this.radKhachHang.TabIndex = 6;
             this.radKhachHang.TabStop = true;
             this.radKhachHang.Text = "Khách Hàng";
@@ -190,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1097, 588);
             this.Controls.Add(this.radKhachHang);
             this.Controls.Add(this.radNhanvien);

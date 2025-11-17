@@ -180,7 +180,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FloralWhite;
-            this.label2.Location = new System.Drawing.Point(682, 38);
+            this.label2.Location = new System.Drawing.Point(413, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(845, 96);
             this.label2.TabIndex = 1;
@@ -301,7 +301,7 @@
             // 
             // btnDonHang
             // 
-            this.btnDonHang.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnDonHang.BackColor = System.Drawing.Color.LightBlue;
             this.btnDonHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDonHang.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDonHang.ForeColor = System.Drawing.Color.FloralWhite;
@@ -333,15 +333,16 @@
             this.tctlMain.Controls.Add(this.tpBanHang);
             this.tctlMain.Controls.Add(this.tpBaoCao);
             this.tctlMain.Controls.Add(this.tpHoaDon);
+            this.tctlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tctlMain.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tctlMain.ItemSize = new System.Drawing.Size(0, 1);
-            this.tctlMain.Location = new System.Drawing.Point(0, 1);
-            this.tctlMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tctlMain.Location = new System.Drawing.Point(0, 0);
             this.tctlMain.Name = "tctlMain";
             this.tctlMain.SelectedIndex = 0;
-            this.tctlMain.Size = new System.Drawing.Size(1411, 1018);
+            this.tctlMain.Size = new System.Drawing.Size(1205, 757);
             this.tctlMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tctlMain.TabIndex = 0;
+            this.tctlMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             // 
             // tpDonHang
             // 
@@ -357,8 +358,8 @@
             this.tpDonHang.Location = new System.Drawing.Point(4, 5);
             this.tpDonHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tpDonHang.Name = "tpDonHang";
-            this.tpDonHang.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tpDonHang.Size = new System.Drawing.Size(1403, 1009);
+            this.tpDonHang.Padding = new System.Windows.Forms.Padding(3);
+            this.tpDonHang.Size = new System.Drawing.Size(1194, 805);
             this.tpDonHang.TabIndex = 0;
             this.tpDonHang.Text = "Đơn hàng";
             this.tpDonHang.Click += new System.EventHandler(this.tpDonHang_Click);
@@ -465,8 +466,8 @@
             this.tpSanPham.Location = new System.Drawing.Point(4, 5);
             this.tpSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tpSanPham.Name = "tpSanPham";
-            this.tpSanPham.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tpSanPham.Size = new System.Drawing.Size(1403, 1009);
+            this.tpSanPham.Padding = new System.Windows.Forms.Padding(3);
+            this.tpSanPham.Size = new System.Drawing.Size(1194, 805);
             this.tpSanPham.TabIndex = 1;
             this.tpSanPham.Text = "Sản phẩm";
             // 
@@ -477,7 +478,7 @@
             this.panel4.Location = new System.Drawing.Point(32, 450);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(970, 190);
+            this.panel4.Size = new System.Drawing.Size(1059, 152);
             this.panel4.TabIndex = 39;
             // 
             // label4
@@ -486,7 +487,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(970, 190);
+            this.label4.Size = new System.Drawing.Size(1059, 152);
             this.label4.TabIndex = 32;
             this.label4.Text = resources.GetString("label4.Text");
             // 
@@ -497,7 +498,7 @@
             this.panel5.Location = new System.Drawing.Point(32, 235);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(970, 125);
+            this.panel5.Size = new System.Drawing.Size(1059, 100);
             this.panel5.TabIndex = 37;
             // 
             // label5
@@ -505,7 +506,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.Location = new System.Drawing.Point(-4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(966, 125);
+            this.label5.Size = new System.Drawing.Size(1063, 100);
             this.label5.TabIndex = 32;
             this.label5.Text = "- Thêm, sửa, xóa thông tin sản phẩm (tên, giá, mã vạch, đơn vị tính). \r\n- Phân lo" +
     "ại sản phẩm theo Nhóm hàng. \r\n- Cập nhật giá bán, giá nhập. \r\n- Theo dõi và điều" +
@@ -518,7 +519,7 @@
             this.panel18.Location = new System.Drawing.Point(32, 54);
             this.panel18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(970, 96);
+            this.panel18.Size = new System.Drawing.Size(1059, 77);
             this.panel18.TabIndex = 38;
             // 
             // label6
@@ -526,7 +527,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(966, 96);
+            this.label6.Size = new System.Drawing.Size(1059, 77);
             this.label6.TabIndex = 32;
             this.label6.Text = "Quản lý danh mục hàng hóa đang kinh doanh. Thông tin sản phẩm chính xác là nền tả" +
     "ng cho việc bán hàng, quản lý kho và tính toán lợi nhuận.";
@@ -573,7 +574,7 @@
             this.tpKhachHang.Location = new System.Drawing.Point(4, 5);
             this.tpKhachHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tpKhachHang.Name = "tpKhachHang";
-            this.tpKhachHang.Size = new System.Drawing.Size(1403, 1009);
+            this.tpKhachHang.Size = new System.Drawing.Size(1194, 805);
             this.tpKhachHang.TabIndex = 2;
             this.tpKhachHang.Text = "Khách hàng";
             this.tpKhachHang.Click += new System.EventHandler(this.tpKhachHang_Click);
@@ -585,7 +586,7 @@
             this.panel6.Location = new System.Drawing.Point(33, 450);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(970, 190);
+            this.panel6.Size = new System.Drawing.Size(1058, 152);
             this.panel6.TabIndex = 39;
             // 
             // label7
@@ -593,7 +594,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(957, 190);
+            this.label7.Size = new System.Drawing.Size(1055, 152);
             this.label7.TabIndex = 32;
             this.label7.Text = resources.GetString("label7.Text");
             // 
@@ -604,7 +605,7 @@
             this.panel7.Location = new System.Drawing.Point(33, 235);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(970, 125);
+            this.panel7.Size = new System.Drawing.Size(1058, 100);
             this.panel7.TabIndex = 37;
             // 
             // label8
@@ -612,7 +613,7 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.Location = new System.Drawing.Point(-4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(935, 125);
+            this.label8.Size = new System.Drawing.Size(1062, 100);
             this.label8.TabIndex = 32;
             this.label8.Text = "- Thêm, sửa, xóa thông tin khách hàng. \r\n- Phân nhóm khách hàng (VIP, khách sỉ, k" +
     "hách lẻ, v.v.). \r\n- Tra cứu lịch sử mua hàng và tổng chi tiêu của từng khách.";
@@ -624,7 +625,7 @@
             this.panel17.Location = new System.Drawing.Point(33, 54);
             this.panel17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(970, 96);
+            this.panel17.Size = new System.Drawing.Size(1058, 77);
             this.panel17.TabIndex = 38;
             // 
             // label9
@@ -632,7 +633,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(954, 96);
+            this.label9.Size = new System.Drawing.Size(1058, 77);
             this.label9.TabIndex = 32;
             this.label9.Text = "Nơi lưu trữ thông tin chi tiết của tất cả các khách hàng, giúp việc bán hàng và c" +
     "hăm sóc khách hàng được cá nhân hóa và hiệu quả hơn.";
@@ -679,7 +680,7 @@
             this.tpBanHang.Location = new System.Drawing.Point(4, 5);
             this.tpBanHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tpBanHang.Name = "tpBanHang";
-            this.tpBanHang.Size = new System.Drawing.Size(1403, 1009);
+            this.tpBanHang.Size = new System.Drawing.Size(1194, 805);
             this.tpBanHang.TabIndex = 3;
             this.tpBanHang.Text = "Bán hàng";
             // 
@@ -736,7 +737,7 @@
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label12.Location = new System.Drawing.Point(0, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(948, 96);
+            this.label12.Size = new System.Drawing.Size(1069, 77);
             this.label12.TabIndex = 32;
             this.label12.Text = "Giao diện chính để thực hiện các giao dịch bán hàng nhanh chóng tại quầy (POS) ho" +
     "ặc tạo giao dịch bán hàng trực tiếp.";
@@ -783,7 +784,7 @@
             this.tpBaoCao.Location = new System.Drawing.Point(4, 5);
             this.tpBaoCao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tpBaoCao.Name = "tpBaoCao";
-            this.tpBaoCao.Size = new System.Drawing.Size(1403, 1009);
+            this.tpBaoCao.Size = new System.Drawing.Size(1194, 805);
             this.tpBaoCao.TabIndex = 4;
             this.tpBaoCao.Text = "Báo cáo";
             // 
@@ -839,7 +840,7 @@
             // label15
             // 
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label15.Location = new System.Drawing.Point(0, 0);
+            this.label15.Location = new System.Drawing.Point(3, -3);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(1192, 96);
             this.label15.TabIndex = 32;
@@ -888,7 +889,7 @@
             this.tpHoaDon.Location = new System.Drawing.Point(4, 5);
             this.tpHoaDon.Margin = new System.Windows.Forms.Padding(0);
             this.tpHoaDon.Name = "tpHoaDon";
-            this.tpHoaDon.Size = new System.Drawing.Size(1403, 1009);
+            this.tpHoaDon.Size = new System.Drawing.Size(1197, 748);
             this.tpHoaDon.TabIndex = 5;
             this.tpHoaDon.Text = "Hóa đơn";
             // 
@@ -926,9 +927,9 @@
             // label20
             // 
             this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label20.Location = new System.Drawing.Point(-38, 0);
+            this.label20.Location = new System.Drawing.Point(3, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(1240, 125);
+            this.label20.Size = new System.Drawing.Size(1065, 100);
             this.label20.TabIndex = 32;
             this.label20.Text = "- Tra cứu và xem chi tiết mọi hóa đơn đã phát hành. \r\n- In lại hóa đơn (Receipt/I" +
     "nvoice) cho khách hàng.\r\n- Quản lý chuỗi số hóa đơn tự động và liên tục.";

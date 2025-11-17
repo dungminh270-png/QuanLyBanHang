@@ -475,6 +475,11 @@
     <Compile Include="Models\ThanhPho.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QLBanHangContext.cs" />
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
@@ -542,6 +547,9 @@
     <EmbeddedResource Include="frmHuongDanSuDung.resx">
       <DependentUpon>frmHuongDanSuDung.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLapHoaDon.resx">
+      <DependentUpon>frmLapHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLichSuMuaHang.resx">
       <DependentUpon>frmLichSuMuaHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -568,14 +576,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Thongtincanhan.resx">
       <DependentUpon>Thongtincanhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -617,6 +620,7 @@
     <None Include="Resources\bút chì.jpg" />
     <None Include="Resources\Image1.bmp" />
     <None Include="Resources\AvartarCaNhan.jpg" />
+    <None Include="Resources\0018.gif" />
     <Content Include="Resources\Avatar.png" />
     <None Include="Resources\QuanLiKhachHang.png" />
   </ItemGroup>

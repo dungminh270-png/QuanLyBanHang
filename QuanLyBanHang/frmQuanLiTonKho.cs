@@ -91,7 +91,7 @@ namespace QuanLyBanHang
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (spDangchon == null) { return; }
-            ;
+            
             try
             {
                 spDangchon.TenSP = txtTenSP.Text;

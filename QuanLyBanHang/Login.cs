@@ -165,7 +165,7 @@ namespace QuanLyBanHang
             }
 
             Register frm = new Register();
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

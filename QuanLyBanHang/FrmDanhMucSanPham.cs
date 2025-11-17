@@ -19,7 +19,12 @@ namespace QuanLyBanHang
 
         private void FrmDanhMucSanPham_Load(object sender, EventArgs e)
         {
-            dgvSanPham.DataSource = DataProvider.Instance.GetAllSanPham();
+            //dgvSanPham.DataSource = DataProvider.Instance.GetAllSanPham();
+            using(var db = new QLBanHangContext())
+            {
+                var sanPhams = db.SanPhams.ToList();
+                dgvSanPham.DataSource = sanPhams;
+            }
         }
     }
 }

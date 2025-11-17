@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.tìmKiếmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sảnPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.khuyếnMãiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sảnPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tìmKiếmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -72,16 +72,19 @@
             this.tìmKiếmToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1826, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1826, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // tìmKiếmToolStripMenuItem
+            // sảnPhẩmToolStripMenuItem
             // 
-            this.tìmKiếmToolStripMenuItem.Name = "tìmKiếmToolStripMenuItem";
-            this.tìmKiếmToolStripMenuItem.Size = new System.Drawing.Size(101, 30);
-            this.tìmKiếmToolStripMenuItem.Text = "Tìm Kiếm";
-            this.tìmKiếmToolStripMenuItem.Click += new System.EventHandler(this.tìmKiếmToolStripMenuItem_Click_1);
+            this.sảnPhẩmToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.khuyếnMãiToolStripMenuItem,
+            this.hotToolStripMenuItem});
+            this.sảnPhẩmToolStripMenuItem.Name = "sảnPhẩmToolStripMenuItem";
+            this.sảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(107, 29);
+            this.sảnPhẩmToolStripMenuItem.Text = "Sản Phẩm";
+            this.sảnPhẩmToolStripMenuItem.Click += new System.EventHandler(this.sảnPhẩmToolStripMenuItem_Click_1);
             // 
             // khuyếnMãiToolStripMenuItem
             // 
@@ -97,15 +100,12 @@
             this.hotToolStripMenuItem.Text = "Hot";
             this.hotToolStripMenuItem.Click += new System.EventHandler(this.hotToolStripMenuItem_Click);
             // 
-            // sảnPhẩmToolStripMenuItem
+            // tìmKiếmToolStripMenuItem
             // 
-            this.sảnPhẩmToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.khuyếnMãiToolStripMenuItem,
-            this.hotToolStripMenuItem});
-            this.sảnPhẩmToolStripMenuItem.Name = "sảnPhẩmToolStripMenuItem";
-            this.sảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(107, 30);
-            this.sảnPhẩmToolStripMenuItem.Text = "Sản Phẩm";
-            this.sảnPhẩmToolStripMenuItem.Click += new System.EventHandler(this.sảnPhẩmToolStripMenuItem_Click_1);
+            this.tìmKiếmToolStripMenuItem.Name = "tìmKiếmToolStripMenuItem";
+            this.tìmKiếmToolStripMenuItem.Size = new System.Drawing.Size(101, 29);
+            this.tìmKiếmToolStripMenuItem.Text = "Tìm Kiếm";
+            this.tìmKiếmToolStripMenuItem.Click += new System.EventHandler(this.tìmKiếmToolStripMenuItem_Click_1);
             // 
             // button1
             // 
@@ -113,7 +113,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 57);
             this.button1.TabIndex = 7;
-            this.button1.Text = "Mua";
+            this.button1.Text = "Chi Tiết";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -123,7 +123,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 57);
             this.button2.TabIndex = 8;
-            this.button2.Text = "Mua";
+            this.button2.Text = "Chi Tiết";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -133,7 +133,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 57);
             this.button3.TabIndex = 9;
-            this.button3.Text = "Mua";
+            this.button3.Text = "Chi Tiết";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -143,7 +143,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(90, 57);
             this.button4.TabIndex = 10;
-            this.button4.Text = "Mua";
+            this.button4.Text = "Chi Tiết";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -153,7 +153,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(90, 57);
             this.button5.TabIndex = 11;
-            this.button5.Text = "Mua";
+            this.button5.Text = "Chi Tiết";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -163,7 +163,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(90, 57);
             this.button6.TabIndex = 12;
-            this.button6.Text = "Mua";
+            this.button6.Text = "Chi Tiết";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 

@@ -609,6 +609,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\hotsale2.jpg" />
+    <None Include="Resources\hotsale1.jpg" />
+    <None Include="Resources\hot sale.jpg" />
+    <None Include="Resources\bigsale2.jpg" />
+    <None Include="Resources\bigsale1.jpg" />
+    <None Include="Resources\bigsale.png" />
     <None Include="Resources\bút viết mực.jpg" />
     <None Include="Resources\bút đẹp.jpg" />
     <None Include="Resources\bút tl.jpg" />

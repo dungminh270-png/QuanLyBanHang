@@ -37,7 +37,7 @@
             this.timKiemmHoaDonUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.timKiemmHoaDonUserControl1.Location = new System.Drawing.Point(0, 0);
             this.timKiemmHoaDonUserControl1.Name = "timKiemmHoaDonUserControl1";
-            this.timKiemmHoaDonUserControl1.Size = new System.Drawing.Size(1182, 753);
+            this.timKiemmHoaDonUserControl1.Size = new System.Drawing.Size(1182, 823);
             this.timKiemmHoaDonUserControl1.TabIndex = 0;
             this.timKiemmHoaDonUserControl1.Load += new System.EventHandler(this.timKiemmHoaDonUserControl1_Load);
             // 
@@ -45,7 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.ClientSize = new System.Drawing.Size(1182, 823);
             this.Controls.Add(this.timKiemmHoaDonUserControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="tctlMain.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tctlMain.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="label1.Text" xml:space="preserve">
     <value>1. Tạo Đơn hàng Mới: Nhấn nút [Tạo mới] -&gt; Chọn Khách hàng -&gt; Thêm các Sản phẩm và nhập số lượng -&gt; Áp dụng Chiết khấu (nếu có) -&gt; Nhấn [Lưu] (để lưu nháp) hoặc [Xác nhận] (để chuyển sang xử lý).
 2. Cập nhật: Chọn đơn hàng cần sửa -&gt; Điều chỉnh thông tin (số lượng, sản phẩm, trạng thái) -&gt; Nhấn [Cập nhật]. 

@@ -343,6 +343,11 @@
     <Compile Include="FormMaiN%28KH%29.Designer.cs">
       <DependentUpon>FormMaiN%28KH%29.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDanhMucKhachHang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>frmDanhMucKhachHang.resx</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
@@ -457,7 +462,10 @@
     <EmbeddedResource Include="FormTimKiemKhachHang.resx">
       <DependentUpon>FormTimKiemKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDanhMucKhachHang.resx" />
+    <EmbeddedResource Include="frmDanhMucKhachHang.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmDanhMucKhachHang.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDanhMucSanPham.resx">
       <DependentUpon>FrmDanhMucSanPham.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -467,6 +475,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHuongDanSuDung.resx">
       <DependentUpon>frmHuongDanSuDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLapHoaDon.resx">
+      <DependentUpon>frmLapHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLichSuMuaHang.resx">
       <DependentUpon>frmLichSuMuaHang.cs</DependentUpon>
@@ -529,7 +540,33 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\thông tin cá nhân.png" />
+    <None Include="Resources\search1.png" />
+    <None Include="Resources\image-20231105010312536.gif" />
+    <None Include="Resources\befb8934de3ab2b495d89c8b3bb2185a.gif" />
+    <None Include="Resources\giphy.gif" />
+    <None Include="Resources\warehouse-alt.png" />
+    <None Include="Resources\Quản lí.png" />
+    <None Include="Resources\giới thiệu chương trình.png" />
+    <None Include="Resources\guide-alt.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\point-of-sale-bill.png" />
+    <None Include="Resources\form.png" />
+    <None Include="Resources\sản phẩm.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\Lịch Sử mua hàng.png" />
+    <None Include="Resources\history.png" />
+    <None Include="Resources\Khách hàng.png" />
+    <None Include="Resources\NhanVien.png" />
+    <None Include="Resources\thành phố.png" />
+    <None Include="Resources\Danh mục.png" />
+    <None Include="Resources\monitor-sun.png" />
+    <None Include="Resources\Đăng nhập.png" />
+    <None Include="Resources\user-logout.png" />
+    <None Include="Resources\Thoát.png" />
+    <None Include="Resources\menu-burger.png" />
     <None Include="Resources\AvartarCaNhan.jpg" />
+    <None Include="Resources\0018.gif" />
     <Content Include="Resources\Avatar.png" />
     <None Include="Resources\QuanLiKhachHang.png" />
   </ItemGroup>

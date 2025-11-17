@@ -54,6 +54,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.LightBlue;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.HeThong,
@@ -63,7 +64,7 @@
             this.LichSu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1111, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1111, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,12 +75,14 @@
             this.MnuDangNhap,
             this.MnuDangXuat,
             this.thoátToolStripMenuItem1});
+            this.HeThong.Image = global::QuanLyBanHang.Properties.Resources.menu_burger;
             this.HeThong.Name = "HeThong";
-            this.HeThong.Size = new System.Drawing.Size(85, 24);
+            this.HeThong.Size = new System.Drawing.Size(105, 26);
             this.HeThong.Text = "Hệ thống";
             // 
             // đăngNhậpToolStripMenuItem
             // 
+            this.đăngNhậpToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.thông_tin_cá_nhân;
             this.đăngNhậpToolStripMenuItem.Name = "đăngNhậpToolStripMenuItem";
             this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.đăngNhậpToolStripMenuItem.Text = "Thông tin cá nhân";
@@ -112,7 +115,7 @@
             this.khuyếnMãiToolStripMenuItem,
             this.hotToolStripMenuItem});
             this.SanPham.Name = "SanPham";
-            this.SanPham.Size = new System.Drawing.Size(88, 24);
+            this.SanPham.Size = new System.Drawing.Size(88, 26);
             this.SanPham.Text = "Sản Phẩm";
             // 
             // khuyếnMãiToolStripMenuItem
@@ -130,7 +133,7 @@
             // TimKiem
             // 
             this.TimKiem.Name = "TimKiem";
-            this.TimKiem.Size = new System.Drawing.Size(86, 24);
+            this.TimKiem.Size = new System.Drawing.Size(86, 26);
             this.TimKiem.Text = "Tìm Kiếm";
             // 
             // Support
@@ -139,7 +142,7 @@
             this.hướngDẫnToolStripMenuItem,
             this.gToolStripMenuItem});
             this.Support.Name = "Support";
-            this.Support.Size = new System.Drawing.Size(68, 24);
+            this.Support.Size = new System.Drawing.Size(68, 26);
             this.Support.Text = "Lịch sử";
             // 
             // hướngDẫnToolStripMenuItem
@@ -157,11 +160,12 @@
             // LichSu
             // 
             this.LichSu.Name = "LichSu";
-            this.LichSu.Size = new System.Drawing.Size(98, 24);
+            this.LichSu.Size = new System.Drawing.Size(98, 26);
             this.LichSu.Text = "Hướng dẫn";
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.LightBlue;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblTime,

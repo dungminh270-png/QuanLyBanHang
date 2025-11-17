@@ -33,7 +33,7 @@ namespace QuanLyBanHang
             MnuDangXuat.Enabled = DaDangNhap;
             MnuDangNhap.Enabled = !DaDangNhap;
            
-            lblHoTenNhanVien.Text = DaDangNhap ? $"Xin chào: " + $"{HoTenNhanVien}" : "Chưa đăng nhập";
+            lblHoTenNhanVien.Text = DaDangNhap ? $"Xin chào: Admin" : "Chưa đăng nhập";
             // xét quyền theo vai trò
             //MnuCauHinhHeThong.Enabled = DaDangNhap && Quyen == VaiTro.QuanTri;
             //MnuQLNhanVien.Enabled = DaDangNhap && Quyen == VaiTro.QuanTri;

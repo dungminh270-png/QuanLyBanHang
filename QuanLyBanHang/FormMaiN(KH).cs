@@ -45,14 +45,14 @@ namespace QuanLyBanHang
         {
             if (DaDangNhapKH)
             {
-                var profile = new Thongtincanhan();
+                var profile = new Thongtincanhan(HoTenKH);
                 profile.MdiParent = this;
                 profile.Show();
             }
-            else
-            {
-                MessageBox.Show("Vui lòng đăng nhập để xem thông tin cá nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            //else
+            //{
+            //    MessageBox.Show("Vui lòng đăng nhập để xem thông tin cá nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
         }
 
         private void DangNhap(object sender, EventArgs e)

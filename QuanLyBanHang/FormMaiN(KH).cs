@@ -91,7 +91,30 @@ namespace QuanLyBanHang
             }
         }
 
-        private void lblHoTen_Click(object sender, EventArgs e)
+        private void HeThong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new FrmMuaHang();
+            f.Show();
+        }
+
+        private void LichSu_Click(object sender, EventArgs e)
+        {
+            var f = new frmHuongDanSuDung();
+            f.Show();     
+        }
+
+        private void hướngDẫnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new frmLichSuMuaHang();    
+            f.Show();  
+        }
+
+        private void gToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

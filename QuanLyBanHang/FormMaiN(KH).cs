@@ -43,11 +43,14 @@ namespace QuanLyBanHang
 
         private void ThongTinCaNhan(object sender, EventArgs e)
         {
+            picFullView.Visible = false;
             if (DaDangNhapKH)
             {
                 var profile = new Thongtincanhan(HoTenKH);
                 profile.MdiParent = this;
+                profile.WindowState = FormWindowState.Maximized;
                 profile.Show();
+
             }
             //else
             //{
@@ -57,6 +60,7 @@ namespace QuanLyBanHang
 
         private void DangNhap(object sender, EventArgs e)
         {
+            picFullView.Visible = false;
             var f = new Login(this);
             f.MdiParent = this;
             f.Show();
@@ -64,6 +68,7 @@ namespace QuanLyBanHang
 
         private void DangXuat(object sender, EventArgs e)
         {
+            picFullView.Visible = false;
             DaDangNhapKH = false;
             HoTenKH = "";
             PhanQuyen();
@@ -97,6 +102,7 @@ namespace QuanLyBanHang
 
         private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            picFullView.Visible = false;
             var f = new FrmMuaHang();
             f.MdiParent = this;
             f.Show();
@@ -104,19 +110,21 @@ namespace QuanLyBanHang
 
         private void LichSu_Click(object sender, EventArgs e)
         {
+            picFullView.Visible = false;
             var f = new frmHuongDanSuDung();
             f.Show();     
         }
 
         private void hướngDẫnToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            picFullView.Visible = false;
             var f = new frmLichSuMuaHang();    
             f.Show();  
         }
 
         private void gToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            picFullView.Visible = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -125,6 +133,18 @@ namespace QuanLyBanHang
         }
 
         private void lblTime_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void khuyếnMãiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            picFullView.Image = Properties.Resources.hotsale2; 
+            picFullView.Visible = false;
+            picFullView.BringToFront();
+        }
+
+        private void SanPham_Click(object sender, EventArgs e)
         {
 
         }

@@ -29,7 +29,7 @@ namespace QuanLyBanHang
                                  select new
                                  {
                                      kh.MaKH,
-                                     kh.TenCty,
+                                     kh.TenKH,
                                      kh.DiaChi,
                                      kh.DienThoai
                                  };
@@ -53,7 +53,7 @@ namespace QuanLyBanHang
                              select new
                              {
                                  kh.MaKH,
-                                 kh.TenCty,
+                                 kh.TenKH,
                                  kh.DiaChi,
                                  kh.DienThoai
                              };

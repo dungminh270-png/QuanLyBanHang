@@ -25,9 +25,9 @@ namespace QuanLyBanHang
                 {
                     sp.MaSP,
                     sp.TenSP,
-                    sp.DonViTinh,
-                    DonGia = sp.DonGia ?? 0,
-                    Hinh = LayAnhTuDuongDan(sp.Hinh)
+                    sp.MaLoai,
+                    DonGia = sp.DonGiaBan ?? 0,
+                    Hinh = LayAnhTuDuongDan(sp.HinhAnh)
                 })
                 .ToList();
         }
@@ -53,20 +53,20 @@ namespace QuanLyBanHang
             // tim theo gia
             if (double.TryParse(GiaTu, out double giaTu))
             {
-                query = query.Where(sp => (sp.DonGia ?? 0) >= giaTu);
+                query = query.Where(sp => (sp.DonGiaBan ?? 0) >= giaTu);
             }   
             if (double.TryParse(GiaDen, out double giaDen))
             {
-                query = query.Where(sp => (sp.DonGia ?? 0) <= giaDen);
+                query = query.Where(sp => (sp.DonGiaBan ?? 0) <= giaDen);
             }
 
             var Ketqua = query.Select(sp => new
             {
                 sp.MaSP,
                 sp.TenSP,
-                DonGia = sp.DonGia ?? 0,
-                sp.DonViTinh,
-                Hinh = LayAnhTuDuongDan(sp.Hinh)
+                DonGia = sp.DonGiaBan ?? 0,
+                sp.MaLoai,
+                Hinh = LayAnhTuDuongDan(sp.HinhAnh)
             }).ToList();
             dgvSanPham.DataSource = Ketqua;
 

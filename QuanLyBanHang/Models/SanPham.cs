@@ -11,8 +11,9 @@ namespace QuanLyBanHang.Models
     {
        [Key] public int MaSP { get; set; }
         public string TenSP { get; set; }
-        public string DonViTinh { get; set; }
-        public double? DonGia { get; set; }
-        public string Hinh { get; set; }
+        public int MaLoai { get; set; }
+        public float? DonGiaBan { get; set; }
+        public int SoLuongTon { get; set; }
+        public string HinhAnh { get; set; }
     }
 }

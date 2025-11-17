@@ -67,27 +67,24 @@ namespace QuanLyBanHang
                     var nv = db.NhanViens.FirstOrDefault(x => x.MaDN == user && x.MatKhau == pass);
                     if (nv != null)
                     {
-                        string hoten = nv.Ho + " " + nv.Ten;
+                        string hoten = nv.HoTen;
                         MessageBox.Show("Đăng nhập thành công (Nhân Viên)!");
-                        _frmMainKH.Hide();
                         if (_frmMain != null)
                         {
                             
                             _frmMain.HoTenNhanVien = hoten;
                             _frmMain.DaDangNhap = true;
                             _frmMain.PhanQuyen();
-                            this.Close();
+                            this.Hide();
                         }
 
-                        else
+                        else if(_frmMainKH != null)
                         {
-                            frmMain mainNV = new frmMain();
-                            mainNV.HoTenNhanVien = hoten;
-                            mainNV.DaDangNhap = true;
-
-                            mainNV.PhanQuyen();
-                            mainNV.Show();
-                            this.Hide();
+                            _frmMain.HoTenNhanVien = hoten;
+                            _frmMain.DaDangNhap = true;
+                            _frmMain.PhanQuyen();
+                            _frmMainKH.Close();
+                            this.Close();
                         }
                     }
                     else
@@ -101,7 +98,7 @@ namespace QuanLyBanHang
                     var kh = db.KhachHangs.FirstOrDefault(x => x.MaDN == user && x.MatKhau == pass);
                     if (kh != null)
                     {
-                        string hotenKH = kh.TenCty;
+                        string hotenKH = kh.TenKH;
                         MessageBox.Show("Đăng nhập thành công (Khách Hàng)!");
                         if (_frmMainKH != null)
                         {

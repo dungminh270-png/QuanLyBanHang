@@ -16,11 +16,12 @@ namespace QuanLyBanHang
         public DbSet<NhanVien> NhanViens { get; set; }
         public DbSet<SanPham> SanPhams { get; set; }    
         public DbSet<ThanhPho> ThanhPhos { get; set; }
+        public DbSet<GioHang> GioHangs { get; set; }
 
         // Connection to database
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=ROSANNRYY;Database=QLBanHang;Trusted_Connection=True;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer(@"Server=.;Database=QLBanHang;Trusted_Connection=True;TrustServerCertificate=True;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,6 +35,8 @@ namespace QuanLyBanHang
             modelBuilder.Entity<NhanVien>().ToTable("NhanVien");
             modelBuilder.Entity<SanPham>().ToTable("SanPham");
             modelBuilder.Entity<ThanhPho>().ToTable("ThanhPho");
+            modelBuilder.Entity<ChiTietHoaDon>().ToTable("ChiTietHoaDon");
+            modelBuilder.Entity<GioHang>().ToTable("GioHang");
         }
     }
 }

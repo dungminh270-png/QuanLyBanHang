@@ -148,6 +148,21 @@
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.35.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.35.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=18.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.SqlManagementObjects.180.10.0\lib\net472\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
     </Reference>
@@ -216,6 +231,9 @@
     </Reference>
     <Reference Include="Microsoft.SqlServer.SqlWmiManagement, Version=18.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.SqlManagementObjects.180.10.0\lib\net472\Microsoft.SqlServer.SqlWmiManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.WmiEnum, Version=18.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.SqlManagementObjects.180.10.0\lib\net472\Microsoft.SqlServer.WmiEnum.dll</HintPath>
@@ -384,6 +402,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>frmDanhMucKhachHang.resx</DependentUpon>
     </Compile>
+    <Compile Include="frmGioHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGioHang.Designer.cs">
+      <DependentUpon>frmGioHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
@@ -466,6 +490,7 @@
     <Compile Include="Models\QLBanHangContext.cs">
       <DependentUpon>QLBanHangContext.dbml</DependentUpon>
     </Compile>
+	  <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\QLBanHangContext.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -490,6 +515,13 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="reportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportForm.Designer.cs">
+      <DependentUpon>reportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Thongtincanhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -503,6 +535,7 @@
       <DependentUpon>TimKiemmHoaDonUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="Chi Tiết SP\frmChiTiet1.resx">
       <DependentUpon>frmChiTiet1.cs</DependentUpon>
     </EmbeddedResource>
@@ -548,6 +581,9 @@
     <EmbeddedResource Include="FrmDanhMucThanhPho.resx">
       <DependentUpon>FrmDanhMucThanhPho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGioHang.resx">
+      <DependentUpon>frmGioHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHuongDanSuDung.resx">
       <DependentUpon>frmHuongDanSuDung.cs</DependentUpon>
     </EmbeddedResource>
@@ -569,6 +605,9 @@
     <EmbeddedResource Include="frmQuanLiTonKho.resx">
       <DependentUpon>frmQuanLiTonKho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTimKiemHoaDon.resx">
+      <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTimKiemSanPham.resx">
       <DependentUpon>FrmTimKiemSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -579,6 +618,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report.rdlc" />
+    <EmbeddedResource Include="reportForm.resx">
+      <DependentUpon>reportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Thongtincanhan.resx">
       <DependentUpon>Thongtincanhan.cs</DependentUpon>
@@ -599,6 +642,7 @@
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\QuanLyBanHang.Models.ChiTietHoaDon.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -613,9 +657,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\point-of-sale-bill.png" />
-    <None Include="Resources\icons8-sell-stock-24.png" />
-    <None Include="Resources\Đăng nhập.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\hotsale2.jpg" />
     <None Include="Resources\hotsale1.jpg" />
     <None Include="Resources\hot sale.jpg" />

@@ -20,16 +20,24 @@ namespace QuanLyBanHang
         }
         private void LoadDuLieu()
         {
-            dgvSanPham.DataSource = db.SanPhams
+            var data = db.SanPhams
                 .Select(sp => new
                 {
                     sp.MaSP,
                     sp.TenSP,
                     sp.MaLoai,
-                    DonGia = sp.DonGiaBan ?? 0,
-                    Hinh = LayAnhTuDuongDan(sp.HinhAnh)
+                    sp.DonGiaBan,
+                    sp.HinhAnh
                 })
                 .ToList();
+            var Ketqua = data.Select(sp => new
+            {
+                sp.MaSP,
+                sp.TenSP,
+                sp.MaLoai,
+                sp.DonGiaBan,
+                Hinh = LayAnhTuDuongDan(sp.HinhAnh) 
+            }).ToList();
         }
         private void btnTim_Click(object sender, EventArgs e)
         {
@@ -53,23 +61,33 @@ namespace QuanLyBanHang
             // tim theo gia
             if (double.TryParse(GiaTu, out double giaTu))
             {
-                query = query.Where(sp => (sp.DonGiaBan ?? 0) >= giaTu);
-            }   
+                decimal giaTuDecimal = (decimal)giaTu;
+                query = query.Where(sp => (sp.DonGiaBan ?? 0m) >= giaTuDecimal);
+            }
             if (double.TryParse(GiaDen, out double giaDen))
             {
-                query = query.Where(sp => (sp.DonGiaBan ?? 0) <= giaDen);
+                decimal giaDenDecimal = (decimal)giaDen;
+                query = query.Where(sp => (sp.DonGiaBan ?? 0m) <= giaDenDecimal);
             }
 
-            var Ketqua = query.Select(sp => new
+            var data = query.Select(sp => new
             {
                 sp.MaSP,
                 sp.TenSP,
                 DonGia = sp.DonGiaBan ?? 0,
                 sp.MaLoai,
-                Hinh = LayAnhTuDuongDan(sp.HinhAnh)
+                sp.HinhAnh
             }).ToList();
+            var Ketqua = data
+                .Select(sp => new
+                {
+                    sp.MaSP,
+                    sp.TenSP,
+                    sp.DonGia,
+                    sp.MaLoai,
+                    Hinh = LayAnhTuDuongDan(sp.HinhAnh)
+                }).ToList();
             dgvSanPham.DataSource = Ketqua;
-
             if (!Ketqua.Any())
             {
                 MessageBox.Show("Không tìm thấy sản phẩm nào", "Thông báo",
@@ -93,14 +111,6 @@ namespace QuanLyBanHang
                 HeaderText = "Tên sản phẩm",
                 Width = 220
             });
-
-            dgvSanPham.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "DonViTinh",
-                HeaderText = "Đơn vị",
-                Width = 100
-            });
-
             dgvSanPham.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "DonGia",
@@ -125,9 +135,8 @@ namespace QuanLyBanHang
             {
                 // Xây dựng đường dẫn đầy đủ
                 string fullPath = Path.Combine(Application.StartupPath, "Images", duongDan.Trim());
-
                 // CHỈ TRẢ VỀ ẢNH NẾU FILE THỰC SỰ TỒN TẠI
-                return File.Exists(fullPath) ? Image.FromFile(fullPath) : null;
+                return File.Exists(fullPath) ? Image.FromFile(fullPath) : Properties.Resources.AvartarCaNhan;
             }
             catch
             {

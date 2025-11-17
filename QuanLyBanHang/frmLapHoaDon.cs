@@ -68,7 +68,7 @@ namespace QuanLyBanHang
 
                 if (sp != null)
                 {
-                    double donGia = sp.DonGiaBan ?? 0;
+                    decimal donGia = sp.DonGiaBan ?? 0;
                     // set the unit price from DB (or keep editable behavior if desired)
                     dgvHoaDon.Rows[rowIndex].Cells["DonGia"].Value = donGia;
 

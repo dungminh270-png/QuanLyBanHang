@@ -45,7 +45,7 @@ namespace QuanLyBanHang
             lblHoTenNhanVien.Text = DaDangNhap ? $"Xin chào: " + $"{HoTenNhanVien}" : "Chưa đăng nhập";
             // xét quyền theo vai trò
             //MnuCauHinhHeThong.Enabled = DaDangNhap && Quyen == VaiTro.QuanTri;
-            //MnuQLNhanVien.Enabled = DaDangNhap && Quyen == VaiTro.QuanTri;
+            //MnuQLNhanVien.Enabled = DaDangNhap && Quyen == VaiTro.QuanTrii;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

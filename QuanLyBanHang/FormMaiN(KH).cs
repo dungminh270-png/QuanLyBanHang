@@ -90,5 +90,10 @@ namespace QuanLyBanHang
                 Application.Exit();
             }
         }
+
+        private void lblHoTen_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

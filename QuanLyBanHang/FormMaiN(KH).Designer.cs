@@ -185,6 +185,7 @@
             this.lblHoTen.Name = "lblHoTen";
             this.lblHoTen.Size = new System.Drawing.Size(118, 20);
             this.lblHoTen.Text = "Chưa đăng nhập";
+            this.lblHoTen.Click += new System.EventHandler(this.lblHoTen_Click);
             // 
             // FormMaiN_KH_
             // 

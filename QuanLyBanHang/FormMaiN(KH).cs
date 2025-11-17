@@ -58,18 +58,19 @@ namespace QuanLyBanHang
                 MessageBox.Show("Vui lòng đăng nhập để xem thông tin cá nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-                var profile = new Thongtincanhan(HoTenKH);
-                profile.MdiParent = this;
-                profile.WindowState = FormWindowState.Maximized;
-                profile.Show();
+            var profile = new Thongtincanhan(HoTenKH);
+            profile.MdiParent = this;
+            profile.WindowState = FormWindowState.Maximized;
+            profile.Show();
 
             
             //else
             //{
             //    MessageBox.Show("Vui lòng đăng nhập để xem thông tin cá nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             //} 
-        }
 
+
+        }
         private void DangNhap(object sender, EventArgs e)
         {
             picFullView.Visible = false;

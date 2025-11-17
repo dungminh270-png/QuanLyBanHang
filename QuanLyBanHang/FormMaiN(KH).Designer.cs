@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.LichSu = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblTime = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblHoTen = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.picFullView = new System.Windows.Forms.PictureBox();
             this.HeThong = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuDangNhap = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,12 +55,10 @@
             this.lblTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblHoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.picFullView = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFullView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -75,6 +79,61 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.UseWaitCursor = true;
+            // 
+            // LichSu
+            // 
+            this.LichSu.Image = global::QuanLyBanHang.Properties.Resources.help;
+            this.LichSu.Name = "LichSu";
+            this.LichSu.Size = new System.Drawing.Size(132, 27);
+            this.LichSu.Text = "Hướng dẫn";
+            this.LichSu.Click += new System.EventHandler(this.LichSu_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.LightBlue;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblTime,
+            this.lblHoTen});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 814);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1417, 26);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.UseWaitCursor = true;
+            // 
+            // lblTime
+            // 
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(44, 20);
+            this.lblTime.Text = "00:00";
+            this.lblTime.Click += new System.EventHandler(this.lblTime_Click_1);
+            // 
+            // lblHoTen
+            // 
+            this.lblHoTen.Name = "lblHoTen";
+            this.lblHoTen.Size = new System.Drawing.Size(118, 20);
+            this.lblHoTen.Text = "Chưa đăng nhập";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // picFullView
+            // 
+            this.picFullView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(19)))), ((int)(((byte)(34)))));
+            this.picFullView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picFullView.Location = new System.Drawing.Point(0, 31);
+            this.picFullView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picFullView.Name = "picFullView";
+            this.picFullView.Size = new System.Drawing.Size(1417, 783);
+            this.picFullView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFullView.TabIndex = 3;
+            this.picFullView.TabStop = false;
+            this.picFullView.UseWaitCursor = true;
+            this.picFullView.Visible = false;
             // 
             // HeThong
             // 
@@ -99,6 +158,7 @@
             // 
             // MnuDangNhap
             // 
+            this.MnuDangNhap.Image = global::QuanLyBanHang.Properties.Resources.Đăng_nhập;
             this.MnuDangNhap.Name = "MnuDangNhap";
             this.MnuDangNhap.Size = new System.Drawing.Size(224, 26);
             this.MnuDangNhap.Text = "Đăng nhập";
@@ -106,6 +166,7 @@
             // 
             // MnuDangXuat
             // 
+            this.MnuDangXuat.Image = global::QuanLyBanHang.Properties.Resources.user_logout;
             this.MnuDangXuat.Name = "MnuDangXuat";
             this.MnuDangXuat.Size = new System.Drawing.Size(224, 26);
             this.MnuDangXuat.Text = "Đăng xuất";
@@ -113,6 +174,7 @@
             // 
             // thoátToolStripMenuItem1
             // 
+            this.thoátToolStripMenuItem1.Image = global::QuanLyBanHang.Properties.Resources.Thoát;
             this.thoátToolStripMenuItem1.Name = "thoátToolStripMenuItem1";
             this.thoátToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.thoátToolStripMenuItem1.Text = "Thoát";
@@ -123,6 +185,7 @@
             this.SanPham.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.khuyếnMãiToolStripMenuItem,
             this.hotToolStripMenuItem});
+            this.SanPham.Image = global::QuanLyBanHang.Properties.Resources.sản_phẩm;
             this.SanPham.Name = "SanPham";
             this.SanPham.Size = new System.Drawing.Size(88, 24);
             this.SanPham.Text = "Sản Phẩm";
@@ -130,6 +193,7 @@
             // 
             // khuyếnMãiToolStripMenuItem
             // 
+            this.khuyếnMãiToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.giảm_giá;
             this.khuyếnMãiToolStripMenuItem.Name = "khuyếnMãiToolStripMenuItem";
             this.khuyếnMãiToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.khuyếnMãiToolStripMenuItem.Text = "Khuyến mãi";
@@ -137,6 +201,7 @@
             // 
             // hotToolStripMenuItem
             // 
+            this.hotToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.hot;
             this.hotToolStripMenuItem.Name = "hotToolStripMenuItem";
             this.hotToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.hotToolStripMenuItem.Text = "Hot";
@@ -145,12 +210,14 @@
             // 
             this.TimKiem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sảnPhẩmToolStripMenuItem});
+            this.TimKiem.Image = global::QuanLyBanHang.Properties.Resources.search;
             this.TimKiem.Name = "TimKiem";
             this.TimKiem.Size = new System.Drawing.Size(86, 24);
             this.TimKiem.Text = "Tìm Kiếm";
             // 
             // sảnPhẩmToolStripMenuItem
             // 
+            this.sảnPhẩmToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.sản_phẩm;
             this.sảnPhẩmToolStripMenuItem.Name = "sảnPhẩmToolStripMenuItem";
             this.sảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.sảnPhẩmToolStripMenuItem.Text = "Sản phẩm";
@@ -161,12 +228,14 @@
             this.Support.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hướngDẫnToolStripMenuItem,
             this.gToolStripMenuItem});
+            this.Support.Image = global::QuanLyBanHang.Properties.Resources.history;
             this.Support.Name = "Support";
             this.Support.Size = new System.Drawing.Size(68, 24);
             this.Support.Text = "Lịch sử";
             // 
             // hướngDẫnToolStripMenuItem
             // 
+            this.hướngDẫnToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.Lịch_Sử_mua_hàng;
             this.hướngDẫnToolStripMenuItem.Name = "hướngDẫnToolStripMenuItem";
             this.hướngDẫnToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.hướngDẫnToolStripMenuItem.Text = "Mua hàng";
@@ -174,6 +243,7 @@
             // 
             // gToolStripMenuItem
             // 
+            this.gToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.icons8_sell_stock_24;
             this.gToolStripMenuItem.Name = "gToolStripMenuItem";
             this.gToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.gToolStripMenuItem.Text = "Giỏ hàng";
@@ -259,8 +329,8 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFullView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

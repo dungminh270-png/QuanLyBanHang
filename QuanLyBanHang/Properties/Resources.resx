@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="bút_màu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bút màu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="NhanVien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NhanVien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,8 +136,20 @@
   <data name="0018" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\0018.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bigsale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bigsale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bút_đẹp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bút đẹp.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="help" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hotsale2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hotsale2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="thành phố" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thành phố.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,11 +160,20 @@
   <data name="Lịch Sử mua hàng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lịch Sử mua hàng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="hotsale1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hotsale1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bút_kì_chim" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bút kì chim.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="guide-alt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\guide-alt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="thông tin cá nhân" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thông tin cá nhân.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bút_chì" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bút chì.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Danh mục" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Danh mục.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,20 +184,35 @@
   <data name="Khách hàng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Khách hàng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bigsale2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bigsale2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="menu-burger" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu-burger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Đăng nhập" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Đăng nhập.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hot_sale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hot sale.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="QuanLiKhachHang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\QuanLiKhachHang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bút_tl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bút tl.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Đăng_nhập" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Đăng nhập.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AvartarCaNhan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AvartarCaNhan.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vietmacdinh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vietmacdinh.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kimthanh36" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kimthanh36.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="point-of-sale-bill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\point-of-sale-bill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,6 +235,12 @@
   <data name="image-20231105010312536" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image-20231105010312536.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bigsale1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bigsale1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bút_viết_mực" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bút viết mực.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="befb8934de3ab2b495d89c8b3bb2185a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\befb8934de3ab2b495d89c8b3bb2185a.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -208,43 +253,7 @@
   <data name="giới thiệu chương trình" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\giới thiệu chương trình.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-	<data name="hot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-		<value>..\Resources\hot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-	</data>
-	  <data name="bút_chì" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bút chì.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bút_kì_chim" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bút kì chim.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bút_màu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bút màu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bút_tl" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bút tl.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bút_viết_mực" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bút viết mực.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bút_đẹp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bút đẹp.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bigsale" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bigsale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bigsale1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bigsale1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bigsale2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bigsale2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hotsale1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hotsale1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hotsale2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hotsale2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hot_sale" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hot sale.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-sell-stock-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-sell-stock-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

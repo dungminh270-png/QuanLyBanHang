@@ -42,9 +42,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cbbCity = new System.Windows.Forms.ComboBox();
             this.chkShow = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.AvatarReg = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarReg)).BeginInit();
@@ -63,7 +63,7 @@
             // txtHoten
             // 
             this.txtHoten.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoten.Location = new System.Drawing.Point(834, 99);
+            this.txtHoten.Location = new System.Drawing.Point(847, 99);
             this.txtHoten.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHoten.Name = "txtHoten";
             this.txtHoten.Size = new System.Drawing.Size(156, 31);
@@ -72,7 +72,7 @@
             // txtTenDN
             // 
             this.txtTenDN.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenDN.Location = new System.Drawing.Point(834, 145);
+            this.txtTenDN.Location = new System.Drawing.Point(847, 145);
             this.txtTenDN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenDN.Name = "txtTenDN";
             this.txtTenDN.Size = new System.Drawing.Size(156, 31);
@@ -81,7 +81,7 @@
             // txtMatkhau
             // 
             this.txtMatkhau.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatkhau.Location = new System.Drawing.Point(834, 195);
+            this.txtMatkhau.Location = new System.Drawing.Point(847, 195);
             this.txtMatkhau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMatkhau.Name = "txtMatkhau";
             this.txtMatkhau.Size = new System.Drawing.Size(156, 31);
@@ -90,7 +90,7 @@
             // txtXacnhanMK
             // 
             this.txtXacnhanMK.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtXacnhanMK.Location = new System.Drawing.Point(834, 245);
+            this.txtXacnhanMK.Location = new System.Drawing.Point(847, 245);
             this.txtXacnhanMK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtXacnhanMK.Name = "txtXacnhanMK";
             this.txtXacnhanMK.Size = new System.Drawing.Size(156, 31);
@@ -215,7 +215,7 @@
             "Hà Nội",
             "Hải Dương",
             "Hải Phòng"});
-            this.cbbCity.Location = new System.Drawing.Point(834, 312);
+            this.cbbCity.Location = new System.Drawing.Point(847, 312);
             this.cbbCity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbCity.Name = "cbbCity";
             this.cbbCity.Size = new System.Drawing.Size(156, 33);
@@ -227,8 +227,8 @@
             this.chkShow.AutoSize = true;
             this.chkShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.chkShow.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkShow.Location = new System.Drawing.Point(834, 282);
-            this.chkShow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkShow.Location = new System.Drawing.Point(847, 282);
+            this.chkShow.Margin = new System.Windows.Forms.Padding(4);
             this.chkShow.Name = "chkShow";
             this.chkShow.Size = new System.Drawing.Size(126, 24);
             this.chkShow.TabIndex = 6;
@@ -236,14 +236,27 @@
             this.chkShow.UseVisualStyleBackColor = false;
             this.chkShow.CheckedChanged += new System.EventHandler(this.chkShow_CheckedChanged);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(36)))), ((int)(((byte)(104)))));
+            this.label6.Location = new System.Drawing.Point(670, 317);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(136, 23);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Chọn thành phố";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Location = new System.Drawing.Point(642, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(630, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(392, 477);
+            this.pictureBox1.Size = new System.Drawing.Size(417, 477);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -258,23 +271,11 @@
             this.AvatarReg.TabIndex = 0;
             this.AvatarReg.TabStop = false;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(36)))), ((int)(((byte)(104)))));
-            this.label6.Location = new System.Drawing.Point(670, 317);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(136, 23);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Chọn thành phố";
-            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 477);
+            this.ClientSize = new System.Drawing.Size(1047, 477);
             this.Controls.Add(this.chkShow);
             this.Controls.Add(this.cbbCity);
             this.Controls.Add(this.label6);

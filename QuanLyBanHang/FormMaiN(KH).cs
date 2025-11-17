@@ -38,6 +38,8 @@ namespace QuanLyBanHang
 
         private void lblTime_Click(object sender, EventArgs e)
         {
+            //lblTime.Text = DateTime.Now.ToString("HH:mm:ss dd/MM/yyyy ");
+
         }
 
 
@@ -46,6 +48,15 @@ namespace QuanLyBanHang
             picFullView.Visible = false;
             if (DaDangNhapKH)
             {
+                var pfp = new Thongtincanhan();
+                pfp.MdiParent = this;
+                pfp.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng đăng nhập để xem thông tin cá nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
                 var profile = new Thongtincanhan(HoTenKH);
                 profile.MdiParent = this;
                 profile.WindowState = FormWindowState.Maximized;
@@ -55,7 +66,7 @@ namespace QuanLyBanHang
             //else
             //{
             //    MessageBox.Show("Vui lòng đăng nhập để xem thông tin cá nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
+            //} 
         }
 
         private void DangNhap(object sender, EventArgs e)

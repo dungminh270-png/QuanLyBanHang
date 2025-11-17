@@ -29,6 +29,15 @@ namespace QuanLyBanHang
 
         private void Thongtincanhan_Load(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrEmpty(CurrentUser.MaKH))
+            {
+                MessageBox.Show("Vui lòng đăng nhập!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //this.Close();
+                return;
+            }
+
             //if (string.IsNullOrEmpty(CurrentUser.MaKH))
             //{
             //    MessageBox.Show("Vui lòng đăng nhập!", "Thông báo",
@@ -36,6 +45,7 @@ namespace QuanLyBanHang
             //    //this.Close();
             //    return;
             //}
+
             LoadThongTinKhachHang();
         }
         private void LoadThongTinKhachHang()
@@ -58,7 +68,11 @@ namespace QuanLyBanHang
                 return;
             }
             txtMaKh.Text = kh.MaKH;
+
+            txtHten.Text = kh.TenKH ?? ""; // Dùng TenCty làm họ tên
+
             txtHten.Text = kh.TenKH ?? "";
+
             txtDiachi.Text = kh.DiaChi ?? "";
             txtSDT.Text = kh.DienThoai ?? "";
 

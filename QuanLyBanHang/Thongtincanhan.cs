@@ -15,14 +15,21 @@ namespace QuanLyBanHang
     {
         QLBanHangContext db = new QLBanHangContext();
         private string duongDanAnhMoi = "";
+        private string _tenKH;
         public Thongtincanhan()
         {
             InitializeComponent();
         }
 
+        public Thongtincanhan(string tenKH)
+        {
+            InitializeComponent();
+            _tenKH = tenKH;
+        }
 
         private void Thongtincanhan_Load(object sender, EventArgs e)
         {
+
             if (string.IsNullOrEmpty(CurrentUser.MaKH))
             {
                 MessageBox.Show("Vui lòng đăng nhập!", "Thông báo",
@@ -30,12 +37,21 @@ namespace QuanLyBanHang
                 //this.Close();
                 return;
             }
+
+            //if (string.IsNullOrEmpty(CurrentUser.MaKH))
+            //{
+            //    MessageBox.Show("Vui lòng đăng nhập!", "Thông báo",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    //this.Close();
+            //    return;
+            //}
+
             LoadThongTinKhachHang();
         }
         private void LoadThongTinKhachHang()
         {
             var kh = db.KhachHangs
-                     .Where(k => k.MaKH == CurrentUser.MaKH)
+                     .Where(k => k.TenKH == _tenKH)
                      .Select(k => new
                      {
                          k.MaKH,
@@ -52,7 +68,11 @@ namespace QuanLyBanHang
                 return;
             }
             txtMaKh.Text = kh.MaKH;
+
             txtHten.Text = kh.TenKH ?? ""; // Dùng TenCty làm họ tên
+
+            txtHten.Text = kh.TenKH ?? "";
+
             txtDiachi.Text = kh.DiaChi ?? "";
             txtSDT.Text = kh.DienThoai ?? "";
 

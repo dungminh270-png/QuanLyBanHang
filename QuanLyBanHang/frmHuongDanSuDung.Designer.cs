@@ -346,6 +346,7 @@
             this.tctlMain.Size = new System.Drawing.Size(1411, 1018);
             this.tctlMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tctlMain.TabIndex = 0;
+            this.tctlMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             // 
             // tpDonHang
             // 

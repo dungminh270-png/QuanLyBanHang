@@ -55,6 +55,7 @@ namespace QuanLyBanHang
             this.hóaĐơnToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.giớiThiệuChươngTrìnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();   // THÊM DÒNG NÀY
             this.quảnLíToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kháchHàngToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.khoHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -267,11 +268,11 @@ namespace QuanLyBanHang
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hướngDẫnSửDụngToolStripMenuItem,
-            this.giớiThiệuChươngTrìnhToolStripMenuItem});
+            this.hướngDẫnSửDụngToolStripMenuItem }); 
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
             this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(121, 32);
-            this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
+            this.trợGiúpToolStripMenuItem.Text = "Trợ giúp"; 
+            
             // 
             // hướngDẫnSửDụngToolStripMenuItem
             // 
@@ -365,5 +366,6 @@ namespace QuanLyBanHang
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem muaHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem khoHàngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem giớiThiệuChươngTrìnhToolStripMenuItem;
     }
 }

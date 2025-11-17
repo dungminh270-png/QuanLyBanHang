@@ -74,7 +74,8 @@ namespace QuanLyBanHang
                 {
                     TenSP = txtTenSP.Text,
                     SoLuongTon = int.Parse(txtSLT.Text),
-                    DonGiaBan = decimal.Parse(txtGia.Text),
+                    DonGiaBan = float.Parse(txtGia.Text),
+
                     HinhAnh = ""
                 };
                 db.SanPhams.Add(sp);
@@ -90,38 +91,37 @@ namespace QuanLyBanHang
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (spDangchon == null) { return}
-            ;
+            if (spDangchon == null) { return; }
+
             try
             {
-                spDangchon.TenSP = txtTenSP.Text,
-                spDangchon.SoLuongTon = int.Parse(txtSLT.Text),
-                spDangchon.DonGiaBan = decimal.Parse (txtGia.Text),
+                spDangchon.TenSP = txtTenSP.Text;
+                spDangchon.SoLuongTon = int.Parse(txtSLT.Text);
+                spDangchon.DonGiaBan = float.Parse(txtGia.Text);
 
+                if (spDangchon == null) { return; }
 
-                db.SaveChanges();
-                LoadSanPham();
-                MessageBox.Show("Cập nhật sản phẩm thành công!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi cập nhật sản phẩm: " + ex.Message);
-            }
-
-        }
-
-        private void pctAnh_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Image Files|*.jpg;*.png";
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                pctAnh.ImageLocation = ofd.FileName; 
-                if (spDangchon != null)
+                try
                 {
-                    spDangchon.HinhAnh = ofd.FileName; 
+                    spDangchon.TenSP = txtTenSP.Text;
+                    spDangchon.SoLuongTon = int.Parse(txtSLT.Text);
+                    spDangchon.DonGiaBan = float.Parse(txtGia.Text);
+
+                    db.SaveChanges();
+                    LoadSanPham();
+                    MessageBox.Show("Cập nhật sản phẩm thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi cập nhật sản phẩm: " + ex.Message);
                 }
             }
+            catch
+            {
+
+            }
         }
+
+
     }
 }

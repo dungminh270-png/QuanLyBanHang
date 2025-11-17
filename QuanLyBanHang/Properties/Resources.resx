@@ -175,7 +175,6 @@
   <data name="AvartarCaNhan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AvartarCaNhan.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="point-of-sale-bill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\point-of-sale-bill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -209,10 +208,10 @@
   <data name="giới thiệu chương trình" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\giới thiệu chương trình.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
-  <data name="bút_chì" type="System.Resources.ResXFileRef, System.Windows.Forms">
+	<data name="hot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\hot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
+	  <data name="bút_chì" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bút chì.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bút_kì_chim" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -229,6 +228,5 @@
   </data>
   <data name="bút_đẹp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bút đẹp.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> 1ebf172715254f0a89018c149e4894dbf9980d27
   </data>
 </root>

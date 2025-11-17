@@ -39,6 +39,7 @@ namespace QuanLyBanHang
         private void lblTime_Click(object sender, EventArgs e)
         {
             //lblTime.Text = DateTime.Now.ToString("HH:mm:ss dd/MM/yyyy ");
+
         }
 
 
@@ -46,14 +47,23 @@ namespace QuanLyBanHang
         {
             if (DaDangNhapKH)
             {
-                var profile = new Thongtincanhan();
-                profile.MdiParent = this;
-                profile.Show();
+                var pfp = new Thongtincanhan();
+                pfp.MdiParent = this;
+                pfp.Show();
             }
             else
             {
                 MessageBox.Show("Vui lòng đăng nhập để xem thông tin cá nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+                var profile = new Thongtincanhan(HoTenKH);
+                profile.MdiParent = this;
+                profile.Show();
+            
+            //else
+            //{
+            //    MessageBox.Show("Vui lòng đăng nhập để xem thông tin cá nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //} 
         }
 
         private void DangNhap(object sender, EventArgs e)
@@ -115,6 +125,16 @@ namespace QuanLyBanHang
         }
 
         private void gToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss dd/MM/yyyy ");
+        }
+
+        private void lblTime_Click_1(object sender, EventArgs e)
         {
 
         }

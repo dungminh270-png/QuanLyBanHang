@@ -221,6 +221,7 @@
             this.Name = "FormMaiN_KH_";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMaiN_KH_";
+            this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.FormMaiN_KH__Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

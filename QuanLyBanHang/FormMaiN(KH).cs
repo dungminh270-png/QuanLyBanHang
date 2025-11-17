@@ -98,6 +98,7 @@ namespace QuanLyBanHang
         private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var f = new FrmMuaHang();
+            f.MdiParent = this;
             f.Show();
         }
 

@@ -15,32 +15,38 @@ namespace QuanLyBanHang
     {
         QLBanHangContext db = new QLBanHangContext();
         private string duongDanAnhMoi = "";
+        private string _tenKH;
         public Thongtincanhan()
         {
             InitializeComponent();
         }
 
+        public Thongtincanhan(string tenKH)
+        {
+            InitializeComponent();
+            _tenKH = tenKH;
+        }
 
         private void Thongtincanhan_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(CurrentUser.MaKH))
-            {
-                MessageBox.Show("Vui lòng đăng nhập!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                this.Close();
-                return;
-            }
+            //if (string.IsNullOrEmpty(CurrentUser.MaKH))
+            //{
+            //    MessageBox.Show("Vui lòng đăng nhập!", "Thông báo",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    //this.Close();
+            //    return;
+            //}
             LoadThongTinKhachHang();
         }
         private void LoadThongTinKhachHang()
         {
             var kh = db.KhachHangs
-                     .Where(k => k.MaKH == CurrentUser.MaKH)
+                     .Where(k => k.TenKH == _tenKH)
                      .Select(k => new
                      {
                          k.MaKH,
-                         k.TenCty,
-                         k.NgSinh,
+                         k.TenKH,
+                         k.NgaySinh,
                          k.GTinh,
                          k.DiaChi,
                          k.DienThoai,
@@ -52,15 +58,15 @@ namespace QuanLyBanHang
                 return;
             }
             txtMaKh.Text = kh.MaKH;
-            txtHten.Text = kh.TenCty ?? ""; // Dùng TenCty làm họ tên
+            txtHten.Text = kh.TenKH ?? "";
             txtDiachi.Text = kh.DiaChi ?? "";
             txtSDT.Text = kh.DienThoai ?? "";
 
             txtThanhPho.Text = kh.ThanhPho.ToString();
 
-            if (kh.NgSinh.HasValue)
+            if (kh.NgaySinh.HasValue)
             {
-                dateTime.Value = kh.NgSinh.Value;
+                dateTime.Value = kh.NgaySinh.Value;
                 dateTime.Checked = true;
             }
             else
@@ -119,7 +125,7 @@ namespace QuanLyBanHang
                     .FirstOrDefault();
             if (kh != null)
             {
-                kh.Avatar = duongDan;
+                kh.HinhAnh = duongDan;
             }
         }
     }

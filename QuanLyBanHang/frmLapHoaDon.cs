@@ -20,7 +20,7 @@ namespace QuanLyBanHang
             var db = new QLBanHangContext();
             //Đổ dữ liệu vào ComboBox Khách Hàng (cboKhachHang)
             cboKhachHang.DataSource = db.KhachHangs
-                                        .Select(k => new { k.MaKH, k.TenCty })
+                                        .Select(k => new { k.MaKH, k.TenKH })
                                         .ToList();
             cboKhachHang.DisplayMember = "TenCty";
             cboKhachHang.ValueMember = "MaKH";
@@ -68,7 +68,7 @@ namespace QuanLyBanHang
 
                 if (sp != null)
                 {
-                    double donGia = sp.DonGia ?? 0;
+                    double donGia = sp.DonGiaBan ?? 0;
                     // set the unit price from DB (or keep editable behavior if desired)
                     dgvHoaDon.Rows[rowIndex].Cells["DonGia"].Value = donGia;
 

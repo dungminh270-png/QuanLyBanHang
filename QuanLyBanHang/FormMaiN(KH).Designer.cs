@@ -39,17 +39,19 @@
             this.khuyếnMãiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TimKiem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sảnPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Support = new System.Windows.Forms.ToolStripMenuItem();
             this.hướngDẫnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LichSu = new System.Windows.Forms.ToolStripMenuItem();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lblTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblHoTen = new System.Windows.Forms.ToolStripStatusLabel();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.lblTime = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -65,6 +67,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1111, 30);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -79,33 +82,34 @@
             this.HeThong.Name = "HeThong";
             this.HeThong.Size = new System.Drawing.Size(105, 26);
             this.HeThong.Text = "Hệ thống";
+            this.HeThong.Click += new System.EventHandler(this.HeThong_Click);
             // 
             // đăngNhậpToolStripMenuItem
             // 
             this.đăngNhậpToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.thông_tin_cá_nhân;
             this.đăngNhậpToolStripMenuItem.Name = "đăngNhậpToolStripMenuItem";
-            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.đăngNhậpToolStripMenuItem.Text = "Thông tin cá nhân";
             this.đăngNhậpToolStripMenuItem.Click += new System.EventHandler(this.ThongTinCaNhan);
             // 
             // MnuDangNhap
             // 
             this.MnuDangNhap.Name = "MnuDangNhap";
-            this.MnuDangNhap.Size = new System.Drawing.Size(224, 26);
+            this.MnuDangNhap.Size = new System.Drawing.Size(210, 26);
             this.MnuDangNhap.Text = "Đăng nhập";
             this.MnuDangNhap.Click += new System.EventHandler(this.DangNhap);
             // 
             // MnuDangXuat
             // 
             this.MnuDangXuat.Name = "MnuDangXuat";
-            this.MnuDangXuat.Size = new System.Drawing.Size(224, 26);
+            this.MnuDangXuat.Size = new System.Drawing.Size(210, 26);
             this.MnuDangXuat.Text = "Đăng xuất";
             this.MnuDangXuat.Click += new System.EventHandler(this.DangXuat);
             // 
             // thoátToolStripMenuItem1
             // 
             this.thoátToolStripMenuItem1.Name = "thoátToolStripMenuItem1";
-            this.thoátToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.thoátToolStripMenuItem1.Size = new System.Drawing.Size(210, 26);
             this.thoátToolStripMenuItem1.Text = "Thoát";
             this.thoátToolStripMenuItem1.Click += new System.EventHandler(this.Thoat_Click);
             // 
@@ -132,9 +136,18 @@
             // 
             // TimKiem
             // 
+            this.TimKiem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sảnPhẩmToolStripMenuItem});
             this.TimKiem.Name = "TimKiem";
             this.TimKiem.Size = new System.Drawing.Size(86, 26);
             this.TimKiem.Text = "Tìm Kiếm";
+            // 
+            // sảnPhẩmToolStripMenuItem
+            // 
+            this.sảnPhẩmToolStripMenuItem.Name = "sảnPhẩmToolStripMenuItem";
+            this.sảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.sảnPhẩmToolStripMenuItem.Text = "Sản phẩm";
+            this.sảnPhẩmToolStripMenuItem.Click += new System.EventHandler(this.sảnPhẩmToolStripMenuItem_Click);
             // 
             // Support
             // 
@@ -150,18 +163,21 @@
             this.hướngDẫnToolStripMenuItem.Name = "hướngDẫnToolStripMenuItem";
             this.hướngDẫnToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.hướngDẫnToolStripMenuItem.Text = "Mua hàng";
+            this.hướngDẫnToolStripMenuItem.Click += new System.EventHandler(this.hướngDẫnToolStripMenuItem_Click);
             // 
             // gToolStripMenuItem
             // 
             this.gToolStripMenuItem.Name = "gToolStripMenuItem";
             this.gToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.gToolStripMenuItem.Text = "Giỏ hàng";
+            this.gToolStripMenuItem.Click += new System.EventHandler(this.gToolStripMenuItem_Click);
             // 
             // LichSu
             // 
             this.LichSu.Name = "LichSu";
             this.LichSu.Size = new System.Drawing.Size(98, 26);
             this.LichSu.Text = "Hướng dẫn";
+            this.LichSu.Click += new System.EventHandler(this.LichSu_Click);
             // 
             // statusStrip1
             // 
@@ -176,18 +192,24 @@
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // lblTime
-            // 
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(44, 20);
-            this.lblTime.Text = "00:00";
-            this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
-            // 
             // lblHoTen
             // 
             this.lblHoTen.Name = "lblHoTen";
             this.lblHoTen.Size = new System.Drawing.Size(118, 20);
             this.lblHoTen.Text = "Chưa đăng nhập";
+            // 
+            // lblTime
+            // 
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(44, 20);
+            this.lblTime.Text = "00:00";
+            this.lblTime.Click += new System.EventHandler(this.lblTime_Click_1);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FormMaiN_KH_
             // 
@@ -199,13 +221,14 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMaiN_KH_";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMaiN_KH_";
             this.Load += new System.EventHandler(this.FormMaiN_KH__Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,7 +252,9 @@
         private System.Windows.Forms.ToolStripMenuItem hotToolStripMenuItem;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel lblTime;
         private System.Windows.Forms.ToolStripStatusLabel lblHoTen;
+        private System.Windows.Forms.ToolStripMenuItem sảnPhẩmToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel lblTime;
+        private System.Windows.Forms.Timer timer1;
     }
 }

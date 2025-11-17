@@ -38,7 +38,7 @@ namespace QuanLyBanHang
                            .Select(kh => new
                            {
                                kh.MaKH,
-                               kh.TenCty,
+                               kh.TenKH,
                                kh.DiaChi,
                                kh.DienThoai,
                                kh.MaThanhPho
@@ -131,7 +131,7 @@ namespace QuanLyBanHang
             var kh = new Models.KhachHang
             {
                 MaKH = txtMaKH.Text,
-                TenCty = txtCongTy.Text,
+                TenKH = txtCongTy.Text,
                 DiaChi = txtDiaChi.Text,
                 DienThoai = txtDienThoai.Text,
                 MaThanhPho = Convert.ToInt32(cboThanhPho.SelectedValue)

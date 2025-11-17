@@ -14,5 +14,7 @@ namespace QuanLyBanHang.Models
         public int MaSP { get; set; }
 
         public int SoLuong { get; set; }
+        public int DonGia { get; set; }
+        public int? ThanhTien { get; set; }
     }
 }

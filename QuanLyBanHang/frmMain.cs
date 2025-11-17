@@ -30,10 +30,15 @@ namespace QuanLyBanHang
 
         public void PhanQuyen()
         {
+            danhMụcToolStripMenuItem.Enabled = DaDangNhap;
+            hóaĐơnToolStripMenuItem.Enabled = DaDangNhap;
+            tìmKiếmToolStripMenuItem.Enabled = DaDangNhap;
+            quảnLíToolStripMenuItem.Enabled = DaDangNhap;
+
             MnuDangXuat.Enabled = DaDangNhap;
             MnuDangNhap.Enabled = !DaDangNhap;
            
-            lblHoTenNhanVien.Text = DaDangNhap ? $"Xin chào: " + $"{HoTenNhanVien}" : "Chưa đăng nhập";
+            lblHoTenNhanVien.Text = DaDangNhap ? $"Xin chào: Admin" : "Chưa đăng nhập";
             // xét quyền theo vai trò
             //MnuCauHinhHeThong.Enabled = DaDangNhap && Quyen == VaiTro.QuanTri;
             //MnuQLNhanVien.Enabled = DaDangNhap && Quyen == VaiTro.QuanTri;
@@ -49,7 +54,7 @@ namespace QuanLyBanHang
 
         private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var f = new Login();
+            var f = new Login(this);
             f.MdiParent = this;
             f.Show();
         }
@@ -175,6 +180,11 @@ namespace QuanLyBanHang
             {
                 Application.Exit();
             }
+        }
+
+        private void MnuCHHT_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chức năng đang được phát triển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

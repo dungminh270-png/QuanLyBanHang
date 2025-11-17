@@ -96,6 +96,9 @@ namespace QuanLyBanHang.Properties {
         public static System.Drawing.Bitmap befb8934de3ab2b495d89c8b3bb2185a {
             get {
                 object obj = ResourceManager.GetObject("befb8934de3ab2b495d89c8b3bb2185a", resourceCulture);
+        public static System.Drawing.Bitmap bút_chì {
+            get {
+                object obj = ResourceManager.GetObject("bút_chì", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +109,9 @@ namespace QuanLyBanHang.Properties {
         public static System.Drawing.Bitmap Đăng_nhập {
             get {
                 object obj = ResourceManager.GetObject("Đăng nhập", resourceCulture);
+        public static System.Drawing.Bitmap bút_đẹp {
+            get {
+                object obj = ResourceManager.GetObject("bút_đẹp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +122,9 @@ namespace QuanLyBanHang.Properties {
         public static System.Drawing.Bitmap Danh_mục {
             get {
                 object obj = ResourceManager.GetObject("Danh mục", resourceCulture);
+        public static System.Drawing.Bitmap bút_kì_chim {
+            get {
+                object obj = ResourceManager.GetObject("bút_kì_chim", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +135,9 @@ namespace QuanLyBanHang.Properties {
         public static System.Drawing.Bitmap form {
             get {
                 object obj = ResourceManager.GetObject("form", resourceCulture);
+        public static System.Drawing.Bitmap bút_màu {
+            get {
+                object obj = ResourceManager.GetObject("bút_màu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +148,9 @@ namespace QuanLyBanHang.Properties {
         public static System.Drawing.Bitmap giảm_giá {
             get {
                 object obj = ResourceManager.GetObject("giảm giá", resourceCulture);
+        public static System.Drawing.Bitmap bút_tl {
+            get {
+                object obj = ResourceManager.GetObject("bút_tl", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +291,9 @@ namespace QuanLyBanHang.Properties {
         public static System.Drawing.Bitmap Quản_lí {
             get {
                 object obj = ResourceManager.GetObject("Quản lí", resourceCulture);
+        public static System.Drawing.Bitmap bút_viết_mực {
+            get {
+                object obj = ResourceManager.GetObject("bút_viết_mực", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

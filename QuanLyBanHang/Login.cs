@@ -18,11 +18,17 @@ namespace QuanLyBanHang
             InitializeComponent();
         }
         private frmMain _frmMain;
+        private FormMaiN_KH_ _frmMainKH;
         public Login(frmMain fmain)
         {
-
+            InitializeComponent();
             _frmMain = fmain;
 
+        }
+        public Login(FormMaiN_KH_ fmainKH)
+        {
+            InitializeComponent();
+            _frmMainKH = fmainKH;
         }
 
         private void txtPass_TextChanged(object sender, EventArgs e)
@@ -61,9 +67,10 @@ namespace QuanLyBanHang
                     var nv = db.NhanViens.FirstOrDefault(x => x.MaDN == user && x.MatKhau == pass);
                     if (nv != null)
                     {
-                        string hoten = nv.Ho + " " + nv.Ten;
+                        string hoten = nv.HoTen;
                         MessageBox.Show("Đăng nhập thành công (Nhân Viên)!");
 
+                        //Đang ở frmMain, đăng nhập (lại)
                         if (_frmMain != null)
                         {
                             _frmMain.HoTenNhanVien = hoten;
@@ -71,15 +78,18 @@ namespace QuanLyBanHang
                             _frmMain.PhanQuyen();
                             this.Close();
                         }
-                        else
+                        //Đang ở frmMainKH, chuyển sang frmMain
+                        else if (_frmMainKH != null)
                         {
+                            _frmMainKH.Hide();
+
                             frmMain mainNV = new frmMain();
                             mainNV.HoTenNhanVien = hoten;
                             mainNV.DaDangNhap = true;
 
-                            mainNV.PhanQuyen();
+                            mainNV.FormClosed += (s, args) => Application.Exit();
                             mainNV.Show();
-                            this.Hide();
+                            this.Close();
                         }
                     }
                     else
@@ -89,15 +99,32 @@ namespace QuanLyBanHang
                 }
                 else if (radKhachHang.Checked)
                 {
-
                     var kh = db.KhachHangs.FirstOrDefault(x => x.MaDN == user && x.MatKhau == pass);
                     if (kh != null)
                     {
-                        string hotenKH = kh.TenCty;
+                        string hotenKH = kh.TenKH;
                         MessageBox.Show("Đăng nhập thành công (Khách Hàng)!");
-                        var panelMainKH = new FormMaiN_KH_();
-                        panelMainKH.Show();
-                        this.Hide();
+
+                        //Đang ở frmMain, chuyển sang frmMainKH (ĐÃ SỬA LỖI)
+                        if (_frmMain != null)
+                        {
+                            _frmMain.Hide();
+                            FormMaiN_KH_ mainKH = new FormMaiN_KH_();
+                            mainKH.DaDangNhapKH = true;
+                            mainKH.HoTenKH = hotenKH;
+                            mainKH.FormClosed += (s, args) => Application.Exit();
+                            mainKH.Show();
+
+                            this.Close();
+                        }
+                        //Đang ở frmMainKH, đăng nhập (lại)
+                        else if (_frmMainKH != null)
+                        {
+                            _frmMainKH.HoTenKH = hotenKH;
+                            _frmMainKH.DaDangNhapKH = true;
+                            _frmMainKH.PhanQuyen();
+                            this.Close();
+                        }
                     }
                     else
                     {

@@ -27,7 +27,7 @@ namespace QuanLyBanHang
             using (var db = new QLBanHangContext())
             {
                 var listKH = db.KhachHangs
-                               .Select(kh => new { kh.MaKH, kh.TenCty })
+                               .Select(kh => new { kh.MaKH, kh.TenKH })
                                .ToList();
 
                 cboKhachHang.DataSource = listKH;
@@ -78,9 +78,9 @@ namespace QuanLyBanHang
                                    {
                                        cthd.MaSP,
                                        sp.TenSP,       
-                                       sp.DonGia,   
+                                       sp.DonGiaBan,   
                                        cthd.SoLuong,
-                                       ThanhTien = sp.DonGia * cthd.SoLuong
+                                       ThanhTien = sp.DonGiaBan * cthd.SoLuong
                                    }).ToList();
 
                 dgvChiTietHoaDon.DataSource = listChiTiet;

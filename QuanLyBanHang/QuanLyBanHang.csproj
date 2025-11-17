@@ -317,27 +317,39 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chi Tiết SP\frmChiTiet1.cs" />
+    <Compile Include="Chi Tiết SP\frmChiTiet1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Chi Tiết SP\frmChiTiet1.Designer.cs">
       <DependentUpon>frmChiTiet1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chi Tiết SP\frmChiTiet2.cs" />
+    <Compile Include="Chi Tiết SP\frmChiTiet2.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Chi Tiết SP\frmChiTiet2.Designer.cs">
       <DependentUpon>frmChiTiet2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chi Tiết SP\frmChiTiet3.cs" />
+    <Compile Include="Chi Tiết SP\frmChiTiet3.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Chi Tiết SP\frmChiTiet3.Designer.cs">
       <DependentUpon>frmChiTiet3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chi Tiết SP\frmChiTiet4.cs" />
+    <Compile Include="Chi Tiết SP\frmChiTiet4.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Chi Tiết SP\frmChiTiet4.Designer.cs">
       <DependentUpon>frmChiTiet4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chi Tiết SP\frmChiTiet5.cs" />
+    <Compile Include="Chi Tiết SP\frmChiTiet5.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Chi Tiết SP\frmChiTiet5.Designer.cs">
       <DependentUpon>frmChiTiet5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chi Tiết SP\frmChiTiet6.cs" />
+    <Compile Include="Chi Tiết SP\frmChiTiet6.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Chi Tiết SP\frmChiTiet6.Designer.cs">
       <DependentUpon>frmChiTiet6.cs</DependentUpon>
     </Compile>
@@ -414,7 +426,9 @@
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMuaHang.cs" />
+    <Compile Include="FrmMuaHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmMuaHang.Designer.cs">
       <DependentUpon>FrmMuaHang.cs</DependentUpon>
     </Compile>

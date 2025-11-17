@@ -32,18 +32,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnXacNhanMua1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.SoLuong = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SoLuong)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(486, 39);
+            this.label1.Location = new System.Drawing.Point(432, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1224, 230);
+            this.label1.Size = new System.Drawing.Size(1053, 195);
             this.label1.TabIndex = 15;
             this.label1.Text = "- Giá: 10.000VND\r\n- Bút viết chì siêu bền, viết sẽ không hết chì (nếu bạn không v" +
     "iết)\r\n- Xóa khô ngay sau 1–2 tẩy gôm, không vón cục\r\n- Đầu bút chính xác, không " +
@@ -53,18 +53,19 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(486, 269);
+            this.label2.Location = new System.Drawing.Point(432, 215);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(524, 138);
+            this.label2.Size = new System.Drawing.Size(450, 117);
             this.label2.TabIndex = 16;
             this.label2.Text = "- Vận Chuyển: 2-3 ngày\r\n- Khu Vực: TP Hồ Chí Minh\r\n\r\n";
             // 
             // btnXacNhanMua1
             // 
             this.btnXacNhanMua1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXacNhanMua1.Location = new System.Drawing.Point(486, 390);
+            this.btnXacNhanMua1.Location = new System.Drawing.Point(432, 312);
+            this.btnXacNhanMua1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXacNhanMua1.Name = "btnXacNhanMua1";
-            this.btnXacNhanMua1.Size = new System.Drawing.Size(152, 62);
+            this.btnXacNhanMua1.Size = new System.Drawing.Size(135, 50);
             this.btnXacNhanMua1.TabIndex = 17;
             this.btnXacNhanMua1.Text = "Xác Nhận Mua";
             this.btnXacNhanMua1.UseVisualStyleBackColor = true;
@@ -73,43 +74,46 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QuanLyBanHang.Properties.Resources.bút_chì;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 39);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 31);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(396, 366);
+            this.pictureBox1.Size = new System.Drawing.Size(352, 293);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // numericUpDown1
+            // SoLuong
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(738, 390);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(151, 35);
-            this.numericUpDown1.TabIndex = 18;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.SoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SoLuong.Location = new System.Drawing.Point(656, 312);
+            this.SoLuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.Size = new System.Drawing.Size(134, 30);
+            this.SoLuong.TabIndex = 18;
+            this.SoLuong.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.SoLuong.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // frmChiTiet1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1750, 736);
-            this.Controls.Add(this.numericUpDown1);
+            this.ClientSize = new System.Drawing.Size(938, 669);
+            this.Controls.Add(this.SoLuong);
             this.Controls.Add(this.btnXacNhanMua1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmChiTiet1";
             this.Text = "Chi_Tiết_1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmChiTiet1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SoLuong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,6 +125,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnXacNhanMua1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown SoLuong;
     }
 }

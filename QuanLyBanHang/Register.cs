@@ -54,7 +54,7 @@ namespace QuanLyBanHang
                 var kh = new KhachHang()
                 {
                     MaKH = "KH" + DateTime.Now.Ticks.ToString().Substring(15),
-                    TenCty = tenKH,
+                    TenKH = tenKH,
                     MaDN = tenDN,
                     MatKhau = matkhau,
                     MaThanhPho = maTP

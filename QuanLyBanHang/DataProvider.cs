@@ -60,7 +60,7 @@ namespace QuanLyBanHang
             var existingKhachHang = db.KhachHangs.Find(khachHang.MaKH);
             if (existingKhachHang != null)
             {
-                existingKhachHang.TenCty = khachHang.TenCty;
+                existingKhachHang.TenKH = khachHang.TenKH;
                 existingKhachHang.DiaChi = khachHang.DiaChi;
                 existingKhachHang.DienThoai = khachHang.DienThoai;
                 existingKhachHang.MaThanhPho = khachHang.MaThanhPho;

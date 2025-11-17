@@ -438,6 +438,12 @@
     <Compile Include="frmQuanLiKhachHang.Designer.cs">
       <DependentUpon>frmQuanLiKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuanLiTonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLiTonKho.Designer.cs">
+      <DependentUpon>frmQuanLiTonKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTimKiemHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -547,6 +553,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLiKhachHang.resx">
       <DependentUpon>frmQuanLiKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLiTonKho.resx">
+      <DependentUpon>frmQuanLiTonKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTimKiemHoaDon.resx">
       <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>

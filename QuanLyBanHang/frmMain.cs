@@ -30,6 +30,11 @@ namespace QuanLyBanHang
 
         public void PhanQuyen()
         {
+            danhMụcToolStripMenuItem.Enabled = DaDangNhap;
+            hóaĐơnToolStripMenuItem.Enabled = DaDangNhap;
+            tìmKiếmToolStripMenuItem.Enabled = DaDangNhap;
+            quảnLíToolStripMenuItem.Enabled = DaDangNhap;
+
             MnuDangXuat.Enabled = DaDangNhap;
             MnuDangNhap.Enabled = !DaDangNhap;
            

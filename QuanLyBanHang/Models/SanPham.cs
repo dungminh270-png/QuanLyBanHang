@@ -12,7 +12,7 @@ namespace QuanLyBanHang.Models
        [Key] public int MaSP { get; set; }
         public string TenSP { get; set; }
         public int MaLoai { get; set; }
-        public float? DonGiaBan { get; set; }
+        public decimal? DonGiaBan { get; set; }
         public int SoLuongTon { get; set; }
         public string HinhAnh { get; set; }
     }

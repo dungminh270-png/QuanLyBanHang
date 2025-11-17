@@ -31,7 +31,7 @@ namespace QuanLyBanHang
                                .ToList();
 
                 cboKhachHang.DataSource = listKH;
-                cboKhachHang.DisplayMember = "TenCty";
+                cboKhachHang.DisplayMember = "TenKH";
                 cboKhachHang.ValueMember = "MaKH";
 
                 if (listKH.Count > 0)
@@ -77,15 +77,15 @@ namespace QuanLyBanHang
                                    select new
                                    {
                                        cthd.MaSP,
-                                       sp.TenSP,       
-                                       sp.DonGiaBan,   
+                                       sp.TenSP,
+                                       DonGia = (double)sp.DonGiaBan,
                                        cthd.SoLuong,
-                                       ThanhTien = sp.DonGiaBan * cthd.SoLuong
+                                       ThanhTien = (decimal)(sp.DonGiaBan * cthd.SoLuong)
                                    }).ToList();
 
                 dgvChiTietHoaDon.DataSource = listChiTiet;
 
-                double total = listChiTiet.Sum(x => x.ThanhTien ?? 0);
+                decimal total = listChiTiet.Sum(x => x.ThanhTien);
 
                 lblTongTien.Text = "Tổng tiền hóa đơn: " + total.ToString("N0") + " đ";
             }

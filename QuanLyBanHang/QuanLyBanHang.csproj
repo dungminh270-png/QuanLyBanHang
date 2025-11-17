@@ -546,6 +546,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\kimthanh36.jpg" />
+    <Content Include="Resources\vietmacdinh.jpg" />
     <None Include="Resources\AvartarCaNhan.jpg" />
     <Content Include="Resources\Avatar.png" />
     <None Include="Resources\QuanLiKhachHang.png" />

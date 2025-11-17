@@ -44,6 +44,7 @@
             this.txtGia = new System.Windows.Forms.TextBox();
             this.pctAnh = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnTim = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAnh)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +53,7 @@
             // 
             this.lblQLTK.AutoSize = true;
             this.lblQLTK.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQLTK.Location = new System.Drawing.Point(231, 27);
+            this.lblQLTK.Location = new System.Drawing.Point(196, 25);
             this.lblQLTK.Name = "lblQLTK";
             this.lblQLTK.Size = new System.Drawing.Size(303, 32);
             this.lblQLTK.TabIndex = 0;
@@ -65,7 +66,7 @@
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.RowHeadersWidth = 51;
             this.dgvSanPham.RowTemplate.Height = 24;
-            this.dgvSanPham.Size = new System.Drawing.Size(814, 154);
+            this.dgvSanPham.Size = new System.Drawing.Size(735, 154);
             this.dgvSanPham.TabIndex = 1;
             // 
             // label1
@@ -132,15 +133,17 @@
             this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(515, 435);
+            this.btnLuu.Location = new System.Drawing.Point(503, 435);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(93, 37);
             this.btnLuu.TabIndex = 3;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtTenSP
             // 
@@ -172,7 +175,7 @@
             // 
             // pctAnh
             // 
-            this.pctAnh.Location = new System.Drawing.Point(560, 257);
+            this.pctAnh.Location = new System.Drawing.Point(493, 239);
             this.pctAnh.Name = "pctAnh";
             this.pctAnh.Size = new System.Drawing.Size(199, 130);
             this.pctAnh.TabIndex = 5;
@@ -182,17 +185,28 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(616, 402);
+            this.label5.Location = new System.Drawing.Point(551, 384);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 16);
             this.label5.TabIndex = 2;
             this.label5.Text = "Ảnh sản phẩm";
             // 
+            // btnTim
+            // 
+            this.btnTim.Location = new System.Drawing.Point(644, 435);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(92, 37);
+            this.btnTim.TabIndex = 6;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
             // frmQuanLiTonKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(838, 494);
+            this.ClientSize = new System.Drawing.Size(761, 494);
+            this.Controls.Add(this.btnTim);
             this.Controls.Add(this.pctAnh);
             this.Controls.Add(this.txtGia);
             this.Controls.Add(this.txtNCC);
@@ -237,5 +251,6 @@
         private System.Windows.Forms.TextBox txtGia;
         private System.Windows.Forms.PictureBox pctAnh;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnTim;
     }
 }

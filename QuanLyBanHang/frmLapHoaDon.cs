@@ -81,7 +81,7 @@ namespace QuanLyBanHang
         {
             using (var db = new QLBanHangContext())
             {
-                db.Database.ExecuteSqlCommand("TRUNCATE TABLE GioHang");
+                db.Database.ExecuteSqlRaw("TRUNCATE TABLE GioHang");
             }
             UserSession.Clear();
             MessageBox.Show("Bạn đã mua hàng thành công!!");

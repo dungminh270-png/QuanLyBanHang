@@ -130,6 +130,10 @@ namespace QuanLyBanHang
                             UserSession.MaKH = kh.MaKH;
                             UserSession.HoTenKH = hotenKH;
                             UserSession.DaDangNhap = true;
+
+                            CurrentUser.MaKH = kh.MaKH;
+                            CurrentUser.TenHienThi = kh.TenKH;
+
                             this.Close();
                         }
                     }

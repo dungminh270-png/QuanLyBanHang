@@ -232,9 +232,6 @@
     <Reference Include="Microsoft.SqlServer.SqlWmiManagement, Version=18.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.SqlManagementObjects.180.10.0\lib\net472\Microsoft.SqlServer.SqlWmiManagement.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.SqlServer.WmiEnum, Version=18.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.SqlManagementObjects.180.10.0\lib\net472\Microsoft.SqlServer.WmiEnum.dll</HintPath>
     </Reference>
@@ -490,7 +487,7 @@
     <Compile Include="Models\QLBanHangContext.cs">
       <DependentUpon>QLBanHangContext.dbml</DependentUpon>
     </Compile>
-	  <Compile Include="Models\GioHang.cs" />
+    <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\QLBanHangContext.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -521,7 +518,6 @@
     <Compile Include="reportForm.Designer.cs">
       <DependentUpon>reportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Thongtincanhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -657,19 +653,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\hotsale2.jpg" />
     <None Include="Resources\hotsale1.jpg" />
     <None Include="Resources\hot sale.jpg" />

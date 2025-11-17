@@ -16,5 +16,10 @@ namespace QuanLyBanHang
         {
             InitializeComponent();
         }
+
+        private void frmGioHang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

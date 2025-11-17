@@ -186,7 +186,7 @@ namespace QuanLyBanHang
             // 
             this.muaHàngToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.Lịch_Sử_mua_hàng;
             this.muaHàngToolStripMenuItem.Name = "muaHàngToolStripMenuItem";
-            this.muaHàngToolStripMenuItem.Size = new System.Drawing.Size(190, 32);
+            this.muaHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.muaHàngToolStripMenuItem.Text = "Mua hàng";
             this.muaHàngToolStripMenuItem.Click += new System.EventHandler(this.muaHàngToolStripMenuItem_Click);
             // 
@@ -216,6 +216,7 @@ namespace QuanLyBanHang
             this.sảnPhẩmToolStripMenuItem1.Name = "sảnPhẩmToolStripMenuItem1";
             this.sảnPhẩmToolStripMenuItem1.Size = new System.Drawing.Size(205, 32);
             this.sảnPhẩmToolStripMenuItem1.Text = "Sản phẩm";
+            this.sảnPhẩmToolStripMenuItem1.Click += new System.EventHandler(this.sảnPhẩmToolStripMenuItem1_Click);
             // 
             // đơnHàngToolStripMenuItem
             // 
@@ -223,6 +224,7 @@ namespace QuanLyBanHang
             this.đơnHàngToolStripMenuItem.Name = "đơnHàngToolStripMenuItem";
             this.đơnHàngToolStripMenuItem.Size = new System.Drawing.Size(205, 32);
             this.đơnHàngToolStripMenuItem.Text = "Đơn hàng";
+            this.đơnHàngToolStripMenuItem.Click += new System.EventHandler(this.đơnHàngToolStripMenuItem_Click);
             // 
             // hóaĐơnToolStripMenuItem2
             // 
@@ -264,7 +266,7 @@ namespace QuanLyBanHang
             // 
             this.kháchHàngToolStripMenuItem2.Image = global::QuanLyBanHang.Properties.Resources.Khách_hàng;
             this.kháchHàngToolStripMenuItem2.Name = "kháchHàngToolStripMenuItem2";
-            this.kháchHàngToolStripMenuItem2.Size = new System.Drawing.Size(205, 32);
+            this.kháchHàngToolStripMenuItem2.Size = new System.Drawing.Size(224, 32);
             this.kháchHàngToolStripMenuItem2.Text = "Khách hàng";
             this.kháchHàngToolStripMenuItem2.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem2_Click);
             // 
@@ -272,7 +274,7 @@ namespace QuanLyBanHang
             // 
             this.khoHàngToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.warehouse_alt;
             this.khoHàngToolStripMenuItem.Name = "khoHàngToolStripMenuItem";
-            this.khoHàngToolStripMenuItem.Size = new System.Drawing.Size(205, 32);
+            this.khoHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.khoHàngToolStripMenuItem.Text = "Kho hàng";
             this.khoHàngToolStripMenuItem.Click += new System.EventHandler(this.khoHàngToolStripMenuItem_Click);
             // 

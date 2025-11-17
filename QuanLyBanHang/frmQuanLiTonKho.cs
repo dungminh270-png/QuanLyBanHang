@@ -169,13 +169,13 @@ namespace QuanLyBanHang
                 HeaderText = "Số lượng tồn",
                 Width = 100
             });
-
+            // Cột đơn giá
             dgvSanPham.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "DonGiaBan",                   
                 DataPropertyName = "DonGiaBan",
                 HeaderText = "Đơn giá bán",
-                Width = 105
+                Width = 165
             });
         }
         private void btnXoa_Click(object sender, EventArgs e)

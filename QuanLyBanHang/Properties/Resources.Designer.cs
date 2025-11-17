@@ -413,6 +413,26 @@ namespace QuanLyBanHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap point_of_sale_bill1 {
+            get {
+                object obj = ResourceManager.GetObject("point-of-sale-bill1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap point_of_sale_bill2 {
+            get {
+                object obj = ResourceManager.GetObject("point-of-sale-bill2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Quản_lí {
             get {
                 object obj = ResourceManager.GetObject("Quản lí", resourceCulture);

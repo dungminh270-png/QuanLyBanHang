@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,44 +16,50 @@ namespace QuanLyBanHang
     public partial class Thongtincanhan : Form
     {
         QLBanHangContext db = new QLBanHangContext();
-        private string duongDanAnhMoi = "";
-        private string _tenKH;
+        
         public Thongtincanhan()
         {
             InitializeComponent();
         }
 
-        public Thongtincanhan(string tenKH)
-        {
-            InitializeComponent();
-            _tenKH = tenKH;
-        }
+        
 
         private void Thongtincanhan_Load(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(CurrentUser.MaKH))
+            if (string.IsNullOrEmpty(UserSession.MaKH))
             {
                 MessageBox.Show("Vui lòng đăng nhập!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 //this.Close();
+                GanThongTinTrong();
+                pctCanhan.Enabled = false;
                 return;
+
             }
-
-            //if (string.IsNullOrEmpty(CurrentUser.MaKH))
-            //{
-            //    MessageBox.Show("Vui lòng đăng nhập!", "Thông báo",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    //this.Close();
-            //    return;
-            //}
-
+            pctCanhan.Enabled = true;
             LoadThongTinKhachHang();
+
+        }
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void GanThongTinTrong()
+        {
+            txtMaKh.Text = "";
+            txtHten.Text = "Chưa đăng nhập";
+            txtDiachi.Text = "";
+            txtSDT.Text = "";
+            txtThanhPho.Text = "";
+            cbbGtinh.SelectedIndex = -1;
+            dateTime.Checked = false;
+            pctCanhan.Image = Properties.Resources.AvartarCaNhan;
         }
         private void LoadThongTinKhachHang()
         {
             var kh = db.KhachHangs
-                     .Where(k => k.TenKH == _tenKH)
+                     .Where(k => k.MaKH == UserSession.MaKH)
                      .Select(k => new
                      {
                          k.MaKH,
@@ -60,6 +68,7 @@ namespace QuanLyBanHang
                          k.GTinh,
                          k.DiaChi,
                          k.DienThoai,
+                         k.HinhAnh,
                          ThanhPho = k.MaThanhPho,
                      }).FirstOrDefault();
             if (kh == null)
@@ -69,7 +78,7 @@ namespace QuanLyBanHang
             }
             txtMaKh.Text = kh.MaKH;
 
-            txtHten.Text = kh.TenKH ?? ""; // Dùng TenCty làm họ tên
+            txtHten.Text = kh.TenKH ?? ""; 
 
             txtHten.Text = kh.TenKH ?? "";
 
@@ -95,6 +104,7 @@ namespace QuanLyBanHang
             {
                 cbbGtinh.SelectedIndex = -1;
             }
+            HienThiAvatar(kh.HinhAnh);
         }
         private void HienThiAvatar(string duongDan)
         {
@@ -113,34 +123,52 @@ namespace QuanLyBanHang
             catch
             {
                 pctCanhan.Image = Properties.Resources.AvartarCaNhan;
+                pctCanhan.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
 
         private void pctCanhan_Click(object sender, EventArgs e)
         {
-            OpenFileDialog opp = new OpenFileDialog();
-            opp.Title = "Chọn ảnh đại diện";
-            opp.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.bmp)|*.jpg;*.jpeg;*.png;*.bmp";
-            if (opp.ShowDialog() == DialogResult.OK)
+            if (string.IsNullOrEmpty(UserSession.MaKH))
             {
-                duongDanAnhMoi = opp.FileName;
-                pctCanhan.Image = Image.FromFile(duongDanAnhMoi);
-                pctCanhan.SizeMode = PictureBoxSizeMode.StretchImage;
+                MessageBox.Show("Vui lòng đăng nhập để thay đổi ảnh đại diện!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            OpenFileDialog opp = new OpenFileDialog
+            {
+                Title = "Chọn ảnh đại diện",
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
+            };
+            if (opp.ShowDialog() != DialogResult.OK) return;
+            try
+            {
+                string duongDanMoi = opp.FileName;
+                string thuMucAnh = Path.Combine(Application.StartupPath, "Avatars");
+                Directory.CreateDirectory(thuMucAnh);
 
-                LuuAvatar(duongDanAnhMoi);
+                string duoiFile = Path.GetExtension(opp.FileName);
+                string tenFileMoi = UserSession.MaKH + duoiFile;
+                string duongDanLuu = Path.Combine(thuMucAnh, tenFileMoi);
+
+                File.Copy(opp.FileName, duongDanLuu, true);
+                string duongDanLuuVaoDB = Path.Combine("Avatars", tenFileMoi);
+                var kh = db.KhachHangs.FirstOrDefault(k => k.MaKH == UserSession.MaKH);
+                if (kh != null)
+                {
+                    kh.HinhAnh = duongDanLuuVaoDB;
+                    db.SaveChanges();
+                }
+                HienThiAvatar(duongDanLuu);
                 MessageBox.Show("Đổi ảnh đại diện thành công!", "Thành công",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-        private void LuuAvatar(string duongDan)
-        {
-            var kh = db.KhachHangs
-                    .Where(k => k.MaKH == CurrentUser.MaKH)
-                    .FirstOrDefault();
-            if (kh != null)
+            catch (Exception ex)
             {
-                kh.HinhAnh = duongDan;
+                MessageBox.Show("Lỗi khi đổi ảnh: " + ex.Message, "Lỗi",
+            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

@@ -12,8 +12,8 @@ namespace QuanLyBanHang.Models
         
         [Key] public int MaHD { get; set; }
         public string MaKH { get; set; }
-        public DateTime NgayLapHD { get; set; }
-        public DateTime NgayNhanHang { get; set; }
+        public DateTime? NgayLapHD { get; set; }
+        public DateTime? NgayNhanHang { get; set; }
         public int? MaNV { get; set; }
     }
 }

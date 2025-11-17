@@ -16,15 +16,5 @@ namespace QuanLyBanHang
         {
             InitializeComponent();
         }
-
-        private void frmTimKiemHoaDon_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timKiemmHoaDonUserControl1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

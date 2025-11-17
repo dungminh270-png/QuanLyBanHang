@@ -24,8 +24,20 @@ namespace QuanLyBanHang
         {
             PhanQuyen();
         }
+        private bool KiemTraDangNhap()
+        {
+            if (!DaDangNhapKH || string.IsNullOrEmpty(UserSession.MaKH))
+            {
+                MessageBox.Show("Vui lòng đăng nhập để sử dụng chức năng này!",
+                    "Chưa đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-        
+                // Tự động mở form đăng nhập luôn (rất pro!)
+                DangNhap(null, null);
+                return false;
+            }
+            return true;
+        }
+
         public void PhanQuyen()
         {
             MnuDangXuat.Enabled = DaDangNhapKH;
@@ -47,18 +59,14 @@ namespace QuanLyBanHang
         private void ThongTinCaNhan(object sender, EventArgs e)
         {
             picFullView.Visible = false;
-            if (DaDangNhapKH)
+            if (!DaDangNhapKH || string.IsNullOrEmpty(UserSession.MaKH))
             {
-                var pfp = new Thongtincanhan();
-                pfp.MdiParent = this;
-                pfp.Show();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng đăng nhập để xem thông tin cá nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng đăng nhập để xem thông tin cá nhân!",
+                    "Chưa đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; 
             }
 
-            var profile = new Thongtincanhan(HoTenKH);
+            var profile = new Thongtincanhan();
             profile.MdiParent = this;
             profile.WindowState = FormWindowState.Maximized;
             profile.Show();
@@ -92,7 +100,7 @@ namespace QuanLyBanHang
             }
             using (var db = new QLBanHangContext())
             {
-                db.Database.ExecuteSqlCommand("TRUNCATE TABLE GioHang");
+                db.Database.ExecuteSqlRaw("TRUNCATE TABLE GioHang");
             }
             UserSession.Clear();
             MessageBox.Show("Đã đăng xuất!!");
@@ -109,7 +117,7 @@ namespace QuanLyBanHang
             );
             using (var db = new QLBanHangContext())
             {
-                db.Database.ExecuteSqlCommand("TRUNCATE TABLE GioHang");
+                db.Database.ExecuteSqlRaw("TRUNCATE TABLE GioHang");
             }
             if (result == DialogResult.Yes)
             {
@@ -125,6 +133,7 @@ namespace QuanLyBanHang
         private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             picFullView.Visible = false;
+            if (!KiemTraDangNhap()) return;
             var f = new FrmMuaHang();
             f.MdiParent = this;
             f.Show();
@@ -134,12 +143,14 @@ namespace QuanLyBanHang
         {
             picFullView.Visible = false;
             var f = new frmHuongDanSuDung();
+            f.MdiParent = this;
             f.Show();     
         }
 
         private void hướngDẫnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             picFullView.Visible = false;
+            if (!KiemTraDangNhap()) return;
             var f = new frmLichSuMuaHang();    
             f.Show();  
         }
@@ -178,6 +189,7 @@ namespace QuanLyBanHang
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            if (!KiemTraDangNhap()) return;
             var f = new frmLapHoaDon();
             f.MdiParent = this;
             f.Show();

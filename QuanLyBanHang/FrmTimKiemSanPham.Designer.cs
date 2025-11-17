@@ -40,12 +40,12 @@
             this.txtGiaTu = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTenSP
@@ -66,12 +66,11 @@
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(173, 30);
             this.txtTenSP.TabIndex = 1;
-            this.txtTenSP.TextChanged += new System.EventHandler(this.txtTenSP_TextChanged);
             // 
             // btnTim
             // 
             this.btnTim.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.Location = new System.Drawing.Point(659, 90);
+            this.btnTim.Location = new System.Drawing.Point(661, 90);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(97, 38);
             this.btnTim.TabIndex = 2;
@@ -119,7 +118,7 @@
             this.lblMaSP.AutoSize = true;
             this.lblMaSP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaSP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(19)))), ((int)(((byte)(34)))));
-            this.lblMaSP.Location = new System.Drawing.Point(357, 55);
+            this.lblMaSP.Location = new System.Drawing.Point(357, 54);
             this.lblMaSP.Name = "lblMaSP";
             this.lblMaSP.Size = new System.Drawing.Size(119, 23);
             this.lblMaSP.TabIndex = 0;
@@ -128,7 +127,7 @@
             // txtMaSP
             // 
             this.txtMaSP.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaSP.Location = new System.Drawing.Point(480, 48);
+            this.txtMaSP.Location = new System.Drawing.Point(482, 54);
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(173, 30);
             this.txtMaSP.TabIndex = 1;
@@ -136,7 +135,7 @@
             // txtGiaDen
             // 
             this.txtGiaDen.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiaDen.Location = new System.Drawing.Point(480, 95);
+            this.txtGiaDen.Location = new System.Drawing.Point(482, 95);
             this.txtGiaDen.Name = "txtGiaDen";
             this.txtGiaDen.Size = new System.Drawing.Size(173, 30);
             this.txtGiaDen.TabIndex = 1;
@@ -172,6 +171,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "TÌM KIẾM\r\n SẢN PHẨM";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QuanLyBanHang.Properties.Resources._0018;
+            this.pictureBox1.Location = new System.Drawing.Point(52, 173);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(268, 202);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightBlue;
@@ -191,15 +199,6 @@
             this.panel2.Size = new System.Drawing.Size(786, 476);
             this.panel2.TabIndex = 5;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QuanLyBanHang.Properties.Resources._0018;
-            this.pictureBox1.Location = new System.Drawing.Point(52, 173);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(268, 202);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // FrmTimKiemSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -213,9 +212,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

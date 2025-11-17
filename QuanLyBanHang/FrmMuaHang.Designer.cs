@@ -117,7 +117,7 @@
             // 
             this.khuyếnMãiToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.giảm_giá;
             this.khuyếnMãiToolStripMenuItem.Name = "khuyếnMãiToolStripMenuItem";
-            this.khuyếnMãiToolStripMenuItem.Size = new System.Drawing.Size(228, 32);
+            this.khuyếnMãiToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
             this.khuyếnMãiToolStripMenuItem.Text = "Khuyến Mãi";
             this.khuyếnMãiToolStripMenuItem.Click += new System.EventHandler(this.khuyếnMãiToolStripMenuItem_Click);
             // 
@@ -125,7 +125,7 @@
             // 
             this.hotToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.hot;
             this.hotToolStripMenuItem.Name = "hotToolStripMenuItem";
-            this.hotToolStripMenuItem.Size = new System.Drawing.Size(228, 32);
+            this.hotToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
             this.hotToolStripMenuItem.Text = "Hot";
             this.hotToolStripMenuItem.Click += new System.EventHandler(this.hotToolStripMenuItem_Click);
             // 
@@ -420,7 +420,7 @@
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.button3);
             this.panel7.Controls.Add(this.label2);
-            this.panel7.Location = new System.Drawing.Point(634, 88);
+            this.panel7.Location = new System.Drawing.Point(658, 88);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(490, 188);
             this.panel7.TabIndex = 20;
@@ -443,7 +443,7 @@
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Controls.Add(this.label5);
             this.panel9.Controls.Add(this.button4);
-            this.panel9.Location = new System.Drawing.Point(634, 318);
+            this.panel9.Location = new System.Drawing.Point(658, 318);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(490, 188);
             this.panel9.TabIndex = 20;
@@ -466,7 +466,7 @@
             this.panel11.Controls.Add(this.panel12);
             this.panel11.Controls.Add(this.label3);
             this.panel11.Controls.Add(this.button5);
-            this.panel11.Location = new System.Drawing.Point(634, 543);
+            this.panel11.Location = new System.Drawing.Point(658, 543);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(490, 188);
             this.panel11.TabIndex = 20;

@@ -101,7 +101,7 @@ namespace QuanLyBanHang
                 {
                     TenSP = txtTenSP.Text,
                     SoLuongTon = int.Parse(txtSLT.Text),
-                    DonGiaBan = float.Parse(txtGia.Text),
+                    DonGiaBan = decimal.Parse(txtGia.Text),
 
                     HinhAnh = ""
                 };
@@ -118,29 +118,27 @@ namespace QuanLyBanHang
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (spDangchon == null) { return; }
+            if(spDangchon == null) return;
+
             try
             {
                 spDangchon.TenSP = txtTenSP.Text;
                 spDangchon.SoLuongTon = int.Parse(txtSLT.Text);
                 spDangchon.DonGiaBan = decimal.Parse(txtGia.Text);
+
+                // Nếu đang hiển thị ảnh từ file (không phải từ Resources)
                 if (!string.IsNullOrEmpty(pctAnh.ImageLocation))
                 {
                     spDangchon.HinhAnh = pctAnh.ImageLocation;
                 }
 
-                    db.SaveChanges();
-                    LoadSanPham();
-                    MessageBox.Show("Cập nhật sản phẩm thành công!");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi cập nhật sản phẩm: " + ex.Message);
-                }
+                db.SaveChanges();
+                LoadSanPham();
+                MessageBox.Show("Cập nhật sản phẩm thành công!");
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show("Lỗi cập nhật sản phẩm: " + ex.Message);
             }
         }
         private void CauHinhDataGridView()

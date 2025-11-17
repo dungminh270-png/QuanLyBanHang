@@ -16,7 +16,7 @@ namespace QuanLyBanHang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ForgotPass());
+            Application.Run(new frmQuanLiTonKho());
         }
     }
 }

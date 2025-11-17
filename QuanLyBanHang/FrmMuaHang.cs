@@ -88,10 +88,5 @@ namespace QuanLyBanHang
             var f = new frmChiTiet6();  
             f.Show();   
         }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

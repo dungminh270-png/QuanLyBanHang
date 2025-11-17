@@ -463,6 +463,9 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiTietHoaDon.cs" />
+    <Compile Include="Models\QLBanHangContext.cs">
+      <DependentUpon>QLBanHangContext.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Models\QLBanHangContext.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -613,6 +616,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-sell-stock-24.png" />
+    <None Include="Resources\Đăng nhập.png" />
     <None Include="Resources\hotsale2.jpg" />
     <None Include="Resources\hotsale1.jpg" />
     <None Include="Resources\hot sale.jpg" />

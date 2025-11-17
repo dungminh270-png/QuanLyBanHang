@@ -49,7 +49,7 @@ namespace QuanLyBanHang
 
         private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var f = new Login();
+            var f = new Login(this);
             f.MdiParent = this;
             f.Show();
         }
@@ -175,6 +175,11 @@ namespace QuanLyBanHang
             {
                 Application.Exit();
             }
+        }
+
+        private void MnuCHHT_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chức năng đang được phát triển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

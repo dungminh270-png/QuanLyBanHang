@@ -27,7 +27,7 @@ namespace QuanLyBanHang
             {
                 MessageBox.Show("Vui lòng đăng nhập!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                this.Close();
+                //this.Close();
                 return;
             }
             LoadThongTinKhachHang();
@@ -39,8 +39,8 @@ namespace QuanLyBanHang
                      .Select(k => new
                      {
                          k.MaKH,
-                         k.TenCty,
-                         k.NgSinh,
+                         k.TenKH,
+                         k.NgaySinh,
                          k.GTinh,
                          k.DiaChi,
                          k.DienThoai,
@@ -52,15 +52,15 @@ namespace QuanLyBanHang
                 return;
             }
             txtMaKh.Text = kh.MaKH;
-            txtHten.Text = kh.TenCty ?? ""; // Dùng TenCty làm họ tên
+            txtHten.Text = kh.TenKH ?? ""; // Dùng TenCty làm họ tên
             txtDiachi.Text = kh.DiaChi ?? "";
             txtSDT.Text = kh.DienThoai ?? "";
 
             txtThanhPho.Text = kh.ThanhPho.ToString();
 
-            if (kh.NgSinh.HasValue)
+            if (kh.NgaySinh.HasValue)
             {
-                dateTime.Value = kh.NgSinh.Value;
+                dateTime.Value = kh.NgaySinh.Value;
                 dateTime.Checked = true;
             }
             else
@@ -119,7 +119,7 @@ namespace QuanLyBanHang
                     .FirstOrDefault();
             if (kh != null)
             {
-                kh.Avatar = duongDan;
+                kh.HinhAnh = duongDan;
             }
         }
     }

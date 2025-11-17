@@ -55,7 +55,6 @@ namespace QuanLyBanHang
             this.hóaĐơnToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.giớiThiệuChươngTrìnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLíToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kháchHàngToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.khoHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -135,6 +134,7 @@ namespace QuanLyBanHang
             this.MnuCHHT.Name = "MnuCHHT";
             this.MnuCHHT.Size = new System.Drawing.Size(269, 32);
             this.MnuCHHT.Text = "Cấu hình hệ thống";
+            this.MnuCHHT.Click += new System.EventHandler(this.MnuCHHT_Click);
             // 
             // MnuDangNhap
             // 
@@ -269,7 +269,6 @@ namespace QuanLyBanHang
             this.trợGiúpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hướngDẫnSửDụngToolStripMenuItem,
             this.giớiThiệuChươngTrìnhToolStripMenuItem});
-            this.trợGiúpToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.help;
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
             this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(121, 32);
             this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
@@ -284,7 +283,6 @@ namespace QuanLyBanHang
             // 
             // giớiThiệuChươngTrìnhToolStripMenuItem
             // 
-            this.giớiThiệuChươngTrìnhToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.giới_thiệu_chương_trình;
             this.giớiThiệuChươngTrìnhToolStripMenuItem.Name = "giớiThiệuChươngTrìnhToolStripMenuItem";
             this.giớiThiệuChươngTrìnhToolStripMenuItem.Size = new System.Drawing.Size(311, 32);
             this.giớiThiệuChươngTrìnhToolStripMenuItem.Text = "Giới thiệu chương trình";
@@ -328,7 +326,6 @@ namespace QuanLyBanHang
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -359,7 +356,6 @@ namespace QuanLyBanHang
         private System.Windows.Forms.ToolStripMenuItem đơnHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hướngDẫnSửDụngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem giớiThiệuChươngTrìnhToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLíToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kháchHàngToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem hóaĐơnToolStripMenuItem2;

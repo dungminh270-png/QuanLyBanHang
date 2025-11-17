@@ -18,11 +18,17 @@ namespace QuanLyBanHang
             InitializeComponent();
         }
         private frmMain _frmMain;
+        private FormMaiN_KH_ _frmMainKH;
         public Login(frmMain fmain)
         {
-
+            InitializeComponent();
             _frmMain = fmain;
 
+        }
+        public Login(FormMaiN_KH_ fmainKH)
+        {
+            InitializeComponent();
+            _frmMainKH = fmainKH;
         }
 
         private void txtPass_TextChanged(object sender, EventArgs e)
@@ -61,25 +67,24 @@ namespace QuanLyBanHang
                     var nv = db.NhanViens.FirstOrDefault(x => x.MaDN == user && x.MatKhau == pass);
                     if (nv != null)
                     {
-                        string hoten = nv.Ho + " " + nv.Ten;
+                        string hoten = nv.HoTen;
                         MessageBox.Show("Đăng nhập thành công (Nhân Viên)!");
-
                         if (_frmMain != null)
+                        {
+                            
+                            _frmMain.HoTenNhanVien = hoten;
+                            _frmMain.DaDangNhap = true;
+                            _frmMain.PhanQuyen();
+                            this.Hide();
+                        }
+
+                        else if(_frmMainKH != null)
                         {
                             _frmMain.HoTenNhanVien = hoten;
                             _frmMain.DaDangNhap = true;
                             _frmMain.PhanQuyen();
+                            _frmMainKH.Close();
                             this.Close();
-                        }
-                        else
-                        {
-                            frmMain mainNV = new frmMain();
-                            mainNV.HoTenNhanVien = hoten;
-                            mainNV.DaDangNhap = true;
-
-                            mainNV.PhanQuyen();
-                            mainNV.Show();
-                            this.Hide();
                         }
                     }
                     else
@@ -93,11 +98,17 @@ namespace QuanLyBanHang
                     var kh = db.KhachHangs.FirstOrDefault(x => x.MaDN == user && x.MatKhau == pass);
                     if (kh != null)
                     {
-                        string hotenKH = kh.TenCty;
+                        string hotenKH = kh.TenKH;
                         MessageBox.Show("Đăng nhập thành công (Khách Hàng)!");
-                        var panelMainKH = new FormMaiN_KH_();
-                        panelMainKH.Show();
-                        this.Hide();
+                        if (_frmMainKH != null)
+                        {
+                            _frmMainKH.HoTenKH = hotenKH;
+                            _frmMainKH.DaDangNhapKH = true;
+                            _frmMainKH.PhanQuyen();
+                            this.Hide();
+                        }
+                        
+                        this.Close();
                     }
                     else
                     {

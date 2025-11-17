@@ -16,8 +16,9 @@ namespace QuanLyBanHang
         {
             InitializeComponent();
         }
-        public bool DaDangNhap { get; set; } = true;
+        public bool DaDangNhapKH { get; set; } = false;
         public string HoTenKH { get; set; }
+
         private void FormMaiN_KH__Load(object sender, EventArgs e)
         {
             PhanQuyen();
@@ -26,10 +27,10 @@ namespace QuanLyBanHang
         
         public void PhanQuyen()
         {
-            MnuDangXuat.Enabled = !DaDangNhap;
-            MnuDangNhap.Enabled = DaDangNhap;
+            MnuDangXuat.Enabled = DaDangNhapKH;
+            MnuDangNhap.Enabled = !DaDangNhapKH;
 
-            lblHoTen.Text = DaDangNhap ? $"Xin chào: " + $"{HoTenKH}" : "Chưa đăng nhập";
+            lblHoTen.Text = DaDangNhapKH ? $"Xin chào: " + $"{HoTenKH}" : "Chưa đăng nhập";
             // xét quyền theo vai trò
             //MnuCauHinhHeThong.Enabled = DaDangNhap && Quyen == VaiTro.QuanTri;
             //MnuQLNhanVien.Enabled = DaDangNhap && Quyen == VaiTro.QuanTri;
@@ -37,30 +38,34 @@ namespace QuanLyBanHang
 
         private void lblTime_Click(object sender, EventArgs e)
         {
-            if (lblTime != null)
-            {
-                lblTime.Text = DateTime.Now.ToString("HH:mm:ss dd/MM/yyyy ");
-            }
+            //lblTime.Text = DateTime.Now.ToString("HH:mm:ss dd/MM/yyyy ");
         }
 
 
         private void ThongTinCaNhan(object sender, EventArgs e)
         {
-            var profile = new Thongtincanhan();
-            profile.MdiParent = this;
-            profile.Show();
+            if (DaDangNhapKH)
+            {
+                var profile = new Thongtincanhan();
+                profile.MdiParent = this;
+                profile.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng đăng nhập để xem thông tin cá nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void DangNhap(object sender, EventArgs e)
         {
-            var f = new Login();
+            var f = new Login(this);
             f.MdiParent = this;
             f.Show();
         }
 
         private void DangXuat(object sender, EventArgs e)
         {
-            DaDangNhap = false;
+            DaDangNhapKH = false;
             HoTenKH = "";
             PhanQuyen();
 
@@ -73,7 +78,17 @@ namespace QuanLyBanHang
 
         private void Thoat_Click(object sender, EventArgs e)
         {
-            
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn thoát chương trình không?",
+                "Xác nhận thoát",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

@@ -43,17 +43,18 @@
             this.hướngDẫnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LichSu = new System.Windows.Forms.ToolStripMenuItem();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblHoTen = new System.Windows.Forms.ToolStripStatusLabel();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.HeThong,
@@ -195,13 +196,14 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMaiN_KH_";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMaiN_KH_";
             this.Load += new System.EventHandler(this.FormMaiN_KH__Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

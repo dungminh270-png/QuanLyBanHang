@@ -30,7 +30,7 @@ namespace QuanLyBanHang
                            .Select(kh => new
                            {
                                kh.MaKH,
-                               kh.TenCty,
+                               kh.TenKH,
                                kh.DiaChi,
                                kh.DienThoai,
                                kh.MaThanhPho

@@ -10,13 +10,13 @@ namespace QuanLyBanHang.Models
     public class NhanVien
     {
         [Key] public int? MaNV { get; set; }
-        public string Ho { get; set; }
-        public string Ten { get; set; }
-        public bool? Nu { get; set; }
-        public DateTime? NgayNV { get; set; }
+        public string HoTen { get; set; }
+        public bool? GTinh { get; set; }
+        public DateTime? NgaySinh { get; set; }
         public string DiaChi { get; set; }
         public string DienThoai { get; set; }
-        public string Hinh { get; set; }
+        public string Email { get; set; }
+        public string HinhAnh { get; set; }
         public string MaDN { get; set; }
         public string MatKhau { get; set; }
     }

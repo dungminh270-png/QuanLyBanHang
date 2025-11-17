@@ -118,5 +118,10 @@ namespace QuanLyBanHang
         {
 
         }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

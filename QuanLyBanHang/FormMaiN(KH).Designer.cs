@@ -159,14 +159,14 @@
             // hướngDẫnToolStripMenuItem
             // 
             this.hướngDẫnToolStripMenuItem.Name = "hướngDẫnToolStripMenuItem";
-            this.hướngDẫnToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.hướngDẫnToolStripMenuItem.Size = new System.Drawing.Size(194, 34);
             this.hướngDẫnToolStripMenuItem.Text = "Mua hàng";
             this.hướngDẫnToolStripMenuItem.Click += new System.EventHandler(this.hướngDẫnToolStripMenuItem_Click);
             // 
             // gToolStripMenuItem
             // 
             this.gToolStripMenuItem.Name = "gToolStripMenuItem";
-            this.gToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.gToolStripMenuItem.Size = new System.Drawing.Size(194, 34);
             this.gToolStripMenuItem.Text = "Giỏ hàng";
             this.gToolStripMenuItem.Click += new System.EventHandler(this.gToolStripMenuItem_Click);
             // 
@@ -189,6 +189,7 @@
             this.statusStrip1.Size = new System.Drawing.Size(1250, 32);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // lblTime
             // 

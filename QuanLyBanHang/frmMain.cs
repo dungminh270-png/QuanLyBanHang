@@ -21,6 +21,8 @@ namespace QuanLyBanHang
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            this.Size = new Size(200, 100);
+            this.StartPosition = FormStartPosition.CenterScreen;
             PhanQuyen();
         }
 
@@ -39,9 +41,6 @@ namespace QuanLyBanHang
             MnuDangNhap.Enabled = !DaDangNhap;
            
             lblHoTenNhanVien.Text = DaDangNhap ? $"Xin chào: Admin" : "Chưa đăng nhập";
-            // xét quyền theo vai trò
-            //MnuCauHinhHeThong.Enabled = DaDangNhap && Quyen == VaiTro.QuanTri;
-            //MnuQLNhanVien.Enabled = DaDangNhap && Quyen == VaiTro.QuanTrii;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

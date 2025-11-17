@@ -496,6 +496,7 @@
     <Compile Include="Models\HoaDon.cs" />
     <Compile Include="Models\KhachHang.cs" />
     <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\reportHoaDon.cs" />
     <Compile Include="Models\SanPham.cs" />
     <Compile Include="Models\ThanhPho.cs" />
     <Compile Include="Program.cs" />

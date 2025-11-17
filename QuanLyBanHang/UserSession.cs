@@ -13,7 +13,7 @@ namespace QuanLyBanHang
         public static bool DaDangNhap { get; set; }
         public static void Clear()
         {
-            MaKH = "0";
+            MaKH = "";
             HoTenKH = "";
             DaDangNhap = false;
         }

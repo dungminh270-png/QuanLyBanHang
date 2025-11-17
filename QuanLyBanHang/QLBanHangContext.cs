@@ -17,6 +17,7 @@ namespace QuanLyBanHang
         public DbSet<SanPham> SanPhams { get; set; }    
         public DbSet<ThanhPho> ThanhPhos { get; set; }
         public DbSet<GioHang> GioHangs { get; set; }
+        public DbSet<reportHoaDon> reportHoaDons { get; set; }
 
         // Connection to database
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -28,6 +29,8 @@ namespace QuanLyBanHang
             // Cấu hình khóa gộp cho ChiTietHoaDon
             modelBuilder.Entity<ChiTietHoaDon>()
                 .HasKey(ct => new { ct.MaHD, ct.MaSP });
+            modelBuilder.Entity<reportHoaDon>()
+            .HasKey(rh => new { rh.MaHD, rh.MaSP });
 
             // ánh xạ các thực thể với bảng tương ứng
             modelBuilder.Entity<KhachHang>().ToTable("KhachHang");

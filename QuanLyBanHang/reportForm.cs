@@ -29,18 +29,16 @@ namespace QuanLyBanHang
         {
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyBanHang.report.rdlc";
-
-            //Gán DataSource
             ReportDataSource rds = new ReportDataSource("CTHoaDon", _dataSource);
             reportViewer1.LocalReport.DataSources.Add(rds);
 
 
-            ReportParameter rptTenKH = new ReportParameter("HoTenKhachHang", _tenKhachHang);
-            ReportParameter rptMaHD = new ReportParameter("MaHD", _maHD.ToString()); 
+            decimal tongTien = _dataSource.Sum(item => item.ThanhTien ?? 0);
+            ReportParameter rptTenKH = new ReportParameter("TenKhachHang", _tenKhachHang);
+            ReportParameter rptMaHD = new ReportParameter("MaHD", _maHD.ToString());
 
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptTenKH, rptMaHD }); 
-
-
+            ReportParameter rptTongTien = new ReportParameter("TongTien", tongTien.ToString("N0") + " VND");
+            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptTenKH, rptMaHD, rptTongTien });
             reportViewer1.RefreshReport();
         }
     }

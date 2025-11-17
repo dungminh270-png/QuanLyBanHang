@@ -101,8 +101,8 @@
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>0.805in</Top>
             <Left>1.73in</Left>
-            <Height>0.30833in</Height>
-            <Width>1.78333in</Width>
+            <Height>0.29166in</Height>
+            <Width>2.26666in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -121,14 +121,12 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Họ tên khách hàng:</Value>
+                    <Value>Họ tên khách hàng: Võ Văn Minh</Value>
                     <Style />
                   </TextRun>
                   <TextRun>
-                    <Value>=Parameters!HoTenKhachHang.Value</Value>
-                    <Style>
-                      <Color>Red</Color>
-                    </Style>
+                    <Value>=Parameters!TenKhachHang.Value</Value>
+                    <Style />
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -406,7 +404,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!MaSP.Value</Value>
+                                  <Value>=Fields!MaSP.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -436,7 +434,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!DonGia.Value</Value>
+                                  <Value>=Fields!DonGia.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -468,7 +466,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!SoLuong.Value</Value>
+                                  <Value>=Fields!SoLuong.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -498,7 +496,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!ThanhTien.Value</Value>
+                                  <Value>=Fields!ThanhTien.Value</Value>
                                   <Style />
                                 </TextRun>
                                 <TextRun>
@@ -560,6 +558,97 @@
               </Border>
             </Style>
           </Tablix>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Tổng tiền:</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>5.39667in</Top>
+            <Left>3.17167in</Left>
+            <Height>0.23333in</Height>
+            <Width>0.75in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="txt1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!TongTien.Value</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>5.42167in</Top>
+            <Left>4.155in</Left>
+            <Height>0.20833in</Height>
+            <Width>1.28333in</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox7">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Thank you &amp; see you again!</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox7</rd:DefaultName>
+            <Top>6.14667in</Top>
+            <Left>2.305in</Left>
+            <Height>0.225in</Height>
+            <Width>2.075in</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>6.55833in</Height>
         <Style />
@@ -575,29 +664,15 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="HoTenKhachHang">
-      <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
     <ReportParameter Name="MaHD">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="MaSP">
+    <ReportParameter Name="TenKhachHang">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="DonGia">
-      <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="SoLuong">
-      <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="ThanhTien">
+    <ReportParameter Name="TongTien">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -608,11 +683,6 @@
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>HoTenKhachHang</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>MaHD</ParameterName>
@@ -620,22 +690,12 @@
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>MaSP</ParameterName>
+          <ParameterName>TenKhachHang</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>3</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>DonGia</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>SoLuong</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>ThanhTien</ParameterName>
+          <ParameterName>TongTien</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

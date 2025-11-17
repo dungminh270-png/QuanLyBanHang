@@ -317,6 +317,42 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chi Tiết SP\frmChiTiet1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chi Tiết SP\frmChiTiet1.Designer.cs">
+      <DependentUpon>frmChiTiet1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chi Tiết SP\frmChiTiet2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chi Tiết SP\frmChiTiet2.Designer.cs">
+      <DependentUpon>frmChiTiet2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chi Tiết SP\frmChiTiet3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chi Tiết SP\frmChiTiet3.Designer.cs">
+      <DependentUpon>frmChiTiet3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chi Tiết SP\frmChiTiet4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chi Tiết SP\frmChiTiet4.Designer.cs">
+      <DependentUpon>frmChiTiet4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chi Tiết SP\frmChiTiet5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chi Tiết SP\frmChiTiet5.Designer.cs">
+      <DependentUpon>frmChiTiet5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chi Tiết SP\frmChiTiet6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chi Tiết SP\frmChiTiet6.Designer.cs">
+      <DependentUpon>frmChiTiet6.cs</DependentUpon>
+    </Compile>
     <Compile Include="CurrentUser.cs" />
     <Compile Include="DanhMucKhachHang.cs">
       <SubType>Form</SubType>
@@ -390,6 +426,12 @@
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmMuaHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMuaHang.Designer.cs">
+      <DependentUpon>FrmMuaHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmQuanLiKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -433,6 +475,11 @@
     <Compile Include="Models\ThanhPho.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QLBanHangContext.cs" />
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
@@ -453,6 +500,24 @@
       <DependentUpon>TimKiemmHoaDonUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="Chi Tiết SP\frmChiTiet1.resx">
+      <DependentUpon>frmChiTiet1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chi Tiết SP\frmChiTiet2.resx">
+      <DependentUpon>frmChiTiet2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chi Tiết SP\frmChiTiet3.resx">
+      <DependentUpon>frmChiTiet3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chi Tiết SP\frmChiTiet4.resx">
+      <DependentUpon>frmChiTiet4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chi Tiết SP\frmChiTiet5.resx">
+      <DependentUpon>frmChiTiet5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chi Tiết SP\frmChiTiet6.resx">
+      <DependentUpon>frmChiTiet6.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DanhMucKhachHang.resx">
       <DependentUpon>DanhMucKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -464,6 +529,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMaiN%28KH%29.resx">
       <DependentUpon>FormMaiN%28KH%29.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTimKiemKhachHang.resx">
       <DependentUpon>FormTimKiemKhachHang.cs</DependentUpon>
@@ -482,11 +548,17 @@
     <EmbeddedResource Include="frmHuongDanSuDung.resx">
       <DependentUpon>frmHuongDanSuDung.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLapHoaDon.resx">
+      <DependentUpon>frmLapHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLichSuMuaHang.resx">
       <DependentUpon>frmLichSuMuaHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMuaHang.resx">
+      <DependentUpon>FrmMuaHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLiKhachHang.resx">
       <DependentUpon>frmQuanLiKhachHang.cs</DependentUpon>
@@ -505,14 +577,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Thongtincanhan.resx">
       <DependentUpon>Thongtincanhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -546,9 +613,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\kimthanh36.jpg" />
-    <Content Include="Resources\vietmacdinh.jpg" />
     <None Include="Resources\AvartarCaNhan.jpg" />
+    <None Include="Resources\0018.gif" />
     <Content Include="Resources\Avatar.png" />
     <None Include="Resources\QuanLiKhachHang.png" />
   </ItemGroup>

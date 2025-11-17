@@ -101,7 +101,8 @@ namespace QuanLyBanHang
                 {
                     TenSP = txtTenSP.Text,
                     SoLuongTon = int.Parse(txtSLT.Text),
-                    DonGiaBan = decimal.Parse(txtGia.Text),
+                    DonGiaBan = float.Parse(txtGia.Text),
+
                     HinhAnh = ""
                 };
                 db.SanPhams.Add(sp);
@@ -128,28 +129,18 @@ namespace QuanLyBanHang
                     spDangchon.HinhAnh = pctAnh.ImageLocation;
                 }
 
-                db.SaveChanges();
-                LoadSanPham();
-                MessageBox.Show("Cập nhật sản phẩm thành công!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi cập nhật sản phẩm: " + ex.Message);
-            }
-
-        }
-
-        private void pctAnh_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Image Files|*.jpg;*.png";
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                pctAnh.ImageLocation = ofd.FileName; 
-                if (spDangchon != null)
-                {
-                    spDangchon.HinhAnh = ofd.FileName; 
+                    db.SaveChanges();
+                    LoadSanPham();
+                    MessageBox.Show("Cập nhật sản phẩm thành công!");
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi cập nhật sản phẩm: " + ex.Message);
+                }
+            }
+            catch
+            {
+
             }
         }
         private void CauHinhDataGridView()
@@ -244,5 +235,7 @@ namespace QuanLyBanHang
                 MessageBox.Show($"Tìm thấy {ketQua.Count} sản phẩm!", "Thành công",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+
     }
 }

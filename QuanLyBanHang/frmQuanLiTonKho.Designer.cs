@@ -180,7 +180,6 @@
             this.pctAnh.Size = new System.Drawing.Size(199, 130);
             this.pctAnh.TabIndex = 5;
             this.pctAnh.TabStop = false;
-            this.pctAnh.Click += new System.EventHandler(this.pctAnh_Click);
             // 
             // label5
             // 

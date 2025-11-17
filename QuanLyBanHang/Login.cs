@@ -69,21 +69,26 @@ namespace QuanLyBanHang
                     {
                         string hoten = nv.HoTen;
                         MessageBox.Show("Đăng nhập thành công (Nhân Viên)!");
+
+                        //Đang ở frmMain, đăng nhập (lại)
                         if (_frmMain != null)
                         {
-                            
                             _frmMain.HoTenNhanVien = hoten;
                             _frmMain.DaDangNhap = true;
                             _frmMain.PhanQuyen();
-                            this.Hide();
+                            this.Close();
                         }
-
-                        else if(_frmMainKH != null)
+                        //Đang ở frmMainKH, chuyển sang frmMain
+                        else if (_frmMainKH != null)
                         {
-                            _frmMain.HoTenNhanVien = hoten;
-                            _frmMain.DaDangNhap = true;
-                            _frmMain.PhanQuyen();
-                            _frmMainKH.Close();
+                            _frmMainKH.Hide();
+
+                            frmMain mainNV = new frmMain();
+                            mainNV.HoTenNhanVien = hoten;
+                            mainNV.DaDangNhap = true;
+
+                            mainNV.FormClosed += (s, args) => Application.Exit();
+                            mainNV.Show();
                             this.Close();
                         }
                     }
@@ -94,21 +99,32 @@ namespace QuanLyBanHang
                 }
                 else if (radKhachHang.Checked)
                 {
-
                     var kh = db.KhachHangs.FirstOrDefault(x => x.MaDN == user && x.MatKhau == pass);
                     if (kh != null)
                     {
                         string hotenKH = kh.TenKH;
                         MessageBox.Show("Đăng nhập thành công (Khách Hàng)!");
-                        if (_frmMainKH != null)
+
+                        //Đang ở frmMain, chuyển sang frmMainKH (ĐÃ SỬA LỖI)
+                        if (_frmMain != null)
+                        {
+                            _frmMain.Hide();
+                            FormMaiN_KH_ mainKH = new FormMaiN_KH_();
+                            mainKH.DaDangNhapKH = true;
+                            mainKH.HoTenKH = hotenKH;
+                            mainKH.FormClosed += (s, args) => Application.Exit();
+                            mainKH.Show();
+
+                            this.Close();
+                        }
+                        //Đang ở frmMainKH, đăng nhập (lại)
+                        else if (_frmMainKH != null)
                         {
                             _frmMainKH.HoTenKH = hotenKH;
                             _frmMainKH.DaDangNhapKH = true;
                             _frmMainKH.PhanQuyen();
-                            this.Hide();
+                            this.Close();
                         }
-                        
-                        this.Close();
                     }
                     else
                     {
@@ -149,7 +165,7 @@ namespace QuanLyBanHang
             }
 
             Register frm = new Register();
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

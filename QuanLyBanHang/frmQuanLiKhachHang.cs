@@ -192,10 +192,5 @@ namespace QuanLyBanHang
                 MessageBox.Show("Xóa khách hàng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void dgvKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

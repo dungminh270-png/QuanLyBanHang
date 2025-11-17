@@ -27,7 +27,7 @@ namespace QuanLyBanHang
             {
                 MessageBox.Show("Vui lòng đăng nhập!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                this.Close();
+                //this.Close();
                 return;
             }
             LoadThongTinKhachHang();

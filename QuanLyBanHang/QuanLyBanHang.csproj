@@ -343,6 +343,11 @@
     <Compile Include="FormMaiN%28KH%29.Designer.cs">
       <DependentUpon>FormMaiN%28KH%29.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDanhMucKhachHang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>frmDanhMucKhachHang.resx</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
@@ -457,7 +462,10 @@
     <EmbeddedResource Include="FormTimKiemKhachHang.resx">
       <DependentUpon>FormTimKiemKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDanhMucKhachHang.resx" />
+    <EmbeddedResource Include="frmDanhMucKhachHang.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmDanhMucKhachHang.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDanhMucSanPham.resx">
       <DependentUpon>FrmDanhMucSanPham.cs</DependentUpon>
       <SubType>Designer</SubType>

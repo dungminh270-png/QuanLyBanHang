@@ -20,7 +20,7 @@ namespace QuanLyBanHang
         private frmMain _frmMain;
         public Login(frmMain fmain)
         {
-
+            InitializeComponent();
             _frmMain = fmain;
 
         }
@@ -66,11 +66,13 @@ namespace QuanLyBanHang
 
                         if (_frmMain != null)
                         {
+                            
                             _frmMain.HoTenNhanVien = hoten;
                             _frmMain.DaDangNhap = true;
                             _frmMain.PhanQuyen();
                             this.Close();
                         }
+
                         else
                         {
                             frmMain mainNV = new frmMain();
@@ -95,9 +97,14 @@ namespace QuanLyBanHang
                     {
                         string hotenKH = kh.TenCty;
                         MessageBox.Show("Đăng nhập thành công (Khách Hàng)!");
+                        if (_frmMain != null)
+                        {
+                            _frmMain.Hide();
+                        }
                         var panelMainKH = new FormMaiN_KH_();
                         panelMainKH.Show();
-                        this.Hide();
+
+                        this.Close();
                     }
                     else
                     {

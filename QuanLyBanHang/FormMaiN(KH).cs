@@ -21,6 +21,7 @@ namespace QuanLyBanHang
         private void FormMaiN_KH__Load(object sender, EventArgs e)
         {
             PhanQuyen();
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss dd/MM/yyyy ");
         }
 
         
@@ -37,10 +38,7 @@ namespace QuanLyBanHang
 
         private void lblTime_Click(object sender, EventArgs e)
         {
-            if (lblTime != null)
-            {
-                lblTime.Text = DateTime.Now.ToString("HH:mm:ss dd/MM/yyyy ");
-            }
+            //lblTime.Text = DateTime.Now.ToString("HH:mm:ss dd/MM/yyyy ");
         }
 
 
@@ -73,7 +71,17 @@ namespace QuanLyBanHang
 
         private void Thoat_Click(object sender, EventArgs e)
         {
-            
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn thoát chương trình không?",
+                "Xác nhận thoát",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

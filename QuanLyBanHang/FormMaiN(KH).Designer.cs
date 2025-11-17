@@ -45,9 +45,10 @@
             this.gToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LichSu = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lblTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblHoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.lblTime = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -189,18 +190,24 @@
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
-            // lblTime
-            // 
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(44, 20);
-            this.lblTime.Text = "00:00";
-            this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
-            // 
             // lblHoTen
             // 
             this.lblHoTen.Name = "lblHoTen";
             this.lblHoTen.Size = new System.Drawing.Size(118, 20);
             this.lblHoTen.Text = "Chưa đăng nhập";
+            // 
+            // lblTime
+            // 
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(44, 20);
+            this.lblTime.Text = "00:00";
+            this.lblTime.Click += new System.EventHandler(this.lblTime_Click_1);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FormMaiN_KH_
             // 
@@ -243,8 +250,9 @@
         private System.Windows.Forms.ToolStripMenuItem hotToolStripMenuItem;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel lblTime;
         private System.Windows.Forms.ToolStripStatusLabel lblHoTen;
         private System.Windows.Forms.ToolStripMenuItem sảnPhẩmToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel lblTime;
+        private System.Windows.Forms.Timer timer1;
     }
 }

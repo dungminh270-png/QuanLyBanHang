@@ -28,7 +28,7 @@ namespace QuanLyBanHang.Chi_Tiết_SP
             int maSanPham = 1;
             string tenSanPham = "Bút chì siêu bền Raumania";
             decimal donGia = 10000;
-            var soLuong = (int)SoLuong.Value;
+            var soLuong = (int)numericUpDown1.Value;
 
             string maKhachHang = UserSession.MaKH;
             string tenKhachHang = UserSession.HoTenKH;

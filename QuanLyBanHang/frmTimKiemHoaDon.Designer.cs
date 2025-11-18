@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.timKiemmHoaDonUserControl1 = new QuanLyBanHang.TimKiemmHoaDonUserControl();
+            this.SuspendLayout();
+            // 
+            // timKiemmHoaDonUserControl1
+            // 
+            this.timKiemmHoaDonUserControl1.BackColor = System.Drawing.Color.LightBlue;
+            this.timKiemmHoaDonUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.timKiemmHoaDonUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.timKiemmHoaDonUserControl1.Name = "timKiemmHoaDonUserControl1";
+            this.timKiemmHoaDonUserControl1.Size = new System.Drawing.Size(1240, 816);
+            this.timKiemmHoaDonUserControl1.TabIndex = 0;
+            // 
+            // frmTimKiemHoaDon
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1240, 816);
+            this.Controls.Add(this.timKiemmHoaDonUserControl1);
+            this.Name = "frmTimKiemHoaDon";
             this.Text = "frmTimKiemHoaDon";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private TimKiemmHoaDonUserControl timKiemmHoaDonUserControl1;
     }
 }

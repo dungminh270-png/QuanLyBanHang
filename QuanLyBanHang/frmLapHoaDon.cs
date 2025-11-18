@@ -125,7 +125,7 @@ namespace QuanLyBanHang
                     frmBaoCao.Show();
 
                     // --- 4. XÓA GIỎ HÀNG TẠM ---
-                    db.Database.ExecuteSqlCommand("TRUNCATE TABLE GioHang");
+                    db.Database.ExecuteSqlRawAsync("TRUNCATE TABLE GioHang");
 
                     // --- 5. LÀM SẠCH FORM ---
                     UserSession.Clear();
